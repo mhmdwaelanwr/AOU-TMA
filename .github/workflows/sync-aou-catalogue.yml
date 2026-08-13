@@ -8,6 +8,7 @@ on:
     paths:
       - "backend-python/scripts/sync_aou_catalogue.py"
       - "backend-python/scripts/sync_aou_catalogue_v2.py"
+      - "backend-python/scripts/export_all_aou_catalogues.py"
       - ".github/workflows/sync-aou-catalogue.yml"
 
 permissions:
@@ -27,10 +28,14 @@ jobs:
         run: python backend-python/scripts/sync_aou_catalogue.py
       - name: Audit all project codes against official English and Arabic catalogues
         run: python backend-python/scripts/sync_aou_catalogue_v2.py
+      - name: Export complete official faculty catalogues
+        run: python backend-python/scripts/export_all_aou_catalogues.py
       - name: Show sync quality report
         run: cat backend-python/app/catalogue_sync_report.json
       - name: Show full catalogue audit summary
         run: python -c "import json; p=json.load(open('backend-python/app/course_catalogue_audit.json')); print(json.dumps({k:v for k,v in p.items() if k!='records'}, ensure_ascii=False, indent=2))"
+      - name: Show export manifest
+        run: cat exports/aou-catalogues/manifest.json
       - name: Commit catalogue changes
         run: |
           git config user.name "github-actions[bot]"
@@ -43,10 +48,11 @@ jobs:
             serverless/data/courses.json \
             serverless/data/course_catalogue_audit.json \
             frontend/public/catalog/courses.json \
-            frontend/public/catalog/course_catalogue_audit.json
+            frontend/public/catalog/course_catalogue_audit.json \
+            exports/aou-catalogues/*.json
           if git diff --cached --quiet; then
             echo "No catalogue changes"
           else
-            git commit -m "data: sync and audit official AOU catalogue"
+            git commit -m "data: sync, audit and export official AOU catalogues"
             git push
           fi
