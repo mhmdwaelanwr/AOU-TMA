@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "updatedAt": "2026-08-13",
+  "rule": "Slash-separated codes in the published TMA deadline sheet are scheduling groups. They are not automatically treated as the same course.",
+  "courses": {
+    "M110": {"currentCatalogue":true,"title":"Python Programming","faculty":"Computer Studies","creditHours":8,"scheduleGroup":["TM111","M110"]},
+    "TM111": {"currentCatalogue":true,"title":"Introduction to Computing and Information Technology 1","faculty":"Computer Studies","creditHours":8,"scheduleGroup":["TM111","M110"]},
+    "MST129": {"currentCatalogue":true,"title":"Applied Calculus","faculty":"Computer Studies","creditHours":4,"scheduleGroup":["M129","MT129","MST129"]},
+    "MT129": {"currentCatalogue":true,"title":"Calculus and Probability","faculty":"Computer Studies","creditHours":4,"scheduleGroup":["M129","MT129","MST129"]},
+    "M129": {"currentCatalogue":false,"title":null,"faculty":"Computer Studies","creditHours":null,"scheduleGroup":["M129","MT129","MST129"],"relatedCurrentCodes":["MT129","MST129"]},
+    "MT131": {"currentCatalogue":true,"title":"Discrete Mathematics","faculty":"Computer Studies","creditHours":4,"scheduleGroup":["M131","MT131"]},
+    "M131": {"currentCatalogue":false,"title":null,"faculty":"Computer Studies","creditHours":null,"scheduleGroup":["M131","MT131"],"relatedCurrentCodes":["MT131"]},
+    "GT101": {"currentCatalogue":true,"title":"Learning and Information Technology","faculty":"Computer Studies","creditHours":3,"scheduleGroup":["GT101","TU170"]},
+    "TU170": {"currentCatalogue":true,"title":"Computing Essentials","faculty":"Computer Studies","creditHours":3,"scheduleGroup":["GT101","TU170"]},
+    "TM105": {"currentCatalogue":true,"title":"Introduction to Programming","faculty":"Computer Studies","creditHours":4,"scheduleGroup":["M105","TM105"]},
+    "M251": {"currentCatalogue":true,"title":"Object Oriented Programming using Java","faculty":"Computer Studies","creditHours":8,"scheduleGroup":["M251","M257"]},
+    "T216A": {"currentCatalogue":true,"title":"Cisco networking (CCNA)-A","faculty":"Computer Studies","creditHours":8},
+    "T216B": {"currentCatalogue":true,"title":"Cisco networking (CCNA)-B","faculty":"Computer Studies","creditHours":8}
+  }
+}

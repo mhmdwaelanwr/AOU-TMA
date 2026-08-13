@@ -1,5 +1,11 @@
 {
-  "version": 1,
-  "updatedAt": null,
-  "courses": {}
+  "version": 2,
+  "updatedAt": "2026-08-13",
+  "courses": {
+    "M110": {"studyVideoUrl": null, "studyFiles": []},
+    "TM105": {"studyVideoUrl": null, "studyFiles": []},
+    "M251": {"studyVideoUrl": null, "studyFiles": []},
+    "T216A": {"studyVideoUrl": null, "studyFiles": []},
+    "T216B": {"studyVideoUrl": null, "studyFiles": []}
+  }
 }
