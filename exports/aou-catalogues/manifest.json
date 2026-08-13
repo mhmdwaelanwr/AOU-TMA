@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "exportedAt": "2026-08-13T22:58:20.117374+00:00",
+  "facultyCount": 6,
+  "courseRecordCount": 780,
+  "faculties": [
+    {
+      "facultyKey": "computer",
+      "faculty": "Faculty of Computer Studies",
+      "courseCount": 136,
+      "file": "computer.json",
+      "sourceUrl": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "facultyKey": "business",
+      "faculty": "Faculty of Business Studies",
+      "courseCount": 86,
+      "file": "business.json",
+      "sourceUrl": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "facultyKey": "language",
+      "faculty": "Faculty of Language Studies",
+      "courseCount": 76,
+      "file": "language.json",
+      "sourceUrl": "https://www.aou.edu.eg/faculties/language/Pages/course-catalogue.aspx"
+    },
+    {
+      "facultyKey": "media",
+      "faculty": "Faculty of Media and Mass Communication",
+      "courseCount": 223,
+      "file": "media.json",
+      "sourceUrl": "https://www.aou.edu.eg/faculties/media/Pages/course-catalogue.aspx"
+    },
+    {
+      "facultyKey": "education",
+      "faculty": "Faculty of Education",
+      "courseCount": 206,
+      "file": "education.json",
+      "sourceUrl": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx"
+    },
+    {
+      "facultyKey": "gmdt",
+      "faculty": "Graphic and Multimedia Design Technology",
+      "courseCount": 53,
+      "file": "gmdt.json",
+      "sourceUrl": "https://www.aou.edu.eg/faculties/gmdt/Pages/course-catalogue.aspx"
+    }
+  ]
+}
