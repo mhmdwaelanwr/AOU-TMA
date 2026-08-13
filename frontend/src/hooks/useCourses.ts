@@ -8,6 +8,18 @@ function cacheKey(q: string, f: Faculty) {
   return `${q}::${f}`;
 }
 
+function coursesEndpoint(q: string, faculty: Faculty) {
+  const params = new URLSearchParams();
+  params.set('q', q);
+  params.set('faculty', faculty);
+
+  // API_URL is intentionally empty in production so Vercel/Netlify can use
+  // same-origin serverless routes. fetch() accepts relative URLs, while
+  // new URL('/api/...') without an explicit base throws "Invalid URL".
+  const base = API_URL.replace(/\/+$/, '');
+  return `${base}/api/courses?${params.toString()}`;
+}
+
 export function useCourses(query: string, faculty: Faculty) {
   const [courses, setCourses] = useState<Course[]>([]);
   const [loading, setLoading] = useState(true);
@@ -36,22 +48,22 @@ export function useCourses(query: string, faculty: Faculty) {
       setLoading(true);
       setError(false);
 
-      const url = new URL(`${API_URL}/api/courses`);
-      url.searchParams.set('q', q);
-      url.searchParams.set('faculty', faculty);
-
-      fetch(url, { signal: controller.signal })
+      fetch(coursesEndpoint(q, faculty), { signal: controller.signal })
         .then(async (response) => {
-          if (!response.ok) throw new Error('catalog_failed');
+          if (!response.ok) throw new Error(`catalog_failed_${response.status}`);
           return response.json() as Promise<{ items: Course[] }>;
         })
         .then((payload) => {
-          const items = payload.items || [];
+          const items = Array.isArray(payload.items) ? payload.items : [];
           courseCache.set(key, items);
           setCourses(items);
         })
         .catch((err) => {
-          if (err?.name !== 'AbortError') setError(true);
+          if (err?.name !== 'AbortError') {
+            console.error('Failed to load course catalog', err);
+            setCourses([]);
+            setError(true);
+          }
         })
         .finally(() => setLoading(false));
     }, 200);
