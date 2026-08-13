@@ -24,14 +24,16 @@ jobs:
         run: pip install -r backend-python/scripts/requirements-sync.txt
       - name: Fetch official AOU course titles and descriptions
         run: python backend-python/scripts/sync_aou_catalogue.py
+      - name: Show sync quality report
+        run: cat backend-python/app/catalogue_sync_report.json
       - name: Commit catalogue changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add backend-python/app/courses.json backend-python/app/course_descriptions.json
+          git add backend-python/app/courses.json backend-python/app/course_descriptions.json backend-python/app/catalogue_sync_report.json serverless/data/courses.json frontend/public/catalog/courses.json
           if git diff --cached --quiet; then
             echo "No catalogue changes"
           else
-            git commit -m "data: sync official AOU course catalogue"
+            git commit -m "data: sync official AOU course descriptions"
             git push
           fi
