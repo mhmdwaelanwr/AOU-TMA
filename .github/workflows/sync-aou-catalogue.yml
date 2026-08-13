@@ -36,6 +36,13 @@ jobs:
         run: python -c "import json; p=json.load(open('backend-python/app/course_catalogue_audit.json')); print(json.dumps({k:v for k,v in p.items() if k!='records'}, ensure_ascii=False, indent=2))"
       - name: Show export manifest
         run: cat exports/aou-catalogues/manifest.json
+      - name: Upload catalogue JSON bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: aou-faculty-catalogues-json
+          path: exports/aou-catalogues/*.json
+          if-no-files-found: error
+          retention-days: 30
       - name: Commit catalogue changes
         run: |
           git config user.name "github-actions[bot]"
