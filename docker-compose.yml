@@ -1,0 +1,53 @@
+services:
+  api:
+    build: ./backend-python
+    restart: unless-stopped
+    expose: ["8000"]
+    environment:
+      CORS_ORIGINS: http://localhost:5173
+      ORDERS_DB_PATH: /app/data/orders.db
+      VODAFONE_CASH_NUMBER: ${VODAFONE_CASH_NUMBER:-}
+      ORANGE_CASH_NUMBER: ${ORANGE_CASH_NUMBER:-}
+      ETISALAT_CASH_NUMBER: ${ETISALAT_CASH_NUMBER:-}
+      WE_PAY_NUMBER: ${WE_PAY_NUMBER:-}
+      INSTAPAY_ADDRESS: ${INSTAPAY_ADDRESS:-}
+      USDT_TRC20_ADDRESS: ${USDT_TRC20_ADDRESS:-}
+      USDT_BEP20_ADDRESS: ${USDT_BEP20_ADDRESS:-}
+    volumes:
+      - orders-data:/app/data
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  fx:
+    build: ./backend-node
+    restart: unless-stopped
+    expose: ["3001"]
+    environment:
+      CORS_ORIGINS: http://localhost:5173
+      FX_CACHE_TTL_MS: 3600000
+      FX_STALE_TTL_MS: 172800000
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3001/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: /catalog-api
+        VITE_FX_URL: /fx-api
+    restart: unless-stopped
+    ports: ["5173:80"]
+    depends_on:
+      api:
+        condition: service_healthy
+      fx:
+        condition: service_healthy
+
+volumes:
+  orders-data:

@@ -1,0 +1,13 @@
+{
+  "name": "aou-tma-hub",
+  "private": true,
+  "version": "4.1.0",
+  "type": "module",
+  "scripts": {
+    "setup": "bash scripts/setup.sh",
+    "live": "node scripts/live.mjs",
+    "dev": "node scripts/live.mjs",
+    "build": "npm --prefix frontend run build",
+    "preview": "npm --prefix frontend run preview -- --host 0.0.0.0"
+  }
+}

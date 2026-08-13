@@ -1,0 +1,1538 @@
+{
+  "generatedFrom": "AOU Egypt official course catalogue pages",
+  "sources": {
+    "Computer Studies": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "Business Studies": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "Education": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
+    "Language Studies": "https://www.aou.edu.eg/faculties/language/Pages/course-catalogue.aspx",
+    "Media": "https://www.aou.edu.eg/faculties/media/Pages/course-catalogue.aspx"
+  },
+  "items": [
+    {
+      "code": "M130",
+      "title": null,
+      "faculty": "Computer Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "M129",
+      "title": null,
+      "faculty": "Computer Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MT129",
+      "title": "Calculus and Probability",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MST129",
+      "title": "Applied Calculus",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "M105",
+      "title": null,
+      "faculty": "Computer Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM105",
+      "title": "Introduction to Programming",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "M109",
+      "title": ".NET Programming",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM111",
+      "title": "Introduction to Computing and Information Technology 1",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "M110",
+      "title": "Python Programming",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "M180",
+      "title": null,
+      "faculty": "Computer Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "T215A",
+      "title": "Communication and Information Technologies A",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM255",
+      "title": "Communication and Information Technologies",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM240",
+      "title": "Computer Graphics and Multimedia",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TT284",
+      "title": "Web technologies",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM256",
+      "title": "Cyber Security",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM270",
+      "title": "Artificial intelligence",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM271",
+      "title": "Machine Learning and Deep learning",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MT248",
+      "title": "Analysing data",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MT249",
+      "title": "Practical modern statistics",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM280",
+      "title": "Smart IoT Systems",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM351",
+      "title": "Data management and analysis",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM355",
+      "title": "Communications Technology",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM311",
+      "title": "Information security",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM340",
+      "title": "Natural Language Processing",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM358",
+      "title": "Machine learning and artificial intelligence",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "M348",
+      "title": "Applied statistical modelling",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "T321",
+      "title": "Operating System Server Administration",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "M131",
+      "title": null,
+      "faculty": "Computer Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MT131",
+      "title": "Discrete Mathematics",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MS102",
+      "title": "Physics",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "GT101",
+      "title": "Learning and Information Technology",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TU170",
+      "title": "Computing Essentials",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "M140",
+      "title": "Python Programming",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MT141",
+      "title": "Introduction to Probability and Statistics",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "M251",
+      "title": "Object Oriented Programming using Java",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "M257",
+      "title": null,
+      "faculty": "Computer Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "T215B",
+      "title": "Communication and Information Technologies B",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "T227",
+      "title": "Change, strategy and projects at work",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM260",
+      "title": "Security, ethics and privacy in IT and Computing",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "T216B",
+      "title": "Cisco networking (CCNA)-B",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "M218",
+      "title": "Relational Databases",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM275",
+      "title": "Parallel and Distributed Systems",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MST224",
+      "title": "Mathematical methods",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "M277",
+      "title": "Introduction to Competitive Programming",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM352",
+      "title": "Web, mobile and cloud technologies",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM366",
+      "title": "Artificial intelligence",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MT395",
+      "title": "Applied Cyber Security",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "T316",
+      "title": "Advanced Networking",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM356",
+      "title": "Interaction design and user experience",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM341",
+      "title": "Computer Vision",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM380",
+      "title": null,
+      "faculty": "Computer Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "T103",
+      "title": null,
+      "faculty": "Computer Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM103",
+      "title": "Computer Organization and Architecture",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "M132",
+      "title": null,
+      "faculty": "Computer Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MT132",
+      "title": "Linear Algebra",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MT101",
+      "title": null,
+      "faculty": "Computer Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM112",
+      "title": "Introduction to Computing and Information Technology 2",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM129",
+      "title": "Technologies in Practice",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "M269",
+      "title": "Algorithms, Data structures and Computability",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "T216A",
+      "title": "Cisco networking (CCNA)-A",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM298",
+      "title": "Operating Systems",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "M275",
+      "title": null,
+      "faculty": "Computer Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "M238",
+      "title": "Data Visualization",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "M252",
+      "title": "Internet Programming",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM276",
+      "title": "Software Development Processes and Methodologies",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM254",
+      "title": "Managing IT: the why, the what and the how",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM291",
+      "title": "Management Information System",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "T318",
+      "title": "Applied Network Security",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM354",
+      "title": "Software Engineering",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MT390",
+      "title": "Image Processing",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM359",
+      "title": "System penetration testing",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "T471",
+      "title": null,
+      "faculty": "Computer Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM471",
+      "title": "The Telematics project CS",
+      "faculty": "Computer Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "BUS101",
+      "title": "Introduction to Math for Business",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "BUS102",
+      "title": "Introduction to Statistics",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "BUS110",
+      "title": "Introduction To Business",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "B122",
+      "title": "An Introduction to Retail management and Marketing",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MGT111",
+      "title": "Principles of Management I",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MGT112",
+      "title": "Principles of Management II",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "B123",
+      "title": "Management Practice",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MKT111",
+      "title": "Principles of Marketing I",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MKT112",
+      "title": "Principles of Marketing II",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "B124",
+      "title": "Fundamentals of Accounting",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACT111",
+      "title": "Financial Accounting",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACT112",
+      "title": "Managerial Accounting",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ECO101",
+      "title": "Principles of Microeconomics",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ECO102",
+      "title": "Principles of Macroeconomics",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "LB170",
+      "title": "Professional Communication Skills for Business Studies",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "BUC111",
+      "title": "Business Communication 1",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "BUC112",
+      "title": "Business Communication 2",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MIS111",
+      "title": "Introduction to Management Information System I",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MIS112",
+      "title": "Introduction to Management Information System II",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "SYS111",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "GB102",
+      "title": "Principles of entrepreneurship for non-specialists",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "GB102E",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "B293",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "BE200",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "BE300",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "BE201",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "BE210/4",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "BE211/4",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "BE310",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "BUS115",
+      "title": "Small Business Management",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACC204",
+      "title": "Intermediate financial accounting",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "HRM111",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "BUS208",
+      "title": "Contemporary issues in marketing",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "B205A",
+      "title": "Exploring innovation and entrepreneurship (A)",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "B205B",
+      "title": "Exploring innovation and entrepreneurship (B)",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "B207A",
+      "title": "Shaping Business Opportunities I",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "B207B",
+      "title": "Shaping Business Opportunities II",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "B291",
+      "title": "Financial Accounting",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "B292",
+      "title": "Management Accounting",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "B294",
+      "title": "Financial Analysis and Decision Making",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "SYS210",
+      "title": "Managing Technology and Innovation",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "SYS280",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "SYS380",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACC300",
+      "title": "Accounting Information Systems",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "B324",
+      "title": "Marketing and Society",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "B325",
+      "title": "Managing across organisational and cultural boundaries",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "B326",
+      "title": "Advanced Financial Accounting",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "B327",
+      "title": "Sustainable enterprise and innovation",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "B328",
+      "title": "Marketing in Action",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "B329",
+      "title": "Leadership in a changing world",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "B391",
+      "title": "Management accounting and finance",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "B392",
+      "title": "Advanced Management Accounting",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "B628",
+      "title": "Managing 1: Organizations and People",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "B629",
+      "title": "Managing 2: Marketing and Finance",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "BB293",
+      "title": "Financial Accounting in Context",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "BUS628",
+      "title": "Global Human Resource Management",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "BUS629",
+      "title": "International Management",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "BUS310",
+      "title": "Strategic Management",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "DD209A",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "DD209B",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "DD309A",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "DD309B",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ECO341",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ECO342",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "FIN240",
+      "title": "Microfinance theory and Practice",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "FIN241",
+      "title": "Microfinance",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "FIN242",
+      "title": "Financial Technology",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "FIN301-F",
+      "title": "Financial and Securities Markets",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "FIN302-F",
+      "title": "Portfolio Theory",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "FIN340-F",
+      "title": "Corporate Finance",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "FIN341",
+      "title": "Islamic Finance",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "FIN342",
+      "title": "Financial & Securities Markets",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "HRM205",
+      "title": "Employment Law",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "HRM206",
+      "title": "Staffing Organizations",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "HRM210",
+      "title": "Training and development",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "HRM215",
+      "title": "Employment Compensation and Benefits",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "HRM320",
+      "title": "Work Place Health & Safety",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "HRM330",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT201",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT202",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT250",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT301",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT305",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT306",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT307",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT311",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT320",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT322",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT330",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT340",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT345",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT350",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT401",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT402",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT403",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT412",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT413",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT420",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT430/6",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ECON201",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ECON202",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "FIN301",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "FIN302",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "LAW301",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MATH201",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MGT201",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MGT202",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MGT301",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MIS201",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MKT201",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "STAT201",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MIS200-IS",
+      "title": "Relational database Management Systems",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MIS201-IS",
+      "title": "Programming for Business Studies",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MIS300",
+      "title": "Project Management",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MIS330",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MIS331",
+      "title": "Business Intelligence",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MIS332",
+      "title": "System analysis and design",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MKT331",
+      "title": "Digital Marketing",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MKT332",
+      "title": "Service Marketing",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACC302",
+      "title": "Principles of Auditing & Assurance Services",
+      "faculty": "Business Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "BE302",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "B206",
+      "title": null,
+      "faculty": "Business Studies",
+      "status": "not_found_in_current_catalogue",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "CES110",
+      "title": "Psychology of Play in Children",
+      "faculty": "Education",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "CES111",
+      "title": "Art Education for Children",
+      "faculty": "Education",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "CES112",
+      "title": "Child Health",
+      "faculty": "Education",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "CES113",
+      "title": "Language Skills for Kindergarten Children",
+      "faculty": "Education",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "EDF109",
+      "title": "The Teaching Profession and the Roles of the Teacher",
+      "faculty": "Education",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "EDF228E",
+      "title": "Talent and Creativity Development",
+      "faculty": "Education",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "EDF230",
+      "title": "Micro Teaching (1)",
+      "faculty": "Education",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "EDS117",
+      "title": "Educational Leadership",
+      "faculty": "Education",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "EDS118",
+      "title": "Educational Technology and Digital Transformation",
+      "faculty": "Education",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "EDS238",
+      "title": "Learning Assessment",
+      "faculty": "Education",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "EDS239E",
+      "title": "Psychological and Educational Guidance",
+      "faculty": "Education",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "CES114",
+      "title": "Directed Motor Play Activities for Children",
+      "faculty": "Education",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "CES115E",
+      "title": "Children’s Library",
+      "faculty": "Education",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "CES231",
+      "title": "Music Education (2)",
+      "faculty": "Education",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "CES232",
+      "title": "Motor Programs for Children",
+      "faculty": "Education",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "CES233",
+      "title": "Foreign language skills for kindergarten children",
+      "faculty": "Education",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "CES234",
+      "title": "Children's Stories and Tales",
+      "faculty": "Education",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "CES235",
+      "title": "Children's Literature",
+      "faculty": "Education",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "CES237E",
+      "title": "Strategies and Programs for Early Detection and Intervention",
+      "faculty": "Education",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "FTS11",
+      "title": "Field Training (1)",
+      "faculty": "Education",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "EL330",
+      "title": "Teaching English as a Foreign Language",
+      "faculty": "Language Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/language/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "EL122",
+      "title": "Writing Research",
+      "faculty": "Language Studies",
+      "status": "verified",
+      "source": "https://www.aou.edu.eg/faculties/language/Pages/course-catalogue.aspx"
+    }
+  ],
+  "snapshotDate": "2026-08-13",
+  "matchingPolicy": "exact course-code match against current AOU Egypt faculty catalogues; unmatched codes are not guessed",
+  "stats": {
+    "tmaRecords": 217,
+    "verifiedTitles": 150,
+    "unresolvedTitles": 67
+  }
+}

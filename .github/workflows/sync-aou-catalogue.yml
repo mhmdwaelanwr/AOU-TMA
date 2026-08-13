@@ -1,0 +1,37 @@
+name: Sync official AOU catalogue
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 3 * * 1"
+  push:
+    paths:
+      - "backend-python/scripts/sync_aou_catalogue.py"
+      - ".github/workflows/sync-aou-catalogue.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install sync dependencies
+        run: pip install -r backend-python/scripts/requirements-sync.txt
+      - name: Fetch official AOU course titles and descriptions
+        run: python backend-python/scripts/sync_aou_catalogue.py
+      - name: Commit catalogue changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add backend-python/app/courses.json backend-python/app/course_descriptions.json
+          if git diff --cached --quiet; then
+            echo "No catalogue changes"
+          else
+            git commit -m "data: sync official AOU course catalogue"
+            git push
+          fi

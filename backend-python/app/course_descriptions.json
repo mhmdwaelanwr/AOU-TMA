@@ -1,0 +1,1521 @@
+{
+  "M130": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "M129": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "MT129": {
+    "title": "Calculus and Probability",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "MST129": {
+    "title": "Applied Calculus",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "M105": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "TM105": {
+    "title": "Introduction to Programming",
+    "description": "This module is an introductory level programming module and it is meant to provide basic foundation in computer programming to students. Students will learn how to develop solutions (algorithms) using pseudocode to solve simple problems. Thereafter, they will learn how to implement these solutions using a programming language (Java). This module serves as foundation for second level programming modules.",
+    "status": "verified",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "code-2"
+  },
+  "M109": {
+    "title": ".NET Programming",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "code-2"
+  },
+  "TM111": {
+    "title": "Introduction to Computing and Information Technology 1",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "code-2"
+  },
+  "M110": {
+    "title": "Python Programming",
+    "description": "This module is an introductory level programming module that is meant to provide a foundation in computer programming to students. Students will learn how to develop solutions (algorithms) using pseudocode to solve problems. Thereafter, students will learn how to implement these solutions using a programming language (Python). This module serves as the foundation for higher-level modules.",
+    "status": "verified",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "code-2"
+  },
+  "M180": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "T215A": {
+    "title": "Communication and Information Technologies A",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "TM255": {
+    "title": "Communication and Information Technologies",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "TM240": {
+    "title": "Computer Graphics and Multimedia",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "radio"
+  },
+  "TT284": {
+    "title": "Web technologies",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "code-2"
+  },
+  "TM256": {
+    "title": "Cyber Security",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "code-2"
+  },
+  "TM270": {
+    "title": "Artificial intelligence",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "code-2"
+  },
+  "TM271": {
+    "title": "Machine Learning and Deep learning",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "graduation-cap"
+  },
+  "MT248": {
+    "title": "Analysing data",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "MT249": {
+    "title": "Practical modern statistics",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "chart-no-axes-combined"
+  },
+  "TM280": {
+    "title": "Smart IoT Systems",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "TM351": {
+    "title": "Data management and analysis",
+    "description": "Data management and analysis (TM351) gives an overview of the concepts, techniques and tools of modern data management and analysis. It addresses traditional data-management concepts together with the increasingly important area of data analytics and prepares students to work with evolving data-management requirements.",
+    "status": "verified",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "database"
+  },
+  "TM355": {
+    "title": "Communications Technology",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "TM311": {
+    "title": "Information security",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "TM340": {
+    "title": "Natural Language Processing",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "languages"
+  },
+  "TM358": {
+    "title": "Machine learning and artificial intelligence",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "graduation-cap"
+  },
+  "M348": {
+    "title": "Applied statistical modelling",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "chart-no-axes-combined"
+  },
+  "T321": {
+    "title": "Operating System Server Administration",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "M131": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "MT131": {
+    "title": "Discrete Mathematics",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "chart-no-axes-combined"
+  },
+  "MS102": {
+    "title": "Physics",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "GT101": {
+    "title": "Learning and Information Technology",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "graduation-cap"
+  },
+  "TU170": {
+    "title": "Computing Essentials",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "code-2"
+  },
+  "M140": {
+    "title": "Python Programming",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "code-2"
+  },
+  "MT141": {
+    "title": "Introduction to Probability and Statistics",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "chart-no-axes-combined"
+  },
+  "M251": {
+    "title": "Object Oriented Programming using Java",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "code-2"
+  },
+  "M257": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "T215B": {
+    "title": "Communication and Information Technologies B",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "T227": {
+    "title": "Change, strategy and projects at work",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "TM260": {
+    "title": "Security, ethics and privacy in IT and Computing",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "code-2"
+  },
+  "T216B": {
+    "title": "Cisco networking (CCNA)-B",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "code-2"
+  },
+  "M218": {
+    "title": "Relational Databases",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "database"
+  },
+  "TM275": {
+    "title": "Parallel and Distributed Systems",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "MST224": {
+    "title": "Mathematical methods",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "chart-no-axes-combined"
+  },
+  "M277": {
+    "title": "Introduction to Competitive Programming",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "code-2"
+  },
+  "TM352": {
+    "title": "Web, mobile and cloud technologies",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "code-2"
+  },
+  "TM366": {
+    "title": "Artificial intelligence",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "code-2"
+  },
+  "MT395": {
+    "title": "Applied Cyber Security",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "code-2"
+  },
+  "T316": {
+    "title": "Advanced Networking",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "code-2"
+  },
+  "TM356": {
+    "title": "Interaction design and user experience",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "TM341": {
+    "title": "Computer Vision",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "code-2"
+  },
+  "TM380": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "T103": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "TM103": {
+    "title": "Computer Organization and Architecture",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "M132": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "MT132": {
+    "title": "Linear Algebra",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "MT101": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "TM112": {
+    "title": "Introduction to Computing and Information Technology 2",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "code-2"
+  },
+  "TM129": {
+    "title": "Technologies in Practice",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "M269": {
+    "title": "Algorithms, Data structures and Computability",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "code-2"
+  },
+  "T216A": {
+    "title": "Cisco networking (CCNA)-A",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "code-2"
+  },
+  "TM298": {
+    "title": "Operating Systems",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "M275": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "M238": {
+    "title": "Data Visualization",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "M252": {
+    "title": "Internet Programming",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "code-2"
+  },
+  "TM276": {
+    "title": "Software Development Processes and Methodologies",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "code-2"
+  },
+  "TM254": {
+    "title": "Managing IT: the why, the what and the how",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "TM291": {
+    "title": "Management Information System",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "T318": {
+    "title": "Applied Network Security",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "code-2"
+  },
+  "TM354": {
+    "title": "Software Engineering",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "code-2"
+  },
+  "MT390": {
+    "title": "Image Processing",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "TM359": {
+    "title": "System penetration testing",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "T471": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "TM471": {
+    "title": "The Telematics project CS",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
+    "icon": "laptop"
+  },
+  "BUS101": {
+    "title": "Introduction to Math for Business",
+    "description": "BUS101 Introduction to Math for Business is a level 4 common introductory module for all tracks, rationale to provide students with sound knowledge on business related calculations such as interest, profit, payroll, etc. This course will provide students with the required technical skills and business knowledge to prepare them along with all other common level 4 modules for more advanced knowledge and skills needed for next level of discipline.",
+    "status": "verified",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "chart-no-axes-combined"
+  },
+  "BUS102": {
+    "title": "Introduction to Statistics",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "chart-no-axes-combined"
+  },
+  "BUS110": {
+    "title": "Introduction To Business",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "B122": {
+    "title": "An Introduction to Retail management and Marketing",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "MGT111": {
+    "title": "Principles of Management I",
+    "description": "MGT111: Principles of Management I is a level 1 common introductory module for all tracks. It introduces the basic information and principles of management, including the evolution of management, organizational environment and culture, and the main functions of management: planning, organizing, leading and control.",
+    "status": "verified",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "MGT112": {
+    "title": "Principles of Management II",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "B123": {
+    "title": "Management Practice",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "MKT111": {
+    "title": "Principles of Marketing I",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "MKT112": {
+    "title": "Principles of Marketing II",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "B124": {
+    "title": "Fundamentals of Accounting",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "landmark"
+  },
+  "ACT111": {
+    "title": "Financial Accounting",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "landmark"
+  },
+  "ACT112": {
+    "title": "Managerial Accounting",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "landmark"
+  },
+  "ECO101": {
+    "title": "Principles of Microeconomics",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "landmark"
+  },
+  "ECO102": {
+    "title": "Principles of Macroeconomics",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "landmark"
+  },
+  "LB170": {
+    "title": "Professional Communication Skills for Business Studies",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "BUC111": {
+    "title": "Business Communication 1",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "BUC112": {
+    "title": "Business Communication 2",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "MIS111": {
+    "title": "Introduction to Management Information System I",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "MIS112": {
+    "title": "Introduction to Management Information System II",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "SYS111": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "GB102": {
+    "title": "Principles of entrepreneurship for non-specialists",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "GB102E": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "B293": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "BE200": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "BE300": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "BE201": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "BE210/4": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "BE211/4": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "BE310": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "BUS115": {
+    "title": "Small Business Management",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "ACC204": {
+    "title": "Intermediate financial accounting",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "radio"
+  },
+  "HRM111": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "BUS208": {
+    "title": "Contemporary issues in marketing",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "B205A": {
+    "title": "Exploring innovation and entrepreneurship (A)",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "B205B": {
+    "title": "Exploring innovation and entrepreneurship (B)",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "B207A": {
+    "title": "Shaping Business Opportunities I",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "B207B": {
+    "title": "Shaping Business Opportunities II",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "B291": {
+    "title": "Financial Accounting",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "landmark"
+  },
+  "B292": {
+    "title": "Management Accounting",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "landmark"
+  },
+  "B294": {
+    "title": "Financial Analysis and Decision Making",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "landmark"
+  },
+  "SYS210": {
+    "title": "Managing Technology and Innovation",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "SYS280": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "SYS380": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "ACC300": {
+    "title": "Accounting Information Systems",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "landmark"
+  },
+  "B324": {
+    "title": "Marketing and Society",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "B325": {
+    "title": "Managing across organisational and cultural boundaries",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "B326": {
+    "title": "Advanced Financial Accounting",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "landmark"
+  },
+  "B327": {
+    "title": "Sustainable enterprise and innovation",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "B328": {
+    "title": "Marketing in Action",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "B329": {
+    "title": "Leadership in a changing world",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "B391": {
+    "title": "Management accounting and finance",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "landmark"
+  },
+  "B392": {
+    "title": "Advanced Management Accounting",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "landmark"
+  },
+  "B628": {
+    "title": "Managing 1: Organizations and People",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "B629": {
+    "title": "Managing 2: Marketing and Finance",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "landmark"
+  },
+  "BB293": {
+    "title": "Financial Accounting in Context",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "landmark"
+  },
+  "BUS628": {
+    "title": "Global Human Resource Management",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "BUS629": {
+    "title": "International Management",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "BUS310": {
+    "title": "Strategic Management",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "DD209A": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "DD209B": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "DD309A": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "DD309B": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "ECO341": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "ECO342": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "FIN240": {
+    "title": "Microfinance theory and Practice",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "landmark"
+  },
+  "FIN241": {
+    "title": "Microfinance",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "landmark"
+  },
+  "FIN242": {
+    "title": "Financial Technology",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "landmark"
+  },
+  "FIN301-F": {
+    "title": "Financial and Securities Markets",
+    "description": "The module develops understanding of financial and securities markets, including derivatives, options, bonds, warrants and convertibles, yield curves and term structures of interest rates, currency exchange rates, portfolio risk and diversification, risk and return, and international portfolio diversification.",
+    "status": "verified",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "landmark"
+  },
+  "FIN302-F": {
+    "title": "Portfolio Theory",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "landmark"
+  },
+  "FIN340-F": {
+    "title": "Corporate Finance",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "landmark"
+  },
+  "FIN341": {
+    "title": "Islamic Finance",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "landmark"
+  },
+  "FIN342": {
+    "title": "Financial & Securities Markets",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "landmark"
+  },
+  "HRM205": {
+    "title": "Employment Law",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "scale"
+  },
+  "HRM206": {
+    "title": "Staffing Organizations",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "HRM210": {
+    "title": "Training and development",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "HRM215": {
+    "title": "Employment Compensation and Benefits",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "HRM320": {
+    "title": "Work Place Health & Safety",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "heart-pulse"
+  },
+  "HRM330": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "ACCT201": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "ACCT202": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "ACCT250": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "ACCT301": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "ACCT305": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "ACCT306": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "ACCT307": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "ACCT311": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "ACCT320": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "ACCT322": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "ACCT330": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "ACCT340": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "ACCT345": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "ACCT350": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "ACCT401": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "ACCT402": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "ACCT403": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "ACCT412": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "ACCT413": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "ACCT420": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "ACCT430/6": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "ECON201": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "ECON202": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "FIN301": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "FIN302": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "LAW301": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "MATH201": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "MGT201": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "MGT202": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "MGT301": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "MIS201": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "MKT201": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "STAT201": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "MIS200-IS": {
+    "title": "Relational database Management Systems",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "database"
+  },
+  "MIS201-IS": {
+    "title": "Programming for Business Studies",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "MIS300": {
+    "title": "Project Management",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "MIS330": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "MIS331": {
+    "title": "Business Intelligence",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "MIS332": {
+    "title": "System analysis and design",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "chart-no-axes-combined"
+  },
+  "MKT331": {
+    "title": "Digital Marketing",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "MKT332": {
+    "title": "Service Marketing",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "ACC302": {
+    "title": "Principles of Auditing & Assurance Services",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "BE302": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "B206": {
+    "title": null,
+    "description": null,
+    "status": "unresolved_course",
+    "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
+    "icon": "briefcase-business"
+  },
+  "CES110": {
+    "title": "Psychology of Play in Children",
+    "description": "The concept of play, and its importance for children - play in psychological theories - types of play - characteristics of play - play and growth - play and education - individual differences and play - play therapy - play and technology - play and talent - technological games and their impact on child development.",
+    "status": "verified",
+    "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
+    "icon": "graduation-cap"
+  },
+  "CES111": {
+    "title": "Art Education for Children",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
+    "icon": "graduation-cap"
+  },
+  "CES112": {
+    "title": "Child Health",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
+    "icon": "heart-pulse"
+  },
+  "CES113": {
+    "title": "Language Skills for Kindergarten Children",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
+    "icon": "languages"
+  },
+  "EDF109": {
+    "title": "The Teaching Profession and the Roles of the Teacher",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
+    "icon": "graduation-cap"
+  },
+  "EDF228E": {
+    "title": "Talent and Creativity Development",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
+    "icon": "graduation-cap"
+  },
+  "EDF230": {
+    "title": "Micro Teaching (1)",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
+    "icon": "graduation-cap"
+  },
+  "EDS117": {
+    "title": "Educational Leadership",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
+    "icon": "graduation-cap"
+  },
+  "EDS118": {
+    "title": "Educational Technology and Digital Transformation",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
+    "icon": "graduation-cap"
+  },
+  "EDS238": {
+    "title": "Learning Assessment",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
+    "icon": "graduation-cap"
+  },
+  "EDS239E": {
+    "title": "Psychological and Educational Guidance",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
+    "icon": "graduation-cap"
+  },
+  "CES114": {
+    "title": "Directed Motor Play Activities for Children",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
+    "icon": "graduation-cap"
+  },
+  "CES115E": {
+    "title": "Children’s Library",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
+    "icon": "graduation-cap"
+  },
+  "CES231": {
+    "title": "Music Education (2)",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
+    "icon": "graduation-cap"
+  },
+  "CES232": {
+    "title": "Motor Programs for Children",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
+    "icon": "graduation-cap"
+  },
+  "CES233": {
+    "title": "Foreign language skills for kindergarten children",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
+    "icon": "languages"
+  },
+  "CES234": {
+    "title": "Children's Stories and Tales",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
+    "icon": "graduation-cap"
+  },
+  "CES235": {
+    "title": "Children's Literature",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
+    "icon": "languages"
+  },
+  "CES237E": {
+    "title": "Strategies and Programs for Early Detection and Intervention",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
+    "icon": "graduation-cap"
+  },
+  "FTS11": {
+    "title": "Field Training (1)",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
+    "icon": "graduation-cap"
+  },
+  "EL330": {
+    "title": "Teaching English as a Foreign Language",
+    "description": "This practical module links recent research on teaching and learning English to classroom methodology. It covers English-language teaching approaches, lesson planning, classroom management, assessment, and ongoing professional development for prospective teachers of English as a foreign language.",
+    "status": "verified",
+    "source": "https://www.aou.edu.eg/faculties/language/Pages/course-catalogue.aspx",
+    "icon": "languages"
+  },
+  "EL122": {
+    "title": "Writing Research",
+    "description": null,
+    "status": "pending_official_sync",
+    "source": "https://www.aou.edu.eg/faculties/language/Pages/course-catalogue.aspx",
+    "icon": "languages"
+  }
+}

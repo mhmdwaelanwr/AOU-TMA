@@ -1,0 +1,341 @@
+{
+  "snapshotDate": "2026-08-13",
+  "count": 67,
+  "items": [
+    {
+      "code": "M130",
+      "faculty": "Computer Studies",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "M129",
+      "faculty": "Computer Studies",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "M105",
+      "faculty": "Computer Studies",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "M180",
+      "faculty": "Computer Studies",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "M131",
+      "faculty": "Computer Studies",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "M257",
+      "faculty": "Computer Studies",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "TM380",
+      "faculty": "Computer Studies",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "T103",
+      "faculty": "Computer Studies",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "M132",
+      "faculty": "Computer Studies",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MT101",
+      "faculty": "Computer Studies",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "M275",
+      "faculty": "Computer Studies",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "T471",
+      "faculty": "Computer Studies",
+      "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "SYS111",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "GB102E",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "B293",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "BE200",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "BE300",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "BE201",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "BE210/4",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "BE211/4",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "BE310",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "HRM111",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "SYS280",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "SYS380",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "DD209A",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "DD209B",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "DD309A",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "DD309B",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ECO341",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ECO342",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "HRM330",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT201",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT202",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT250",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT301",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT305",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT306",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT307",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT311",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT320",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT322",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT330",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT340",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT345",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT350",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT401",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT402",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT403",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT412",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT413",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT420",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ACCT430/6",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ECON201",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "ECON202",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "FIN301",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "FIN302",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "LAW301",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MATH201",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MGT201",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MGT202",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MGT301",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MIS201",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MKT201",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "STAT201",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "MIS330",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "BE302",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    },
+    {
+      "code": "B206",
+      "faculty": "Business Studies",
+      "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx"
+    }
+  ]
+}

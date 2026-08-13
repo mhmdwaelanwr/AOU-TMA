@@ -1,0 +1,60 @@
+[
+  {
+    "id": "vodafone_cash",
+    "group": "wallet",
+    "label": "Vodafone Cash",
+    "currency": "EGP",
+    "env": "VODAFONE_CASH_NUMBER",
+    "icon": "smartphone"
+  },
+  {
+    "id": "orange_cash",
+    "group": "wallet",
+    "label": "Orange Cash",
+    "currency": "EGP",
+    "env": "ORANGE_CASH_NUMBER",
+    "icon": "smartphone"
+  },
+  {
+    "id": "etisalat_cash",
+    "group": "wallet",
+    "label": "e& cash",
+    "currency": "EGP",
+    "env": "ETISALAT_CASH_NUMBER",
+    "icon": "smartphone"
+  },
+  {
+    "id": "we_pay",
+    "group": "wallet",
+    "label": "WE Pay",
+    "currency": "EGP",
+    "env": "WE_PAY_NUMBER",
+    "icon": "smartphone"
+  },
+  {
+    "id": "instapay",
+    "group": "bank",
+    "label": "InstaPay",
+    "currency": "EGP",
+    "env": "INSTAPAY_ADDRESS",
+    "icon": "badge-dollar-sign"
+  },
+  {
+    "id": "usdt_trc20",
+    "group": "crypto",
+    "label": "USDT · TRC20",
+    "currency": "USDT",
+    "network": "TRON (TRC20)",
+    "env": "USDT_TRC20_ADDRESS",
+    "icon": "circle-dollar-sign"
+  },
+  {
+    "id": "usdt_bep20",
+    "group": "crypto",
+    "label": "USDT · BEP20",
+    "currency": "USDT",
+    "network": "BNB Smart Chain (BEP20)",
+    "env": "USDT_BEP20_ADDRESS",
+    "icon": "circle-dollar-sign"
+  }
+]

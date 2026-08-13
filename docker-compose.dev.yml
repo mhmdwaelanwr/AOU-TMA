@@ -1,0 +1,38 @@
+services:
+  api:
+    build: ./backend-python
+    ports: ["8000:8000"]
+    environment:
+      CORS_ORIGINS: http://localhost:5173
+      ORDERS_DB_PATH: /app/data/orders.db
+      VODAFONE_CASH_NUMBER: ${VODAFONE_CASH_NUMBER:-}
+      ORANGE_CASH_NUMBER: ${ORANGE_CASH_NUMBER:-}
+      ETISALAT_CASH_NUMBER: ${ETISALAT_CASH_NUMBER:-}
+      WE_PAY_NUMBER: ${WE_PAY_NUMBER:-}
+      INSTAPAY_ADDRESS: ${INSTAPAY_ADDRESS:-}
+      USDT_TRC20_ADDRESS: ${USDT_TRC20_ADDRESS:-}
+      USDT_BEP20_ADDRESS: ${USDT_BEP20_ADDRESS:-}
+    volumes:
+      - orders-data:/app/data
+
+  fx:
+    build: ./backend-node
+    ports: ["3001:3001"]
+    environment:
+      CORS_ORIGINS: http://localhost:5173
+      FX_CACHE_TTL_MS: 3600000
+      FX_STALE_TTL_MS: 172800000
+
+  frontend:
+    image: node:22-alpine
+    working_dir: /app
+    volumes: ["./frontend:/app"]
+    command: sh -c "npm install && npm run dev -- --host 0.0.0.0"
+    ports: ["5173:5173"]
+    environment:
+      VITE_API_URL: http://localhost:8000
+      VITE_FX_URL: http://localhost:3001
+    depends_on: [api, fx]
+
+volumes:
+  orders-data:
