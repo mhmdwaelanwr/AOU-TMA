@@ -34,7 +34,26 @@ jobs:
           cache: pip
           cache-dependency-path: backend-python/requirements-dev.txt
       - run: pip install -r requirements-dev.txt
-      - run: pytest -q
+      - run: PYTHONPATH=. pytest -q
+
+  serverless-api:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Smoke test production courses route
+        run: >-
+          node -e "import('./api/courses.mjs').then(async ({default: handler}) => {
+          const req = { method: 'GET', url: '/api/courses?q=TM105&faculty=all' };
+          let statusCode = 200;
+          const res = {
+          status(code) { statusCode = code; return this; },
+          json(body) { if (statusCode !== 200 || body.count !== 1 || body.items?.[0]?.code !== 'TM105') process.exit(1); }
+          };
+          await handler(req, res);
+          })"
 
   fx-service:
     runs-on: ubuntu-latest
