@@ -7,6 +7,7 @@ on:
   push:
     paths:
       - "backend-python/scripts/sync_aou_catalogue.py"
+      - "backend-python/scripts/sync_aou_catalogue_v2.py"
       - ".github/workflows/sync-aou-catalogue.yml"
 
 permissions:
@@ -24,16 +25,28 @@ jobs:
         run: pip install -r backend-python/scripts/requirements-sync.txt
       - name: Fetch official AOU course titles and descriptions
         run: python backend-python/scripts/sync_aou_catalogue.py
+      - name: Audit all project codes against official English and Arabic catalogues
+        run: python backend-python/scripts/sync_aou_catalogue_v2.py
       - name: Show sync quality report
         run: cat backend-python/app/catalogue_sync_report.json
+      - name: Show full catalogue audit summary
+        run: python -c "import json; p=json.load(open('backend-python/app/course_catalogue_audit.json')); print(json.dumps({k:v for k,v in p.items() if k!='records'}, ensure_ascii=False, indent=2))"
       - name: Commit catalogue changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add backend-python/app/courses.json backend-python/app/course_descriptions.json backend-python/app/catalogue_sync_report.json serverless/data/courses.json frontend/public/catalog/courses.json
+          git add \
+            backend-python/app/courses.json \
+            backend-python/app/course_descriptions.json \
+            backend-python/app/catalogue_sync_report.json \
+            backend-python/app/course_catalogue_audit.json \
+            serverless/data/courses.json \
+            serverless/data/course_catalogue_audit.json \
+            frontend/public/catalog/courses.json \
+            frontend/public/catalog/course_catalogue_audit.json
           if git diff --cached --quiet; then
             echo "No catalogue changes"
           else
-            git commit -m "data: sync official AOU course descriptions"
+            git commit -m "data: sync and audit official AOU catalogue"
             git push
           fi
