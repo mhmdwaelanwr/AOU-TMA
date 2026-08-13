@@ -3,6 +3,7 @@ import { API_URL } from '../lib/config';
 import type { Course, Faculty } from '../types';
 
 const courseCache = new Map<string, Course[]>();
+let staticCatalogPromise: Promise<Course[]> | null = null;
 
 function cacheKey(q: string, f: Faculty) {
   return `${q}::${f}`;
@@ -12,12 +13,36 @@ function coursesEndpoint(q: string, faculty: Faculty) {
   const params = new URLSearchParams();
   params.set('q', q);
   params.set('faculty', faculty);
-
-  // API_URL is intentionally empty in production so Vercel/Netlify can use
-  // same-origin serverless routes. fetch() accepts relative URLs, while
-  // new URL('/api/...') without an explicit base throws "Invalid URL".
   const base = API_URL.replace(/\/+$/, '');
   return `${base}/api/courses?${params.toString()}`;
+}
+
+function filterCatalog(items: Course[], q: string, faculty: Faculty) {
+  const needle = q.trim().toLocaleLowerCase();
+  return items.filter((course) => {
+    if (faculty !== 'all' && course.faculty !== faculty) return false;
+    if (!needle) return true;
+    const haystack = `${course.code} ${course.title || ''} ${course.description || ''} ${course.faculty} ${course.facultyAr}`.toLocaleLowerCase();
+    return haystack.includes(needle);
+  });
+}
+
+function loadStaticCatalog() {
+  if (!staticCatalogPromise) {
+    staticCatalogPromise = fetch('/catalog/courses.json', { cache: 'force-cache' })
+      .then(async (response) => {
+        if (!response.ok) throw new Error(`static_catalog_${response.status}`);
+        const payload = await response.json() as Course[] | { items?: Course[] };
+        const items = Array.isArray(payload) ? payload : payload.items;
+        if (!Array.isArray(items) || items.length === 0) throw new Error('static_catalog_empty');
+        return items;
+      })
+      .catch((error) => {
+        staticCatalogPromise = null;
+        throw error;
+      });
+  }
+  return staticCatalogPromise;
 }
 
 export function useCourses(query: string, faculty: Faculty) {
@@ -28,12 +53,11 @@ export function useCourses(query: string, faculty: Faculty) {
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    if (abortRef.current) abortRef.current.abort();
+    abortRef.current?.abort();
     if (timerRef.current !== null) clearTimeout(timerRef.current);
 
     const q = query.trim();
     const key = cacheKey(q, faculty);
-
     const cached = courseCache.get(key);
     if (cached) {
       setCourses(cached);
@@ -48,29 +72,44 @@ export function useCourses(query: string, faculty: Faculty) {
       setLoading(true);
       setError(false);
 
-      fetch(coursesEndpoint(q, faculty), { signal: controller.signal })
-        .then(async (response) => {
+      const load = async () => {
+        try {
+          const response = await fetch(coursesEndpoint(q, faculty), { signal: controller.signal, cache: 'no-store' });
           if (!response.ok) throw new Error(`catalog_failed_${response.status}`);
-          return response.json() as Promise<{ items: Course[] }>;
-        })
-        .then((payload) => {
+          const payload = await response.json() as { items?: Course[] };
           const items = Array.isArray(payload.items) ? payload.items : [];
+
+          if (q === '' && faculty === 'all' && items.length === 0) {
+            throw new Error('catalog_returned_empty_baseline');
+          }
+
           courseCache.set(key, items);
           setCourses(items);
-        })
-        .catch((err) => {
-          if (err?.name !== 'AbortError') {
-            console.error('Failed to load course catalog', err);
+          setError(false);
+        } catch (err: any) {
+          if (err?.name === 'AbortError') return;
+          console.warn('Catalog API unavailable; using bundled fallback.', err);
+          try {
+            const staticItems = filterCatalog(await loadStaticCatalog(), q, faculty);
+            courseCache.set(key, staticItems);
+            setCourses(staticItems);
+            setError(false);
+          } catch (fallbackError) {
+            console.error('Failed to load both API and bundled catalog.', fallbackError);
             setCourses([]);
             setError(true);
           }
-        })
-        .finally(() => setLoading(false));
-    }, 200);
+        } finally {
+          if (!controller.signal.aborted) setLoading(false);
+        }
+      };
+
+      void load();
+    }, 120);
 
     return () => {
       if (timerRef.current !== null) clearTimeout(timerRef.current);
-      if (abortRef.current) abortRef.current.abort();
+      abortRef.current?.abort();
     };
   }, [query, faculty]);
 
