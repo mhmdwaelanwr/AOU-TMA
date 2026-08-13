@@ -1,11 +1,74 @@
 [
-  {"code":"EG","countryCode":"EG","currency":"EGP","flag":"EG","country":{"ar":"مصر","en":"Egypt"},"branch":{"ar":"فرع مصر","en":"Egypt Branch"}},
-  {"code":"KW","countryCode":"KW","currency":"KWD","flag":"KW","country":{"ar":"الكويت","en":"Kuwait"},"branch":{"ar":"فرع الكويت","en":"Kuwait Branch"}},
-  {"code":"SA","countryCode":"SA","currency":"SAR","flag":"SA","country":{"ar":"السعودية","en":"Saudi Arabia"},"branch":{"ar":"فرع السعودية","en":"Saudi Arabia Branch"}},
-  {"code":"LB","countryCode":"LB","currency":"LBP","flag":"LB","country":{"ar":"لبنان","en":"Lebanon"},"branch":{"ar":"فرع لبنان","en":"Lebanon Branch"}},
-  {"code":"JO","countryCode":"JO","currency":"JOD","flag":"JO","country":{"ar":"الأردن","en":"Jordan"},"branch":{"ar":"فرع الأردن","en":"Jordan Branch"}},
-  {"code":"BH","countryCode":"BH","currency":"BHD","flag":"BH","country":{"ar":"البحرين","en":"Bahrain"},"branch":{"ar":"فرع البحرين","en":"Bahrain Branch"}},
-  {"code":"OM","countryCode":"OM","currency":"OMR","flag":"OM","country":{"ar":"عُمان","en":"Oman"},"branch":{"ar":"فرع عُمان","en":"Oman Branch"}},
-  {"code":"SD","countryCode":"SD","currency":"SDG","flag":"SD","country":{"ar":"السودان","en":"Sudan"},"branch":{"ar":"فرع السودان","en":"Sudan Branch"}},
-  {"code":"PS","countryCode":"PS","currency":"ILS","flag":"PS","country":{"ar":"فلسطين","en":"Palestine"},"branch":{"ar":"فرع فلسطين","en":"Palestine Branch"}}
+  {
+    "code": "EG",
+    "countryCode": "EG",
+    "currency": "EGP",
+    "flag": "🇪🇬",
+    "country": { "ar": "مصر", "en": "Egypt" },
+    "branch": { "ar": "فرع مصر", "en": "Egypt Branch" }
+  },
+  {
+    "code": "KW",
+    "countryCode": "KW",
+    "currency": "KWD",
+    "flag": "🇰🇼",
+    "country": { "ar": "الكويت", "en": "Kuwait" },
+    "branch": { "ar": "فرع الكويت", "en": "Kuwait Branch" }
+  },
+  {
+    "code": "SA",
+    "countryCode": "SA",
+    "currency": "SAR",
+    "flag": "🇸🇦",
+    "country": { "ar": "السعودية", "en": "Saudi Arabia" },
+    "branch": { "ar": "فرع السعودية", "en": "Saudi Arabia Branch" }
+  },
+  {
+    "code": "LB",
+    "countryCode": "LB",
+    "currency": "LBP",
+    "flag": "🇱🇧",
+    "country": { "ar": "لبنان", "en": "Lebanon" },
+    "branch": { "ar": "فرع لبنان", "en": "Lebanon Branch" }
+  },
+  {
+    "code": "JO",
+    "countryCode": "JO",
+    "currency": "JOD",
+    "flag": "🇯🇴",
+    "country": { "ar": "الأردن", "en": "Jordan" },
+    "branch": { "ar": "فرع الأردن", "en": "Jordan Branch" }
+  },
+  {
+    "code": "BH",
+    "countryCode": "BH",
+    "currency": "BHD",
+    "flag": "🇧🇭",
+    "country": { "ar": "البحرين", "en": "Bahrain" },
+    "branch": { "ar": "فرع البحرين", "en": "Bahrain Branch" }
+  },
+  {
+    "code": "OM",
+    "countryCode": "OM",
+    "currency": "OMR",
+    "flag": "🇴🇲",
+    "country": { "ar": "عُمان", "en": "Oman" },
+    "branch": { "ar": "فرع عُمان", "en": "Oman Branch" }
+  },
+  {
+    "code": "SD",
+    "countryCode": "SD",
+    "currency": "SDG",
+    "flag": "🇸🇩",
+    "country": { "ar": "السودان", "en": "Sudan" },
+    "branch": { "ar": "فرع السودان", "en": "Sudan Branch" }
+  },
+  {
+    "code": "PS",
+    "countryCode": "PS",
+    "currency": "ILS",
+    "flag": "🇵🇸",
+    "country": { "ar": "فلسطين", "en": "Palestine" },
+    "branch": { "ar": "فرع فلسطين", "en": "Palestine Branch" }
+  }
 ]

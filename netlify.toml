@@ -6,6 +6,9 @@
 [build.environment]
   NODE_VERSION = "22"
 
+[functions]
+  included_files = ["serverless/data/**", "serverless/shared.mjs"]
+
 [[headers]]
   for = "/*"
   [headers.values]
@@ -13,7 +16,7 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-src https://www.youtube.com https://www.youtube-nocookie.com; frame-ancestors 'none'"
 
 [[headers]]
   for = "/assets/*"
@@ -23,7 +26,7 @@
 [[headers]]
   for = "/api/*"
   [headers.values]
-    Cache-Control = "public, max-age=300, s-maxage=600"
+    Cache-Control = "public, max-age=60, s-maxage=300"
 
 [[redirects]]
   from = "/api/courses"
@@ -38,6 +41,11 @@
 [[redirects]]
   from = "/api/fx"
   to = "/.netlify/functions/fx"
+  status = 200
+
+[[redirects]]
+  from = "/api/location"
+  to = "/.netlify/functions/location"
   status = 200
 
 [[redirects]]
