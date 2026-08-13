@@ -15,17 +15,17 @@
   },
   "MT129": {
     "title": "Calculus and Probability",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This module introduces the concepts of differentiation and integration as well as some applications of differential and integral calculus. Moreover, the module offers a clear and comprehensive survey of the of data sampling, measurements of central tendency and spread, organizing and visualizing categorical and numerical data. It also includes topics in the basic probability such as events, simple probability, conditional probability, and Bayes’ rule. Finally, it provides an introduction to fundamental basis and concepts of statistical inferences, normal distribution. The module has direct links to computing, programming and communication modules, in addition to the numerical analysis module.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "laptop"
+    "icon": "chart-no-axes-combined"
   },
   "MST129": {
     "title": "Applied Calculus",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This module introduces some fundamental topics of differential and integral calculus, with an emphasis on applications. Among the topics covered are functions (including exponential and logarithmic), limits, the concept of derivative, computing the derivative, maxima and minima of functions, and integration. Emphasis will be placed upon the use of calculus in defining and solving problems from areas including computing, data science and natural sciences",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "laptop"
+    "icon": "code-2"
   },
   "M105": {
     "title": null,
@@ -43,15 +43,15 @@
   },
   "M109": {
     "title": ".NET Programming",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This module is intended to introduce and present the fundamental skills that are required to design and develop object-oriented programs and applications in .NET Framework",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
     "icon": "code-2"
   },
   "TM111": {
     "title": "Introduction to Computing and Information Technology 1",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This is an introductory level 1 module, which provides students with a broad introduction to Computing and Information Technology concepts, principles and theories.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
     "icon": "code-2"
   },
@@ -71,122 +71,122 @@
   },
   "T215A": {
     "title": "Communication and Information Technologies A",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Students will begin with Communication and information technologies (T215) – learning about the core principles upon which new technologies are built. They will gain an understanding of the ways in which data is stored, manipulated and transmitted; and discover how new processes and services are transforming our lives. Digital communication and information technologies have become fundamental to the operation of modern societies. New products and services are rapidly transforming our lives, both at work and at play. This module will help students learn more about these developments, and will equip them with the understanding and skills to continue learning about new developments in the future. Students will study the core principles on which the technologies are built and, through a range of online and offline activities, investigate new topics and technologies. After studying this module, students will be in a better position to appreciate the potential of developments in communication and information technologies.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "laptop"
+    "icon": "graduation-cap"
   },
   "TM255": {
     "title": "Communication and Information Technologies",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "The module is designed to be a broad level 2 ICT module covering subjects such as wireless communications, collaborative working, interaction design and computer security. It particularly supports the ITC pathway of the IT and Computing qualification. The module is specifically designed to progress students towards their study of level 3 ICT modules such as TM355 Communications technology. This is achieved through the choice of technological topics introduced and the development of appropriate study skills and communication skills.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "laptop"
+    "icon": "code-2"
   },
   "TM240": {
     "title": "Computer Graphics and Multimedia",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This module targets to cope with the current advances in computer graphics and multimedia and providing clear and concise explanations of the basic concepts of computer graphics and multimedia. This module is expected to enable students to gain understanding of basics of modelling, viewing, animation principles in both 2D and 3D and the impact of such topics on modern multimedia aspects.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
     "icon": "radio"
   },
   "TT284": {
     "title": "Web technologies",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This module is meant to introduce students to the foundations of web applications, including protocols, standards and content handling.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
     "icon": "code-2"
   },
   "TM256": {
     "title": "Cyber Security",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "TM256 Cyber security is a compulsory module in the BSc (Honours) in Cyber Security qualification, which is intended one of the second level modules that students on this qualification study. Other modules in the taught module component of the qualification include TM112 (Introduction to computing and IT 2); TM129 (Technologies in practice); TT284 (Web technologies); T216A (Cisco networking (CCNA) part 1); TM311 (Information security); TM359 (Systems penetration testing); TM471 (The computing and IT project) in stage 3. The focus of the module on Cyber Security is to address the gap in cyber security content within the qualification based on an analysis of other stage 1, stage 2 and stage 3 modules. Areas covered here also includes operating systems security, infrastructure security, application security and foundations of digital forensic.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "code-2"
+    "icon": "chart-no-axes-combined"
   },
   "TM270": {
     "title": "Artificial intelligence",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Artificial intelligence and Machine learning skills are becoming more and more essential in the modern job market. Machine Learning Engineer was ranked as one of the top most demanded employees based on the incredible growth of job openings and the average base salary. In this module the student will learn what Artificial Intelligence (AI) is, explore use cases and applications of AI, understand AI basic concepts and terms like symbolic AI, optimization and neural networks.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "code-2"
+    "icon": "graduation-cap"
   },
   "TM271": {
     "title": "Machine Learning and Deep learning",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "TM271 is a compulsory module in the BSc (Hons) Artificial Intelligence qualification. Machine Learning and Deep Learning techniques are essential for regression and classification tasks and for extracting meaningful insights from data. Students will also study the important techniques of Deep Learning and the strengths and limitations of Machine Learning and AI systems in this module. This module aims to provide students with an in-depth introduction to two main- areas of Machine Learning: supervised and unsupervised. That covers the basics of ML and the deep learning approaches.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
     "icon": "graduation-cap"
   },
   "MT248": {
     "title": "Analysing data",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "The statistical analysis of data is usually based on some kind of modelling of the situation of interest. In this module, students will use the commercial statistical software package Minitab to help them with analysing data. Such statistical modelling with large amounts of data and realistic models together lead to many and difficult calculations. Therefore, the module requires a sound knowledge of level 1 mathematics modules MST129, MT131 and MT132.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "laptop"
+    "icon": "chart-no-axes-combined"
   },
   "MT249": {
     "title": "Practical modern statistics",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This module introduces major topics of modern applied statistics: time series, multivariate analysis, and Bayesian statistics. The module emphasises underlying principles and practical applications rather than technical details. Use of a computer is an essential component – the module includes SPSS and WinBUGS software, which students will use to analyse data and develop their understanding of statistics.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
     "icon": "chart-no-axes-combined"
   },
   "TM280": {
     "title": "Smart IoT Systems",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Internet of Things (IoT) is presently a trending technology worldwide. Government, academia, and industry are involved in different aspects of research, implementation, and business with IoT. IoT is taking part of different application domains, including: agriculture, space, healthcare, manufacturing, construction, water, and mining. IoT-based applications such as innovative shopping system, infrastructure management in both urban and rural areas, remote health monitoring and emergency notification systems, and transportation systems, are gradually relying on IoT based systems. Therefore, it is very important to learn the fundamentals of this emerging technology. Other modules in the taught module component of the qualification have a relation to this course, including TM270 (Artificial Intelligence); TM271 (Machine Learning and Deep learning); TM112 (Introduction to computing and information technology) TM471 (The computing and IT project).",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "laptop"
+    "icon": "heart-pulse"
   },
   "TM351": {
     "title": "Data management and analysis",
-    "description": "Data management and analysis (TM351) gives an overview of the concepts, techniques and tools of modern data management and analysis. It addresses traditional data-management concepts together with the increasingly important area of data analytics and prepares students to work with evolving data-management requirements.",
+    "description": "Data management and analysis (TM351) – an overview of the concepts, techniques, and tools of modern data management and analysis. The requirements of data management continually evolve. Recently those requirements have surpassed the capabilities of traditional data management. So, in order to better prepare our graduates for the new demands of the job market, it is necessary to address both the traditional concepts of data management as well as the increasingly important area of data analytics.",
     "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
     "icon": "database"
   },
   "TM355": {
     "title": "Communications Technology",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Communications technology (TM355) – looks at the underlying technologies of modern electronic communications, such as mobile data and telephony, broadband, Wi-Fi, and optical fiber. Electronic communication is ubiquitous in homes, offices and urban environments. This module gives students an insight into these and other questions, by looking at the fundamental principles of communications technologies. Through these principles students will gain an insight into the possibilities and constraints of modern communications technology. This module complements other modules relating to networking (e.g., T215A/B, T216A/B and T316).",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "laptop"
+    "icon": "code-2"
   },
   "TM311": {
     "title": "Information security",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "TM311 Information Security is a compulsory module in the BSc (Honours) in Cyber Security qualification, which is intended one of the third level modules that students on this qualification study. TM311 is designed with a link to other modules, including: TM129(Technologies in Practice), TM256(Computer Security and Digital Forensics), T318(Applied Network Security). TM311 contributes to student employability by addressing key skills in information literacy, communication, planning and problem solving in the context of Information Security. A cyber security analyst is responsible for the implementation, maintenance and support of the security controls that protect an organisation’s systems and data assets from threats and hazards.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "laptop"
+    "icon": "code-2"
   },
   "TM340": {
     "title": "Natural Language Processing",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Natural Language Processing (NLP) is a cognitive science sub-discipline drawing on linguistics, computer science, and psycholinguistics. Recent strides in this area have already begun to influence how human beings interact with computers. NLP is a field located at the intersection of data science and Artificial Intelligence (AI) that is all about teaching machines how to understand human languages and extract meaning from text. This is also why machine learning is often part of NLP projects.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
     "icon": "languages"
   },
   "TM358": {
     "title": "Machine learning and artificial intelligence",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "TM358 is a compulsory module in the BSc (Hons) Data Science programme as well as the Computer Science track of the ITC qualifications. Machine Learning and AI techniques are essential for regression and classification tasks and for extracting meaningful insights from data. Students will also study the important techniques of Deep Learning and the strengths and limitations of Machine Learning and AI systems in this module.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
     "icon": "graduation-cap"
   },
   "M348": {
     "title": "Applied statistical modelling",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This 30 point level 3 module is designed to build on the statistical modelling taught at L1 (in M140) and L2 (in MT248). Whilst M348 is intended to be a replacement for M346 Linear statistical modelling, it will have a new focus and serve a broader range of students. The main statistical theme running throughout M346 is that of linear and generalised linear modelling. These statistical modelling techniques are widely used by statisticians and are of utmost importance to anyone modelling and analysing large and complex datasets. In M348 the software package will be R. R is a popular statistical software package used around the world in academia and in industry, particularly by data scientists. R is a command line based package and hence is associated with steeper learning curve than GUI-based packages such as GenStat. To mitigate this it is planned to mediate the use of R through Jupyter notebooks. These electronic documents allow executable R code to be embedded amongst explanatory text. Furthermore this executable code can either be set to be modifiable by students, enabling them to learn by adapting examples, or to be locked (and if desired hidden) thus not distracting students with code extraneous to a teaching point but nevertheless required. Also by providing a means for students to present results and conclusions alongside the code used to generate them they provide a means for tutors to gain a greater understanding of what a student is trying to do and hence put tutors in a better position to give appropriate feedback.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "chart-no-axes-combined"
+    "icon": "radio"
   },
   "T321": {
     "title": "Operating System Server Administration",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "The recent advancements and development in the field of information and communication technology required in depth knowledge of Operating Systems along with the management of Servers hosting various services required for smooth operation of the network. This advanced undergraduate course aims to meet this objective by discussing the various roles of the Operating Systems and its implementation in forming the advanced networks.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "laptop"
+    "icon": "briefcase-business"
   },
   "M131": {
     "title": null,
@@ -197,50 +197,50 @@
   },
   "MT131": {
     "title": "Discrete Mathematics",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This is an elementary level module which introduces various topics in discrete mathematics. It offers a clear and comprehensive survey of logic operations, predicates, quantifiers, sets, functions, relations. Also, the module provides the concept of permutations, combinations and counting techniques which are needed as prerequisite in most of technology and communication modules. Moreover, the module gives some knowledge of relevant algorithmic ideas in number theory and cryptography that are widely used in data structure, data base, programming, data communication and in scientific research.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
     "icon": "chart-no-axes-combined"
   },
   "MS102": {
     "title": "Physics",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "An understanding of the physical phenomena underlying the operation of devices involved in information processing and transmission can lead to better understanding of those devices. In addition, software developers of computer games frequently require knowledge of the behavior of physical objects in order to produce realistic games. Finally, as a fundamental science, a good understanding of physics and its techniques will help students develop a better understanding of nature and how to approach studying it. The module has implicit links to computer communication and software development modules, in addition to the final year project.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "laptop"
+    "icon": "code-2"
   },
   "GT101": {
     "title": "Learning and Information Technology",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Learning and Information Technology is a fundamental module for all students enrolled in Arab Open University. It provides students a college level academic experiences that develop self-learning skills. It also provides students with a broad introduction to computing and Information Technology concepts and principles.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
     "icon": "graduation-cap"
   },
   "TU170": {
     "title": "Computing Essentials",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This is an introductory course which introduces students to the essential concepts related to computing essentials. This is a fundamental course for all students enrolled in AOU.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
     "icon": "code-2"
   },
   "M140": {
     "title": "Python Programming",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "\"This module emphasizes the practical side of the subject introduction to statistics, along with the theoretical principles. Open sources software and calculators are used to analyze data and develop students’ understanding of statistical concepts. The module covers exploratory methods for summarising data, examining relationships, randomness and sampling distributions, probability, testing hypotheses, and estimation. Students are assumed to have mathematical competencies at the beginners’ level.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "code-2"
+    "icon": "chart-no-axes-combined"
   },
   "MT141": {
     "title": "Introduction to Probability and Statistics",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "MT141 is an introductory module in probability and statistics. It is designed to provide Artificial Intelligence students with the basic concepts of data analysis and statistical computing. Topics covered include basic descriptive measures, measures of association, probability theory, measurement error, random variables, probability distributions, confidence intervals, and hypothesis testing. To study this module, students should have a sound knowledge of level 1 mathematics modules MST129, MT131 and MT132.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
     "icon": "chart-no-axes-combined"
   },
   "M251": {
     "title": "Object Oriented Programming using Java",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This module is intended to provide students a good understanding of object-oriented principles, including inheritance, polymorphism, class libraries, interacting objects, and the unified modelling language (UML). It uses the JAVA language to illustrate theses principles.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
     "icon": "code-2"
   },
@@ -253,101 +253,101 @@
   },
   "T215B": {
     "title": "Communication and Information Technologies B",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Digital communication and information technologies have become fundamental to the operation of modern societies. New products and services are rapidly transforming our lives, both at work and at play. This module will help you to learn more about these developments through studying the core principles on which the technologies are built and, through a range of online and offline activities, investigate new topics and technologies. This module will also help you to raise students’ awareness of some of the technologies and issues associated with safeguarding the privacy of digital information and the people who are affected by its use – hence the themes ‘protecting’ and ‘prying’. These themes are explored through case studies and practical examples. A recurring approach is the use of an analytical framework that uses five themes to examine the technologies and issues: convenience, identity, reliability, acceptability and consequences.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "laptop"
+    "icon": "graduation-cap"
   },
   "T227": {
     "title": "Change, strategy and projects at work",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This module will improve students’ understanding of the origins, nature and consequences of change in the workplace. It also equips them with the knowledge, skills and competencies needed to successfully plan real practical projects. Besides, it allows students to gain an understanding of how ICTs both drive and enable change in the workplace. Moreover, it develops their knowledge, understanding and skills in project working and helps them to apply their new skills and knowledge to the planning of their own project involving the use of ICTs and associated business systems in their workplace.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "laptop"
+    "icon": "briefcase-business"
   },
   "TM260": {
     "title": "Security, ethics and privacy in IT and Computing",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "The ITC specialists must conduct ethically by adhering to the ITC code of conduct and understand the social, professional and legal context of IT and computing,",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "code-2"
+    "icon": "scale"
   },
   "T216B": {
     "title": "Cisco networking (CCNA)-B",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Cisco Systems are market leaders in supplying networking equipment for the internet. They also have a well-established educational programme for network professionals. The Arab Open University offers the Cisco Certified Network Associate “CCNA” (ICND2) Version 5 curriculum, which provides the knowledge, understanding, and skills needed to configure a LAN/WAN using Cisco equipment. The module is composed of two modules: • Scaling Networks • Connecting networks",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "code-2"
+    "icon": "graduation-cap"
   },
   "M218": {
     "title": "Relational Databases",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Database technologies are integral part of most information systems and hence their study is of paramount importance. SQL (or Structured Query Language) is a powerful language which is used for communicating with and extracting data from databases. To become a data scientist, a working knowledge of databases and SQL is a requirement. The course aims to develop database skills based on a sound understanding and appropriate application of the underpinning theory. On completing the course students will understand database theory and practice when implementing a database to meet stated requirements.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
     "icon": "database"
   },
   "TM275": {
     "title": "Parallel and Distributed Systems",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This course introduces students to the fundamentals and techniques of parallel and distributed computing. Topics to be covered include: parallel and distributed computing, concurrency, distributed computing paradigms, inter-process communications, operating system support, client server model, and models of parallel machines. This course has either a direct or indirect links with other courses, including: Introduction to computing and information technology (TM112), Computer Architecture and Organization (TM103), and Python Programming (M110). In addition, students will be capable to choose the proper environments of their final year projects based on the knowledge and skills they gain from this course. Understanding issues like processors capabilities and intercommunication between cores and processors are essential for building high performance systems.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "laptop"
+    "icon": "briefcase-business"
   },
   "MST224": {
     "title": "Mathematical methods",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This module introduces a variety of mathematical methods, which are used in modelling through their application to solving real world problems. These methods include first and second order differential equations, calculus of functions of several variables, vector calculus, Fourier series and partial differential equations. The module gives a good foundation for higher-level study and is essential preparation for most level 2 and level 3 mathematics and statistics modules. The module needs a sound knowledge of algebra, trigonometry, calculus, linear algebra, and geometry as provided by the appropriate level 1 study.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
     "icon": "chart-no-axes-combined"
   },
   "M277": {
     "title": "Introduction to Competitive Programming",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This module aims to prepare students for competitive problem-solving. It covers the fundamental algorithmic solving techniques like brute force, greedy and dynamic programming. Domain-specific techniques like number theory, computational geometry, string processing and graph theory will also be covered. In addition, the module also covers algorithmic and programming language toolkits used in problem-solving supported by the solution of representative or well-known problems in the various algorithmic paradigms.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
     "icon": "code-2"
   },
   "TM352": {
     "title": "Web, mobile and cloud technologies",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Cloud computing and mobile technologies offer new possibilities for the production and distribution of IT applications and services. Rapid, elastic and scalable provisioning of IT resources allows organisations to be more innovative, agile and cost effective. In our personal lives, cloud and mobile technologies allow us to store, access and share information online. Storing and processing information with no clear physical location or legal authority raises important concerns around governance and security. In this module students will learn about the technical and social aspects of cloud computing and mobile technologies, and they will gain hands-on experience of these technologies.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "code-2"
+    "icon": "scale"
   },
   "TM366": {
     "title": "Artificial intelligence",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Basic concepts in artificial intelligence are being used in huge research projects all over the world for the last three decades. This includes research and development at the industrial and academic levels. The module introduces the students to the basics natural intelligence where AI has been inspired and presents the AI concepts and techniques that are being used in advanced AI projects.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
     "icon": "code-2"
   },
   "MT395": {
     "title": "Applied Cyber Security",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "In today’s world, organizations must be prepared to defend against threats in cyberspace. Decision makers must be familiar with the basic principles and best practices of cyber security to best protect their enterprises.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "code-2"
+    "icon": "briefcase-business"
   },
   "T316": {
     "title": "Advanced Networking",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "With the continuous advancements in the networking field, the need arises for teaching advanced networking concepts. This advanced undergraduate course aims to meet this objective by discussing advanced networking topics complementing those introduced in T216A/B.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "code-2"
+    "icon": "graduation-cap"
   },
   "TM356": {
     "title": "Interaction design and user experience",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Interaction design and the user experience (TM356) – in this module the students will learn the importance of user-centred design, and acquire practical skills for designing the interactive products for everyday life. From apps, phones and business systems to wearables, the web and the Internet of Things, interactive products are the stuff of everyday life. But how can interactions be designed to best meet their purposes, offer good user experiences, and be easy, satisfying and enjoyable to use? How can interactions be evaluated effectively when their users, purposes and contexts of use vary so widely? In this module we take a user-centred approach through which the student will learn about the factors, techniques, tools and theories that affect interaction design and acquire practical skills that will equip the student to analyse, design, and evaluate the interactive products of everyday life. Why are some interactive products so popular? How do you create products that everybody wants? One of the fundamental things the student will learn in this module is the importance of user-centred design. In this context, this module complements the rest of Web Development modules.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "laptop"
+    "icon": "briefcase-business"
   },
   "TM341": {
     "title": "Computer Vision",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This module provides an introduction to computer vision, including basic methods from image processing techniques and deep learning with neural networks to solve high level vision tasks. It helps to the student to develop the practical skills necessary to build computer vision applications.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "code-2"
+    "icon": "graduation-cap"
   },
   "TM380": {
     "title": null,
@@ -365,8 +365,8 @@
   },
   "TM103": {
     "title": "Computer Organization and Architecture",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This module offers a clear and comprehensive survey about computer organization and architecture. It introduces the inner workings of a modern digital computer through an integrated presentation of fundamental concepts and principles",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
     "icon": "briefcase-business"
   },
@@ -379,10 +379,10 @@
   },
   "MT132": {
     "title": "Linear Algebra",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "The course introduces a range of ideas concerning matrices and its applications, matrix operations that are widely used in data structure, programming, data communication, digital signal processing and in scientific research. The course shows algorithmic method to solve systems of linear equations. Moreover, it includes concept of vector spaces and subspace that are used to construct algebraic codes. Also, it introduces the meaning of basis and dimension of a subspace the vector space Rn. The concept of linear transformation between two vector spaces together with null space and rank are also included. Finally, the course introduce the idea of characteristic values/vectors and diagonalization.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "laptop"
+    "icon": "code-2"
   },
   "MT101": {
     "title": null,
@@ -393,36 +393,36 @@
   },
   "TM112": {
     "title": "Introduction to Computing and Information Technology 2",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This module will further develop and extend the skills and knowledge that students will have built up by studying its partner module TM111. The overall focus of TM112 is on developing the students’ problem solving skills.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
     "icon": "code-2"
   },
   "TM129": {
     "title": "Technologies in Practice",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This module provides an opportunity to sample some of the key areas in computing and information technology. Students will be introduced to three subjects as tasters for their future studies and career: robotics, networking and operating systems. Studying these subjects will enable students to develop essential skills if they are considering future employment in the computing and IT industry. Students will also better understand the different routes through the curriculum offered by the faculty of computer studies. They will be applying what they learn to a series of practical activities, to demonstrate their skills and understanding in these areas to potential employers.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "laptop"
+    "icon": "graduation-cap"
   },
   "M269": {
-    "title": "Algorithms, Data structures and Computability",
-    "description": null,
-    "status": "pending_official_sync",
+    "title": "Algorithms, Data structures and Computability.",
+    "description": "One of the basic pillars of advanced computing projects consists of the set of proper algorithms used to solve not only traditional but also unconventional IT problems. With the huge amount of data embedding the new data science, being skilled in setting proper data structure, managing and understanding computability techniques become a must nowadays. M269 is one of the most important modules for information technologies and computing related majors and tracks. The underlying concepts of this module are implemented using the python programming language.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
     "icon": "code-2"
   },
   "T216A": {
     "title": "Cisco networking (CCNA)-A",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Students will begin with Cisco networking (CCNA) (T216). This will give them the knowledge, understanding, and skills needed to configure a LAN/WAN using Cisco equipment (which should also leave you well prepared for the industry-standard CCNA certification examination) They will also gain hands-on practical experience of configuring networks at four compulsory day schools. Cisco Systems are market leaders in supplying networking equipment for the internet. They also have a well-established educational programme for network professionals. The Arab Open University offers the Cisco Certified Network Associate “CCNA” (ICND1) Version 5 curriculum, which provides the knowledge, understanding, and skills needed to configure a LAN/WAN using Cisco equipment. The module is composed of two modules: • Introduction to Networks • Routing and switching essentials",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "code-2"
+    "icon": "graduation-cap"
   },
   "TM298": {
     "title": "Operating Systems",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "The study of Operating Systems is essential since these are an integral part of modern IT systems. This is an introductory level module which introduces students to fundamental concepts of a variety of operating systems.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
     "icon": "laptop"
   },
@@ -435,66 +435,66 @@
   },
   "M238": {
     "title": "Data Visualization",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Data Visualisation is an important aspect of Data Science that enables the extraction of useful and meaningful insights from data. All Data Science projects should use data visualisations to enrich them. All types of data visualisation techniques are important and help students and learners to extract better insights about the data. Applying data visualization techniques to difficult and challenging data analysis problems help in better understanding of these problems. This is a mandatory module in the Data Science programme.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "laptop"
+    "icon": "chart-no-axes-combined"
   },
   "M252": {
     "title": "Internet Programming",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "The World Wide Web continues to serve as a foundation for the advancement of a wide range of increasingly influential and strategic technologies, supporting a wide range of private and public-sector applications and services. Hence, it is important to know how browsers, computers, and mobile devices interact with the web. The response to the question is your first step toward a deeper understanding of the internet and learning a new set of internet skills, with billions of websites now available. This module will foster web and mobile developing skills to design, create, and maintain appropriate solutions that meet the needs in our fast changing digital world. The module aims to equip students with the practical skills to integrate and implement client-side scripting language JavaScript, server–side PHP scripting language along with MySQL database system and hybrid mobile application development tools to create secure, dynamic web/mobile applications and master the web technologies necessary to develop a complete e-commerce solution.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "code-2"
+    "icon": "graduation-cap"
   },
   "TM276": {
     "title": "Software Development Processes and Methodologies",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Software is quickly becoming integral part of human life as we see more and more automation and technical advancements. Just like we expect car to work all the time and can't afford to break or reboot unexpectedly, software industry needs to continue to learn better way to build software if it were to become integral part of human life. In this course, you will get an overview of how software teams work? What processes they use? What are some of the industry standard methodologies? What are pros and cons of each? You will learn enough to have meaningful conversation around software development processes. The module covers the importance of developing software in an iterative process by means of established methods.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
     "icon": "code-2"
   },
   "TM254": {
     "title": "Managing IT: the why, the what and the how",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This module provides a basis for further study of IT management, and introduces the student to many of the concepts that are tested by the BCS Professional Certification in IS Project Management and IT Service Management. In addition, the module will help the student to develop important skills particularly relevant to the workplace, such as written communication skills, information literacy, independent learning, entrepreneurship, critical analysis and team working. In an IT context, the module will provide practitioners with relevant experience, skills and insight into project management and service management. This module aims to",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "laptop"
+    "icon": "graduation-cap"
   },
   "TM291": {
     "title": "Management Information System",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This module introduces the use and relevance of information systems to managers and enterprises. Rather than providing an in depth technological treatment of information systems, this module prepares students as future managers to assess the impact of information systems on a particular enterprise. This module also introduces students to a range of skills required to manage information systems projects. It explores current Information Systems concepts and technologies. Students learn how information systems give a business or organization a competitive edge by providing technologies that help managers to plan, control and make decisions.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
     "icon": "briefcase-business"
   },
   "T318": {
     "title": "Applied Network Security",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "People, organizations, and enterprises are becoming increasingly dependent on digital services. Therefore, the need arises to protect information from being maliciously intercepted, disrupted, or misused.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "code-2"
+    "icon": "briefcase-business"
   },
   "TM354": {
     "title": "Software Engineering",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Software engineering (TM354) – the intellectual tools needed to design, build, and test software systems. This module aims to provide you with an understanding of software engineering concepts and a view of practical software development. It follows a disciplined approach to the development of software systems to meet specified requirements. You will become familiar with a wide range of techniques to support the dialogue between software engineers and an organisation’s stakeholders, and the work of the developers. You will also develop a good understanding of the different approaches to, and practices of, software development, including those followed by agile methods.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
     "icon": "code-2"
   },
   "MT390": {
     "title": "Image Processing",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Image Processing is an important field of study and MT390 is meant to provide students with the basic knowledge of this field. Along with the importance of Image Processing in traditional areas such as Medical Diagnosis, Industrial Inspections, Security Systems, Robotics etc., the pervasiveness of smart phones equipped with powerful cameras has increased the need for Image Processing due to the availability of large amount of image data. This module is intended to provide students the opportunity to study the basics of the important field of Image Processing.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "laptop"
+    "icon": "heart-pulse"
   },
   "TM359": {
     "title": "System penetration testing",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "TM359 (system penetration testing) is a compulsory module in the BSc (Honours) in Cyber security qualification, which is intended one of the third level modules that students on this qualification study. Other modules in the taught module component of the qualification have a relation to this course, including TT284 (Web Technologies); T216A (Cisco Networking (CCNA); TM256 (Computer Security and Digital Forensics); TM311 (Information security); T318 (Applied Network Security); TM471 (The computing and IT project) in stage 3. The focus of the module on penetration testing for system and ethical hacking to provide systems of the highest possible level of security. The aim of this module is to introduce and extend certain concepts of each high-level domain such as Systems security, security testing, and ethical hacking, that is not covered in the other modules of the qualification.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "laptop"
+    "icon": "code-2"
   },
   "T471": {
     "title": null,
@@ -505,10 +505,10 @@
   },
   "TM471": {
     "title": "The Telematics project CS",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "The objective of this module is to provide the students with the opportunity to apply the theoretical and the practical concepts they have learnt during the lower level courses to a real and tangible project. During their last year, students are required in this module to submit a project proposal consistent with the computer science track. They need to use the skills they have acquired in order to accomplish their presumptive proposal. Beside the deliverable and the assessments, each student has to submit a report that sums up the plan-do-review cycle of his/her work and has to present the findings in front of a faculty committee.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx",
-    "icon": "laptop"
+    "icon": "code-2"
   },
   "BUS101": {
     "title": "Introduction to Math for Business",
@@ -519,127 +519,127 @@
   },
   "BUS102": {
     "title": "Introduction to Statistics",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "BUS102 is an introductory course in Statistics for Business Students of all tracks. Rational is to provide students with good knowledge on statistical techniques commonly used in research works done on Social Science topics. Statistics is a science that deals with collection, description, analysis, interpretation, and presentation of data. Understanding data better and making decisions accordingly are the key qualities that a business manager must possess to excel in their performance.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "chart-no-axes-combined"
   },
   "BUS110": {
     "title": "Introduction To Business",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "“Introduction to Business” is an introductory course, which surveys the role of business in society. At its simplest level, business is the exchange of goods and services for mutual benefit or profit. Students will be exposed to a wide variety of topics including the terms, trends, organizational structure and opportunities inherent in this exchange, the course introduces the student to the contemporary business world, the business of managing, people in organizations, the principles of marketing, managing information, and financial issues.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
-    "icon": "briefcase-business"
+    "icon": "landmark"
   },
   "B122": {
     "title": "An Introduction to Retail management and Marketing",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "It is an introductory Level 1 course. As the retail industry is highly dynamic and innovative, this course looks at how retailing has developed within a business context, and how retail outlets work and apply retail marketing. It offers a balance between theory and practice that is innovative and engaging. During your studies you will consider contemporary factors that affect retailing: globalization; the impact of ever-changing technology; and social and ethical issues. This course is designed for retail industry employees wishing to develop a career in management, and anyone interested in working in the retail sector, or simply wanting to know more about the world of retailing.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "briefcase-business"
   },
   "MGT111": {
     "title": "Principles of Management I",
-    "description": "MGT111: Principles of Management I is a level 1 common introductory module for all tracks. It introduces the basic information and principles of management, including the evolution of management, organizational environment and culture, and the main functions of management: planning, organizing, leading and control.",
+    "description": "MGT111: Principles of Management I is a level 1 common introductory module –for all tracks- rationale is to educate student with the basic information and principles of different topics in management including evolution of management, organization environment and culture, also the main functions of management; planning, organizing, leading and control, this will aid in laying down the foundation for business students to firstly, understand a variety of management topics and functions, secondly to prepare students along with all other common level 1 modules for more advanced knowledge and skills needed for next levels of specialization.",
     "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "briefcase-business"
   },
   "MGT112": {
     "title": "Principles of Management II",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "MGT112: Principles of Management II is a level 1 common introductory module –for Management track- elective for all other tracks. Rationale is to educate student with the basic information and principles of different topics in management including organizational behaviour, globalization, international trade, and global monetary systems, these topics along with MGT111 will prepare students with fundamental and foundational basis for management specialisation.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "briefcase-business"
   },
   "B123": {
     "title": "Management Practice",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This course introduces management ideas and uses activities to build on existing knowledge and skills through the application of management theory. It’s suitable if you’ve studied any introductory course and want to complete the Certificate in Business Studies or gain 30 credits towards our BA (Hons). This introductory Level 1 course introduces management ideas and uses activities to build on your existing knowledge and skills. You’ll also use your own workplace experiences to develop an academic understanding of management and valuable study skills, which you’ll demonstrate by writing about management and reflecting on your own skills as a learner.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "briefcase-business"
   },
   "MKT111": {
     "title": "Principles of Marketing I",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "MKT111: Principles of Marketing I is a level 1 common–for all tracks-introductory module rationale is to educate student with the basic information and principles of different topics in marketing including evolution and role of marketing, analysing the marketing environment, also the main functions of marketing; segmentation, targeting and positioning, also marketing tools such as the 7 Ps, supply chain, this will aid in laying down the foundation for business students to firstly, understand a variety of marketing topics and functions, secondly to prepare students along with all other common level 1 modules for more advanced knowledge and skills needed for next levels of specialization.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "briefcase-business"
   },
   "MKT112": {
     "title": "Principles of Marketing II",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "MKT112: Principles of Marketing II is a level 1 common introductory module –for Marketing track- elective for all other tracks. Rationale is to educate student with the basic information and principles of different topics in marketing including digital marketing, conscious marketing, corporate social responsibility, ethics, consumer behaviour, global marketing, marketing research, and these topics along with MKT111 will prepare students with fundamental and foundational basis for marketing specialisation.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "briefcase-business"
   },
   "B124": {
     "title": "Fundamentals of Accounting",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This module provides a broad introduction to accounting study at the university level. It covers the fundamentals of financial and management accounting as well as the essential skills, knowledge and ethics required to be a professional accountant. Fundamentals of Accounting module is required for all business with accounting track. It is strongly recommended that students study this module before Financial accounting (B291) and Management accounting (B292).",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "landmark"
   },
   "ACT111": {
     "title": "Financial Accounting",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This module aims to teach students the fundamentals of financial accounting. Students will gain an understanding of how to prepare the basic financial statements, based on application of the accounting concepts and principles, as well as how to analyze the financial statements information, and calculate and interpret critical financial ratios that will help company stakeholders make rational decisions. This module is obligatory for all students of Faculty of Business Studies.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "landmark"
   },
   "ACT112": {
     "title": "Managerial Accounting",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This module aims to teach students the fundamentals of managerial accounting. Students will gain an understanding of concepts and applications of managerial accounting, Moreover, students will learn how to prepare and use the accounting information for internal planning and control purposes, as well as using it to make informed managerial decisions. This module is obligatory for all students of the accounting track.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "landmark"
   },
   "ECO101": {
     "title": "Principles of Microeconomics",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Principles of Microeconomics is a level 1 common introductory module to introduce students to the basic principles of microeconomic concepts, including supply and demand, resource allocation, consumer behaviour, market structures, and government impact. This module develops skills such as logical and analytical thinking and problem-solving skills. It is designed to explain the theoretical ideas and applies them to real-life examples and case studies.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "landmark"
   },
   "ECO102": {
     "title": "Principles of Macroeconomics",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This common introductory Level 1 module presents macroeconomics in a way that is modern and based in the real world of business and economic policy, the module uses a more realistic version of the familiar aggregate demand and aggregate supply model to analyze short-run fluctuations and monetary and fiscal policy. This course emphasizes the many areas of macroeconomics where most economists agree.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "landmark"
   },
   "LB170": {
     "title": "Professional Communication Skills for Business Studies",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Personal and corporate success in business relies on effective communication. Communication Skills for Business and Management will help you acquire skills to distinguish you from your peers. This key introductory Level 1 course is practical and will empower you to undertake more insightful case-study analysis, write successful essays, and produce powerful reports. From proposals to emails, you’ll work with a wide range of texts from business studies courses and the wider business world, deepening your knowledge and developing your written communication skills - helping you to succeed in both business studies and business generally.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
-    "icon": "briefcase-business"
+    "icon": "chart-no-axes-combined"
   },
   "BUC111": {
     "title": "Business Communication 1",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This module will help students to develop their communication and analytical skills paving the way for a more professional approach to business situations. This key introductory Level 1 course is practical and will empower students to analyse business situations with a valuable tool to design and compose business messages that are well-developed, audience-focused and free of errors. BUC111 will encourage students to explore and compose a variety of business messages via emails, social media posts, or letters. With a wide variety of business scenarios, students will work with a wide range of emails, letters, social media posts and visuals to develop their communication potentials into well-grounded professional communication practices.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
-    "icon": "briefcase-business"
+    "icon": "radio"
   },
   "BUC112": {
     "title": "Business Communication 2",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "BUC112 will help students to develop their reporting and interpersonal skills paving the way for a more professional approach to business situations. This key introductory Level 1 Module is practical and will encourage students to apply professional analysis to report writing, design and draft reports, capitalize on the linguistic proficiency developed in BUC111 when writing reports. The module will incite students to cultivate their interpersonal skills, namely by fostering better interactions through effective listening strategies, better teamwork understanding, and valuable meeting and presentation guidelines and practices. BUC111 allows students to explore and compose a variety of business reports, including information reports, proposals, and analytical reports; learn about effective interpersonal skills strategies; and get good insight into planning and delivering successful presentations.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
-    "icon": "briefcase-business"
+    "icon": "languages"
   },
   "MIS111": {
     "title": "Introduction to Management Information System I",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Introduction to Management Information System will educate students how technology and development in information and data are fundamentally changing business. It also helps student to identify organisation’s strengths and weaknesses to enable operational efficiency and business decision making using management information systems methods and techniques. In data driven world, this model is essential for business students because it enables them to solve problems and create new opportunities using technology and data. Additionally, it prepares students, alongside other common level 4 modules, for acquiring advanced knowledge and skills required for further specialisation.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "briefcase-business"
   },
   "MIS112": {
     "title": "Introduction to Management Information System II",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "MIS112 builds upon the foundational knowledge acquired from MIS111 Introduction to Management Information Systems I, providing students with an enhanced understanding of various topics. The module covers project management, project planning diagrams, outsourcing, the systems development life cycle, managing knowledge, ethical and social issues in information systems, supply chain management, technologies reshaping the supply chain, leveraging them for business advantages, and business intelligence, including data warehousing and blockchain in distributed computing. Those topics will expand the boundaries of knowledge on the domain of management information system and prepare them to handle more advance module on the MIS track.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "briefcase-business"
   },
@@ -652,8 +652,8 @@
   },
   "GB102": {
     "title": "Principles of entrepreneurship for non-specialists",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Providing students with concepts and tools that help them learn about the principles of entrepreneurship, its importance, and the steps for establishing and managing small projects, in addition to introducing students to the steps necessary to establish a small-sized private project through the following main methods: Developing students’ ability to apply the concepts necessary to start a project in business reality Improve students' ability to use business creation tools such as business plan and business model Applying technological tools in entrepreneurship through projects that are discussed within interactive groups.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "briefcase-business"
   },
@@ -715,17 +715,17 @@
   },
   "BUS115": {
     "title": "Small Business Management",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "BUS115 Small Business Management is a level 1 common introductory module that provides students with principles of business in an-increasingly global society. This course is designed to enhance awareness, opportunities, and challenges in today's business environment. This course will introduce students to entrepreneur's success factors, developing business plans, forms of business ownership, management and leadership styles, marketing and market research, technology, and e-commerce, understanding financial statements and testing the feasibility and viability of a new venture.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
-    "icon": "briefcase-business"
+    "icon": "landmark"
   },
   "ACC204": {
     "title": "Intermediate financial accounting",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "The module will help candidates to understand different types of company from their formation, company financial accounting, the regulatory framework in which they operate, and their role in the context of market economies, law, and society. Candidates will also gain an understanding thoroughly different items of statement of financial positions (i.e., Assets, liabilities, and owners’ equity), and the relevant accounting policies and procedures related to recognizing these items.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
-    "icon": "radio"
+    "icon": "scale"
   },
   "HRM111": {
     "title": null,
@@ -736,64 +736,64 @@
   },
   "BUS208": {
     "title": "Contemporary issues in marketing",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This level 2 module provides intermediate/advanced conceptual and practical learning to students interested in the theory and practice of marketing in a contemporary context. BUS208 is addressing marketing strategy planning, global marketing, personal selling, and sales management, using social media and mobile marketing to connect with customers, CRM, Big Data, and Marketing Analytics, and Logistics.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
-    "icon": "briefcase-business"
+    "icon": "radio"
   },
   "B205A": {
     "title": "Exploring innovation and entrepreneurship (A)",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This module provides students with a broad foundation in innovation and entrepreneurship. The course is composed of two parts A and B. Students will be introduced to core concepts of entrepreneurship and innovation. This module will focus on the skills required to create teams, build networks and to secure the necessary resources in the context of an innovative, entrepreneurial venture.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "briefcase-business"
   },
   "B205B": {
     "title": "Exploring innovation and entrepreneurship (B)",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This module provides students with a broad foundation in innovation and entrepreneurship. The course is composed of two parts A and B. Students will be introduced to core concepts of entrepreneurship and innovation. This module will focus on the skills required to create teams, build networks and to secure the necessary resources in the context of an innovative, entrepreneurial venture.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "briefcase-business"
   },
   "B207A": {
     "title": "Shaping Business Opportunities I",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "B207A is a module offered to equip students with basic and fundamental concepts and theories about business functions, and it is designed to provide intermediate conceptual and practical learning to students in operations management, marketing and human resource management.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
-    "icon": "briefcase-business"
+    "icon": "radio"
   },
   "B207B": {
     "title": "Shaping Business Opportunities II",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "B207B is a module offered to equip students with basic and fundamental concepts and theories about business functions, and it is designed to provide intermediate conceptual and practical learning to students in operations management, marketing and human resource management.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
-    "icon": "briefcase-business"
+    "icon": "radio"
   },
   "B291": {
     "title": "Financial Accounting",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This course is the first of two modules leading to the Professional Certificate in Accounting (K01). We strongly recommend that you study this course before Management accounting (B292), but both courses can be studied independently. This is a Level 2 course and students need to have a good knowledge of financial accounting, obtained either through Level 1 study with the AOU or by doing equivalent work at another university. Ideal preparation for this course would be our Level 1 course Fundamentals of Accounting (B124).",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "landmark"
   },
   "B292": {
     "title": "Management Accounting",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This is a level 2 course and students need to have a good knowledge of financial accounting obtained either through level 1 study with the AOU or completing equivalent work at another university. This is the course for students if they want a route into the accounting profession or need to gain fundamental accounting skills for a management or other role. The overall aim of this module is to help students learn and interpret management accounting information. You may be undertaking this module to prepare for a career as an accountant working in or with organizations, as part of a degree or as a stand- alone module.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "landmark"
   },
   "B294": {
     "title": "Financial Analysis and Decision Making",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Effective financial decision making is crucial every successful organisation. This module will equip you with the tools and techniques that facilitate good financial decisions in order to achieve organisational goals, financial appraisal techniques used to evaluate investment projects and evaluate multiple investment options, how to value stocks, bonds and real estate, and the commonly used derivative instruments and their role in managing risk.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "landmark"
   },
   "SYS210": {
     "title": "Managing Technology and Innovation",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Management of technology is a difficult and complex process, but it is an issue that faces all firms today. It involves the handling of technical and social issues in a broad spectrum of functional areas including manufacturing, design, development, information, processing, construction, pollution, violence, and so forth. Management of technology and innovation is concerned with developing and enhancing the capabilities of individuals and the characteristics of institutions to match the potential benefits, to contain the hazards resulting from technological change and also to find new ways to compete and survive.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "briefcase-business"
   },
@@ -813,108 +813,108 @@
   },
   "ACC300": {
     "title": "Accounting Information Systems",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This course is the first module to introduce the domain of information systems in accounting. This is a Level 6 course and students need to have a good knowledge of financial accounting, obtained through Levels 4 and 5 accounting modules. Thus, it is strongly recommended that students study this course after studying Financial/Management accounting (B291 and B292).",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "landmark"
   },
   "B324": {
     "title": "Marketing and Society",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This course explores the theory and practice of responsible marketing, addressing the interrelated areas of corporate social responsibility and marketing ethics and the emergent area of social marketing. It examines the impact of established marketing techniques and practices on the promotion of social well-being and behavioural change. You will identify key ethical issues involved in marketing decision-making and the responsibilities of organisations to their stakeholders, including the wider community. Elements of marketing management (such as communications, research and planning) are examined within this wider framework at both a domestic and international level.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "briefcase-business"
   },
   "B325": {
     "title": "Managing across organisational and cultural boundaries",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "B325 is offered as an option at level 3 in the awards: BA (Hons) Business Studies; BA (Hons) Leadership and management. The course aligns well within the educational aims of these programs by developing “the student’s interest in and knowledge of the world of business”. By providing students with the opportunity to draw on their own experience and critically engage with theory with theory relevant to managing across organisational and cultural boundaries, it supports the program’s aim of developing “graduates who bring to their employment in business or organisations of any sort, a range of critically important and highly valued skills”. B325 will complement other courses within the existing suite of courses offered within management and business studies. It will embrace all learners irrespective of their level of attained experience and position within their own organisation.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
-    "icon": "briefcase-business"
+    "icon": "graduation-cap"
   },
   "B326": {
     "title": "Advanced Financial Accounting",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This module covers selected advanced financial accounting topics. It introduces different types of inter-entity relationships and related accounting issues and accounting treatments. Students will learn how to prepare, read, analyse and evaluate the consolidated financial statements based on the guidelines provided under the relevant Accounting Standards.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "landmark"
   },
   "B327": {
     "title": "Sustainable enterprise and innovation",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This level 3 module provides intermediate/advanced conceptual and practical learning to students interested in the theory and practice of entrepreneurship and innovation in relation to sustainability context. B327 is a module addressing sustainability underpinnings (i.e., the TBL approach), the societal impacts of entrepreneurship and innovation, and sustainable enterprise challenge.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
-    "icon": "briefcase-business"
+    "icon": "radio"
   },
   "B328": {
     "title": "Marketing in Action",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "The B328 module is built around marketing communications as a fundamental marketing practice and is informed by insights from practitioners. In this module, you will cover a range of topics related to marketing practice and will be encouraged to cultivate a broad spectrum of skills pertaining to marketing, employability and professional practice.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "briefcase-business"
   },
   "B329": {
     "title": "Leadership in a changing world",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "B329 provides the opportunity to learn about leadership in dynamic risky times as to develop as sense of positive leadership. Technological changes, social networking and their impact on leadership skills are assessed allowing to discover new emergent styles of leadership needed to improve the status quo.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "briefcase-business"
   },
   "B391": {
     "title": "Management accounting and finance",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "B391 is a module that provides an opportunity to explore the understanding of the management accounting and financial dimension into the contexts of international financial markets, investments, and managerial decision making within organisations. The content of the module is designed to develop a thorough understanding of the discipline and to stimulate students’ interest in key management accounting and international financial concepts and issues managers face within contemporary organisations. The module seeks to support students in the practical application of the skills and techniques acquired. Alongside theory reflecting contemporary developments in management accounting and international financial research, students are offered the chance to reflect on real world events.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "landmark"
   },
   "B392": {
     "title": "Advanced Management Accounting",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "The module offers students the opportunity to continue their studies in the BA Business Studies after they have completed the B291 & B292 modules. It builds on the knowledge and skills students have learned in B292 by focusing on theories, concepts and techniques at a more advanced level. The learning outcomes also include a critical evaluation of the theories and techniques and their application in ambiguous settings using case study approach. Business entities operate in economic turbulent environments. Under these constraints, decisions taken by managers of business units can vary and differ depending on the manager’s and the company’s pursuit of goals and objectives. Proper economic analysis and use of appropriate techniques and tools are therefore mandatory for managers and decision makers. The module can be used to understand strategy and to situate the role of strategic management accounting within the broader content of organizational and industry differences using theories, tools, techniques and relevant case studies and examples. Basic skills of quantitative proficiency is required in order to understand pricing decisions techniques, financial measures of performance, investments , EVA , Variance analysis , budgeting costing etc. This module provides students with a solid base of Advanced management Accounting study and practice.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "landmark"
   },
   "B628": {
     "title": "Managing 1: Organizations and People",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This module is designed for managers, aspiring managers, team leaders and supervisors; it uses activities and problem-solving to take you through core topics in organizational behavior and human resource management. Topics include organizational context and culture, stakeholders, management roles, recruitment and induction, performance management, motivation, team work, managing operations and change. These are focused primarily on your own work situations and practices, whether these are in the commercial, public or voluntary sectors.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "briefcase-business"
   },
   "B629": {
     "title": "Managing 2: Marketing and Finance",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Main elements and realities of a manager’s job and explains how one can develop and organize himself to be effective and successful in his role. Managing in modern organizations is not easy: no context is the same; the ‘right’ decision in one organization may be the ‘wrong’ one in another, or at another time. There is no ‘one best way’. However, there is also ‘received wisdom’ – tried and tested practices and behaviours that are usually effective in bringing about the result a manager wants. These are included in this module where appropriate. But even ‘good practice’ needs adaptation: time or resources may be in short supply and a manager may have to do the best he or she can with what’s available. This is the art of management: doing what’s possible in the best way possible in the circumstances to achieve, through others, the goals for which an organization is striving.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "landmark"
   },
   "BB293": {
     "title": "Financial Accounting in Context",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "BB293 Financial Accounting in Context is a level 2 course. This module provides essential information about financial accounting. This is the fundamental course for students who wish to select the accounting profession as their career. In this module, Students will gain a detailed understanding of how financial statements are prepared and develop the skills to prepare and analyse financial statements information. Also, students will explore differences in financial reporting mechanisms under different types of businesses.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "landmark"
   },
   "BUS628": {
     "title": "Global Human Resource Management",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This course examines the strategic and global issues of HRM by showing how organizations address the trade-offs between global integration and local responsiveness. It discusses varying methods of globalized talent management and employer branding and conclude with a multi-dimensional approach to HRM.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "briefcase-business"
   },
   "BUS629": {
     "title": "International Management",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "In this module, you will basically cover a range of topics related to international business and will be encouraged to cultivate a broad spectrum of knowledge and skills pertaining to globalization, national differences, the global trade and investment environment, the global monetary system, the strategy and structure of international business, International business functions, and professional practice.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
-    "icon": "briefcase-business"
+    "icon": "landmark"
   },
   "BUS310": {
     "title": "Strategic Management",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Strategic Management: Creating Competitive Advantages Module introduces you to the essentials of strategy (key concepts, tools of analysis, various strategies and tactics), which are considered critical to managing organizations especially in today’s dynamic and connected environment. More specifically, this course examines the process of strategy, analysis of internal as well as external environment, development of strategic alternatives, selection of available and suitable alternative, implementation of strategies, and strategic control and corporate governance. Special emphasis given to the applicable strategic tools in the dynamic business environment including SWOT analysis, five-forces, resource-based view and others. Forms of organizational structure and how it affects the formulated strategies will also be delivered throughout the course.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
-    "icon": "briefcase-business"
+    "icon": "chart-no-axes-combined"
   },
   "DD209A": {
     "title": null,
@@ -960,92 +960,92 @@
   },
   "FIN240": {
     "title": "Microfinance theory and Practice",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This course will use information economics to understand microfinance as an alternate source of financing for the poor. The rise of informal credit markets and cooperative savings and credit cooperatives organizations amidst difficulties of accessing financial services from banks shall be explored. The problems of adverse selection and moral hazards in commercial banking and how microfinance institutions use local information and group lending to circumvent these problems shall be considered. Competition, profitability versus poverty reduction as objectives of microfinance institutions. Management and self sustainability of MFI and crosscutting issues on microfinance gender and education among others shall be covered.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "landmark"
   },
   "FIN241": {
     "title": "Microfinance",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This module focuses on the role of microfinance as an alternate source of financing for the poor. It will explore the difficulties of accessing financial services from banks during the rise of informal credit markets and cooperative savings and credit cooperatives organizations. The problems of adverse selection and moral hazards in commercial banking and how microfinance institutions use local information and group lending to circumvent these problems shall be considered. Competition, profitability versus poverty reduction as objectives of microfinance institutions. Management and self-sustainability of MFI and crosscutting issues on microfinance gender and education among others shall be covered.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "landmark"
   },
   "FIN242": {
     "title": "Financial Technology",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "FinTech has seen a dramatic increase of popularity in terms of both business applications and academic research in the last decade. Importantly, FinTech has the potential not only to improve profit margins of financial service companies but also to democratize finance, help unbanked individuals and support responsible financial enterprises. The course will equip students with a sound understanding of the technology underlying FinTech by introducing topics in block chain, machine learning and artificial intelligence. Building on this technological basis, the course will provide an overview of key trends and discuss the impact of FinTech on financial services such as payments, investing, lending, borrowing and spending.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "landmark"
   },
   "FIN301-F": {
     "title": "Financial and Securities Markets",
-    "description": "The module develops understanding of financial and securities markets, including derivatives, options, bonds, warrants and convertibles, yield curves and term structures of interest rates, currency exchange rates, portfolio risk and diversification, risk and return, and international portfolio diversification.",
+    "description": "The aims of the module are to promote the student understanding of derivative markets, options, bonds, warrants and convertibles, yield curves and the term structure of interest rates, currency exchange rate and the international exchange rate parity, portfolio risk and diversification, risk and return. The course provides a thorough understanding of international portfolio diversification and the principles behind financial derivative markets.",
     "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "landmark"
   },
   "FIN302-F": {
     "title": "Portfolio Theory",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This course provides in-depth study of investment portfolios: the theory behind them, construction techniques, asset classes employed and their management. Students will re-examine and enhance their understanding and knowledge of the theoretical foundations of asset pricing, market efficiency and the Modern Portfolio Theory (MPT). Students will be able to provide a “Statement of Advice” for an institutional investor, quantitatively forecast characteristics of various asset classes in an economy, and then create an investment portfolio to satisfy the investment requirements. Students will learn various strategies to test the portfolio constructed, issues that impact portfolio performance in achieving investment objectives, and finally evaluate its performance.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "landmark"
   },
   "FIN340-F": {
     "title": "Corporate Finance",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This course is designed to provide students with the necessary skills that are required in the market place especially in the field of corporate finance. FIN340: Corporate Finance will help students acquire fundamental knowledge required to make financial sound decisions using tools that will guide them to solve real world financial problems at both individual and corporate levels. The course is a blend of theory and practice that will build on previous acquired skills in B124A/B: financial and managerial accounting respectively and a financial strong conceptual base covered in FIN241 on Financial Theory and Practice.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "landmark"
   },
   "FIN341": {
     "title": "Islamic Finance",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This course aim to introduce students to the Principles of Islamic Finance, Islamic banks; Risk management of Islamic institutions, globalization and challenges for Islamic finance. This course provides an overview and understanding to the main concepts and theories of Islamic Finance.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "landmark"
   },
   "FIN342": {
     "title": "Financial & Securities Markets",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Acquire knowledge in financial markets and instruments, and in financial engineering together with the quantitative tools essential for understanding modern finance. The module provides thorough understanding of the reason financial markets are crucial to promoting greater economic efficiency. It shows that well-functioning financial markets are a key factor in producing high economic growth & poorly performing financial markets are one reason that many parts of the world remain desperately poor. The module further shows how activities in the financial and securities markets have direct effects on personal wealth, behaviour of businesses and consumers and the cyclical performance of the economy. The module develops an advanced understanding of the financial and securities markets, how it works, the debt and equity markets and intermediaries. It aims to promote the student understanding of derivative markets, options ,Bonds , warrants and convertibles, Yield curves & the term structure of interest rates , currency exchange rate and the international exchange rate parity, portfolio risk and diversification, risk and return. The module further enhances student’s knowledge & practices of how the stock and commodities markets function.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
-    "icon": "landmark"
+    "icon": "radio"
   },
   "HRM205": {
     "title": "Employment Law",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Employment Law is a level 5 module that focuses on the principles of employment and labour laws, the challenges in the contemporary workplace and the national/local context of labour and social security laws. As well as explaining the principles and rules governing the labour/employment relationships in the national context. The goals of this course is to provide the students with relevant information on the nature and legal terminology of employment law, the most common laws and how they affect organizations and the legal principles applicable to a wide range of work-related concerns.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "scale"
   },
   "HRM206": {
     "title": "Staffing Organizations",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "HRM206 is the next course to be taken by students of HR track, after HRM205 – Employment and Labour Law. This module explores both strategic and operational issues involved in staffing organizations. It focuses particularly on the essentials of human resources functions related to staffing. It examines the design and management of successful staffing practices used to build and retain a quality workforce in order to achieve both organizational effectiveness and individual job satisfaction. Students will study key topics in staffing and strategic planning: job analysis and job design, recruitment, selection and retention, orientation, induction, all within a decision-making and legal framework. And this module will provide them with an understanding of the links between staffing activities and the organization’s strategic objectives. On another hand, students will be developing their skills in critical thinking, problem solving and written and oral communication, since this module will engage them in business activities in a disciplined and ethical manner. This will help them pursue personal development of knowledge and skills related to a management career",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
-    "icon": "briefcase-business"
+    "icon": "scale"
   },
   "HRM210": {
     "title": "Training and development",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "HRM210 Module is developed to provide students with a basic knowledge and understanding of training process with a detailed explanation of each phase of the process. It demonstrates how training should be aligned with organization strategy. It elucidates main motivation, learning and development theories while showing how these theories influence training design, development, implementation and evaluation. Accordingly, HRM210 covers training needs assessment, training design, training methods, training evaluation, adult learning theory, management development, organizational learning, and knowledge management. The course is mainly designed for undergraduate Business majors who wish to specialize in HR, yet will also help any business major who is seeking to understand the strategic role of training, development, and OL in corporations.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
-    "icon": "briefcase-business"
+    "icon": "graduation-cap"
   },
   "HRM215": {
     "title": "Employment Compensation and Benefits",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This module focuses on employee compensations. Compensation and benefits specialists are in charge of ensuring fair and equitable pay rates to employees, based on job evaluation, wage surveys, incentives, pay equity and compensation strategy. This module provides students with a sound understanding of the essential of financial reward systems in the organization. Students will examine key topics in compensation and benefits. They will also develop skills in critical thinking, problem solving and written and oral communication.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
-    "icon": "briefcase-business"
+    "icon": "landmark"
   },
   "HRM320": {
     "title": "Work Place Health & Safety",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This module focuses on the association with workplace health and safety and human resources management (HRM). It covers major elements of Workplace safety and health in the contemporary global workplace. HRM professionals need to be knowledgeable about existing workplace health and safety issues including regulations, equipment/process safety, behavioral aspects of safety, and ways to avert and reduce hazards in the workplace. Accordingly, this course will provide students with an understanding of the legal regulations of occupational safety, duties and obligations to uphold a safe workplace.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "heart-pulse"
   },
@@ -1289,22 +1289,22 @@
   },
   "MIS200-IS": {
     "title": "Relational database Management Systems",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Relational Database Management Systems is a level 5 course that provides students with a comprehensive understanding of relational database management systems, which is the main part of information systems and mandatory for various business processes, which makes the module mandatory for MIS studies.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "database"
   },
   "MIS201-IS": {
     "title": "Programming for Business Studies",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Programming for Business Studies is a level 5 model that provides students with the understanding and basic skills that enable them to use Python programming language to solve business problem. Programming knowledge and skills using language like python is also important for MIS student in the development of systems or processing and analysing data. This module is a key to many other topics that will be handled in next levels, such as business intelligence and system analysis and design. It also complements other topics at the same level, like the database management system.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
-    "icon": "briefcase-business"
+    "icon": "database"
   },
   "MIS300": {
     "title": "Project Management",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This Module is a socio-technical view of project management. The Module provides a holistic view that focuses on both technical and social dimension and how they interact to determine the fate of projects. The Module develops the knowledge of various types of projects practiced in business environment including the concepts, tools and techniques, which are useful in a new-project situations and formal project management process to gain a competitive advantage. This module provides a valuable guide and reference when dealing with typical problems that arise in the course of a project. The module has been designed to encourage and develop greater critical analytical skills. Significant amount of the right balance of real-world examples, cutting-edge theory, and practical exercises have been embedded to develop the students’ analytical, problem-solving skills and effective project managers’ skills.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "briefcase-business"
   },
@@ -1317,38 +1317,38 @@
   },
   "MIS331": {
     "title": "Business Intelligence",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Business Intelligence: In data driven markets, it is critical for business graduates to understand how business leaders make decisions through data analysis using technology. MIS331 is a level 6 module that study Business intelligence, which is using technology to gather, store and analyse data to build knowledge that enable executives and managers to predict the future of business and industry and making informed decisions. During their education on the MIS track, students collected business knowledge in fields like marketing and economics, besides technical skills like programming and database design and management.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
-    "icon": "briefcase-business"
+    "icon": "landmark"
   },
   "MIS332": {
     "title": "System analysis and design",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "System Analysis & Design introduces the students to the principles and practices of system analysis and design. Students will be presented with the methods used by experts to maintain information systems that perform business function. This course also explains the role of the systems analyst in the process and provides an overview of the various methodologies, tools, and techniques used in the process. MIS332: System analysis and design is a level 6 module. Students will build on previous knowledge and combine what they learned during their studies on MIS track.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "chart-no-axes-combined"
   },
   "MKT331": {
     "title": "Digital Marketing",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This module addresses the distinctive challenges integral to the Digital Marketing in a variety of modern business. In this course, students get an introduction to the fundamental principles of online marketing (e marketing and social-media) both with theory and with practical trainings. Students will build upon pre-acquired knowledge from other marketing courses.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
-    "icon": "briefcase-business"
+    "icon": "radio"
   },
   "MKT332": {
     "title": "Service Marketing",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This module addresses the distinctive challenges integral to the marketing of services in a variety of modern business. Settings emphasis on distinctive features of service management and marketing, in addition to the theories, instruments, and strategies required to tackle them. Aspects of relationship marketing and the new service‐dominant logic of marketing will also be covered.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
     "icon": "briefcase-business"
   },
   "ACC302": {
     "title": "Principles of Auditing & Assurance Services",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "The course describes the role of the public accountant, professional standards, professional ethics, legal liability, audit evidence and documentation, audit planning internal control, audit sampling & procedures to audit the financial statements. This course thus aims to provide an introduction to the principles and practices of auditing. It provides students with a sound understanding of fundamental auditing concepts and procedures, and the application of auditing standards. Accordingly, the course provides a foundation for students, who intend pursuing a specialised pathway in the auditing profession, as well as those who will pursue careers in accounting and other disciplines where principles of risk assessment, systems control and evaluation, and transaction testing are important. While the course focuses mainly on the practical application of an external financial audit.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
-    "icon": "briefcase-business"
+    "icon": "scale"
   },
   "BE302": {
     "title": null,
@@ -1358,11 +1358,11 @@
     "icon": "briefcase-business"
   },
   "B206": {
-    "title": null,
-    "description": null,
-    "status": "unresolved_course",
+    "title": "Understanding Customers",
+    "description": "This level 2 module provides intermediate/advanced conceptual and practical learning to students interested in the theory and practice of consumer behaviour in relation to the wider marketing context. This module aims to introduce students to theories, concepts and techniques guiding how contemporary marketing practitioners understand consumers and business buying behaviour.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx",
-    "icon": "briefcase-business"
+    "icon": "radio"
   },
   "CES110": {
     "title": "Psychology of Play in Children",
@@ -1373,149 +1373,149 @@
   },
   "CES111": {
     "title": "Art Education for Children",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "The course will cover the concept of art education, its goals, and the nature of fine motor skills. It will also discuss the significance of art education for child development, methods for developing artistic skills, stages of children's art development, and the elements of visual composition in art activities. Additionally, the course will cover skills such as drawing, coloring, design, printing, and mixed media.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
-    "icon": "graduation-cap"
+    "icon": "radio"
   },
   "CES112": {
     "title": "Child Health",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Child health in Egyptian law - growth standards and development from birth to 8 years (physical growth - psychological growth - social growth - motor growth - mental growth) - the importance of monitoring (height, weight, and head circumference) from birth, and applications of that until the age of 8 years - growth for people with special needs - maternal health and child growth - child nutrition - nutritional guidelines for the child (programs directed at the child and the teacher) - assessing the child's nutritional needs - school nutrition - applied nutrition - malnutrition diseases - some misconceptions about child health - emergency health problems and procedures for dealing with them - the school health environment - the teacher's health and child safety - child-friendly schools.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
     "icon": "heart-pulse"
   },
   "CES113": {
     "title": "Language Skills for Kindergarten Children",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "the nature of language, its forms - pre-reading and writing skills, and appropriate educational activities for the child in the early childhood stages - designing appropriate activities to develop reading and writing skills, and the relationship between care settings (home - nursery - kindergarten - school ...) in language development, and the relationship between language and thinking - preparing appropriate assessment tools to evaluate linguistic development and reading and writing skills for children in the early childhood stages - the development of learning to read and write over the ages, reading and writing problems, and appropriate practices in learning functional reading and writing.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
     "icon": "languages"
   },
   "EDF109": {
     "title": "The Teaching Profession and the Roles of the Teacher",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "The course content includes understanding the concepts and skills related to the teaching profession and the work of teachers, the historical development of the teaching profession, recognizing its components and significance, and the relationship between the teaching profession and society. It explores the role of teaching in social reform, the future of the teaching profession, and the culture of professional empowerment within education. Additionally, it covers quality standards and institutional accreditation in pre-university education, the future of the teaching profession in the digital age, contemporary developments and trends, the pressures of the teaching profession and ways to mitigate them, dimensions of professional development for teachers, and communities of professional practice.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
     "icon": "graduation-cap"
   },
   "EDF228E": {
     "title": "Talent and Creativity Development",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "The course content includes the fundamental differences between terms used in the field of talent and creativity, identifying the various behavioral traits of gifted individuals across different categories, and determining the factors influencing talent development. It covers theoretical models of talent and creativity, recognizing psychological and behavioral issues in gifted and creative children, applying methods to identify and recognize gifted and creative individuals, and understanding their strengths. Additionally, the course involves developing enrichment programs to enhance talent and excellence among learners, understanding the roles of teachers in talent development, and exploring contemporary global practices in the field of talent and creativity development.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
     "icon": "graduation-cap"
   },
   "EDF230": {
     "title": "Micro Teaching (1)",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "The course content includes the concept of micro teaching, the differences between it and traditional teaching, its importance, types, and stages. It introduces teaching skills such as planning, implementation, and evaluation, the concept of lesson planning, its levels, elements of a lesson plan, techniques for content analysis, writing learning objectives in the area of specialization, and preparing daily lesson plans.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
     "icon": "graduation-cap"
   },
   "EDS117": {
     "title": "Educational Leadership",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "The course content includes the concept of educational leadership, mechanisms for interacting with leaders, administrative activities, and the technical and behavioral factors associated with them. It covers concepts related to leadership behavior such as motivation and related work incentives, job satisfaction, and managerial motivations. The course explores the nature of leadership personality, distinguishing between positive, negative, participative, and autocratic leadership behaviors. It also addresses school communication styles and their applications in school work, strategic thinking skills, conflict management, decision-making, and negotiation.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
     "icon": "graduation-cap"
   },
   "EDS118": {
     "title": "Educational Technology and Digital Transformation",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "The course content includes the concept of educational technology and related concepts such as learning resources, innovations in educational technology, their characteristics, types, classifications, and conditions for their use in education. It also covers the concept of distance education, instructional design and its theories, designing teaching and learning situations in the area of specialization, the role of social networks in education, and educational platforms and electronic learning environments.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
     "icon": "graduation-cap"
   },
   "EDS238": {
     "title": "Learning Assessment",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "The course content includes assessment as a part of the teaching and learning process, the importance and objectives of assessment, determining what to assess and how to assess it, reliability and validity of the assessment process, objectivity and impartiality, objective tests, essay tests, performance assessment, portfolio assessment, formative assessment, summative assessment, standardized and international assessments, assessment for learning, and the use of technology in assessment, including electronic testing.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
-    "icon": "graduation-cap"
+    "icon": "landmark"
   },
   "EDS239E": {
     "title": "Psychological and Educational Guidance",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "This course covers the origins of guidance psychology, its fields, and educational applications, as well as its relationship with student guidance and counseling. It includes the process of psychological counseling, its importance, and the skills involved, the stages of the counseling process, identifying cases that require guidance assistance, diagnosing them, and how to address them.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
     "icon": "graduation-cap"
   },
   "CES114": {
     "title": "Directed Motor Play Activities for Children",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "The concept of motor play and its importance for the child - The objectives of motor play - The stages of motor play - The types of motor play - The functions of motor play - The physical characteristics of the child - Learning methods through motor play - The effect of motor play on the child's development (physical - motor - psychological - mental) - Basic motor skills - Elements of physical fitness (strength, speed, flexibility, agility, endurance, balance ....) - Division of motor skills (stages) - Applications on motor play.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
     "icon": "graduation-cap"
   },
   "CES115E": {
     "title": "Children’s Library",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "The course reviews the concept of libraries, introduces children's libraries, their types, and objectives. It also covers the fundamental principles of establishing, preparing, and equipping libraries, including site selection, design criteria, and collection development. Additionally, the course delves into the process of providing libraries with resources and the criteria for selecting children's books, as well as cataloging them. Furthermore, it explores the activities and services offered by libraries, both print and electronic information sources, and their role in broadening children's horizons, encouraging them, and fostering a love of reading.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
     "icon": "graduation-cap"
   },
   "CES231": {
     "title": "Music Education (2)",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "The course will examine the importance of children's songs from the perspectives of philosophers, educational thinkers, and musicians. It will explore the objectives of children's songs and children's responses to music. The course will cover the reading of simple music notation and solfege singing. It will delve into the characteristics of children's songs and effective teaching methods. Additionally, the course will differentiate between children's songs and other musical activities. Students will learn correct singing techniques and basic instrumental accompaniment for children's songs. The course will cover criteria for selecting children's songs and addressing common vocal challenges in children. Finally, the course will provide students with the skills to teach children's songs and identify musically gifted children. It will also explore universal music principles.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
     "icon": "graduation-cap"
   },
   "CES232": {
     "title": "Motor Programs for Children",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "The course will cover the following: an introduction to early childhood programs in the context of contemporary educational trends; the goals, importance, components, and types of early childhood programs; the philosophical foundations of early childhood programs; the importance, content, components, principles, and goals of physical activity programs for children; the integrated curriculum approach; the daily program for children, including its components and the teacher's role in each; and the design and evaluation of children's programs.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
     "icon": "graduation-cap"
   },
   "CES233": {
     "title": "Foreign language skills for kindergarten children",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "What are the child's foreign language skills - Educational activities appropriate for the child - Designing appropriate activities to develop these skills - Awareness of the practical content of the foreign language course in the kindergarten curriculum - Preparing appropriate assessment tools to evaluate the foreign language - Problems of the child practicing the foreign language.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
     "icon": "languages"
   },
   "CES234": {
     "title": "Children's Stories and Tales",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "Introduction to children's stories and tales - The concept of stories - The concept of tales - The importance of stories, their objectives, and their types - Stories and child development - How to tell stories to children, and types of narration - Characteristics of children's stories, and their relationship to the characteristics of the age group - The art of storytelling - Employing environmental materials in preparing stories and tales - Developing skills in preparing stories and tales appropriate for children in the early childhood stage, and applying them.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
     "icon": "graduation-cap"
   },
   "CES235": {
     "title": "Children's Literature",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "The course will cover the following: the origins and global and local development of children's literature; the concept, goals, and significance of children's literature; the characteristics of children's literature; a study of literary genres for children; folk literature, including its concept, performance, and impact on children; and an exploration of various forms of children's literature.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
     "icon": "languages"
   },
   "CES237E": {
     "title": "Strategies and Programs for Early Detection and Intervention",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "The course will cover the following: the concept of early detection and intervention; the importance, rationale, and scope of early intervention; target populations for early intervention; early intervention services; barriers to early intervention; early intervention team composition and characteristics; early indicators of disabilities; common challenges related to early detection; and the use of advanced technology in early detection and intervention to address these challenges.",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
     "icon": "graduation-cap"
   },
   "FTS11": {
     "title": "Field Training (1)",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": "The practices of the course may include observing teaching and learning situations, school activities, evaluating them, interacting with school teachers, administration, and students, as well as discussing and analyzing experiences resulting from reflecting on observations of the school environment and interacting with it, and participating in some of its activities. (If needed, the practices of the course may also involve micro-teaching or watching teaching-centered videos, discussing and analyzing them through seminar sessions.)",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx",
     "icon": "graduation-cap"
   },
   "EL330": {
     "title": "Teaching English as a Foreign Language",
-    "description": "This practical module links recent research on teaching and learning English to classroom methodology. It covers English-language teaching approaches, lesson planning, classroom management, assessment, and ongoing professional development for prospective teachers of English as a foreign language.",
+    "description": "This is a four-credit-hour module of one semester in length. It is a practical course that links the findings of recent research on teaching/learning English language to classroom methodology. The module discusses English language teaching approaches and methodologies which provide an overview of current approaches to develop language student-teachers who seek a career in teacher education. It presents foundational concepts, best practices and practical suggestions on how to develop lessons and activities for energetic and curious minds of young learners in the 21st Century classroom. The course module aims at familiarizing the students with the basic framework of designing a lesson plan. It also gives insight into classroom management, assessment, and ongoing professional development. Moreover, it features the perspectives and suggestions from practicing teachers around the world that can be used as a basic text for prospective teachers to develop the knowledge and skills to teach English as a foreign language. The course book has the following features: - Content-based chapters which encourage students to explore traditional and modern approaches of teaching. - Abundant and clear examples, models and graphic organizers to give students solid support. - Exercises sections to practice the learned content and sustain knowledge acquisition. - Pair and group assignments to promote collaborative learning. - Lesson plan sections which provide opportunities for consolidation and assessment. - List of references for further readings.",
     "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/language/Pages/course-catalogue.aspx",
     "icon": "languages"
   },
   "EL122": {
     "title": "Writing Research",
-    "description": null,
-    "status": "pending_official_sync",
+    "description": " EL122: Writing Research is a level 1 course aiming to offer students a sound preparation for level 2 courses. EL122 will build on information and skills gained in the EL117 Writing course. This course further develops the skills and strategies students need in order to write academic assignments that are analytical, reasoned, well-developed and supported. Students are expected to demonstrate that they are capable of following a required citation system; the Harvard Referencing Style. The course is designed for upper-intermediate to advanced students who have had exposure to basic rhetorical styles in their EL117 Writing course and have had experience writing essays with a thesis statement and supporting ideas. EL122 provides students with a rich and cohesive set of readings in order to train them to synthesize concepts and ideas and to select appropriate evidence in order to produce sound research papers. This is done through elaborate training on note taking, quoting, paraphrasing and summarizing skills. Further, the course trains students on how to academically document the cited resources by using the Harvard Referencing Style. The organization of the course follows two main parts: Part One: The Writing Process where students are guided on the steps needed to choose a research topic and to find the supporting sources to use as evidence. This part is comprised of 6 chapters; each chapter presents two to four overarching concepts that underlie the steps in the writing process. Examples derived from authentic student writing are included to illustrate each concept. Several complex activities are included after each writing concept to train students on open reading techniques, paraphrasing, responding to writing, summarizing, using quotations, note taking, outlining, writing a thesis statement, integrating evidence in the first draft and evaluating resources. Part Two: Sources for Research where students use a collection of articles as sources for their research papers. The articles are organized around three themes; each has one or two framing articles which set forth some key concepts about the topic, and two sub-themes. Integrating Parts One & Two: students choose the sub-theme from Part Two. Students read and discuss the articles and collect theme-related ones for their papers. To do this, they follow the steps of the writing process specified in Part One. In addition to the course book Sourcework second edition, there is a support website that is equipped with a wealth of student and instruction resources. These resources include an answer key, teaching notes, grading rubrics and student downloads. elt.heinle.com/sourcework",
+    "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/language/Pages/course-catalogue.aspx",
-    "icon": "languages"
+    "icon": "radio"
   }
 }
