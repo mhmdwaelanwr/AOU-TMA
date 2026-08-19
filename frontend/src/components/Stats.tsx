@@ -6,7 +6,7 @@ type Props = { courseCount: number; text: Record<string, string> };
 export const Stats = memo(function Stats({ courseCount, text }: Props) {
   const items = [
     [BookOpenCheck, String(courseCount), text.courses, text.searchableCatalog],
-    [Building2, '4', text.faculties, text.oneCatalog],
+    [Building2, '6', text.faculties, text.oneCatalog],
     [CircleDollarSign, '9', text.currencies, text.aouCountries],
     [Timer, text.orderMetricValue, text.orderMetric, text.orderMetricCaption],
   ] as const;

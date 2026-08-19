@@ -1,1 +1,1 @@
-"""AOU TMA Hub backend application package."""
+"""TMAly backend application package."""

@@ -1,24 +1,18 @@
 export type Language = 'ar' | 'en';
 export type Theme = 'light' | 'dark';
-export type ThemePreference = Theme | 'system';
-export type Faculty = 'all' | 'Computer Studies' | 'Business Studies' | 'Education' | 'Language Studies';
-export type CurrencyCode = 'EGP' | 'KWD' | 'SAR' | 'LBP' | 'JOD' | 'BHD' | 'OMR' | 'SDG' | 'ILS';
-export type PaymentCurrency = CurrencyCode | 'USDT';
-export type BranchCode = 'EG' | 'KW' | 'SA' | 'LB' | 'JO' | 'BH' | 'OM' | 'SD' | 'PS';
+export type Faculty = 'all' | 'Computer Studies' | 'Business Studies' | 'Education' | 'Language Studies' | 'Media & Mass Communication' | 'Graphic & Multimedia Design';
+export type CurrencyCode = 'EGP' | 'KWD' | 'SAR' | 'LBP' | 'JOD' | 'BHD' | 'OMR' | 'SDG' | 'ILS' | 'USDT' | 'MAD';
+export type ServiceType = 'TMA' | 'QUIZ' | 'ASSIGNMENT';
+
+export type BranchId = 'egypt' | 'kuwait' | 'saudi' | 'bahrain' | 'jordan' | 'lebanon' | 'oman' | 'sudan' | 'palestine' | 'morocco';
 
 export type Branch = {
-  code: BranchCode;
-  countryCode: string;
+  id: BranchId;
+  name: { ar: string; en: string };
   currency: CurrencyCode;
   flag: string;
-  country: { ar: string; en: string };
-  branch: { ar: string; en: string };
-};
-
-export type StudyFile = {
-  label: string;
-  url: string;
-  type?: 'pdf' | 'zip' | 'link' | 'doc';
+  timezone: string;
+  city: { ar: string; en: string };
 };
 
 export type CourseIconName =
@@ -31,32 +25,29 @@ export type Course = {
   faculty: string;
   facultyAr: string;
   priceEgp: number;
+  originalPriceEgp?: number;
+  discount?: 'limited_time';
   semester: string;
-  type: string;
+  type: 'TMA' | 'ONSITE';
   title: string | null;
   titleStatus: 'verified' | 'not_found_in_current_catalogue';
   catalogueSource: string | null;
   description: string | null;
-  descriptionStatus: 'verified' | 'pending_official_sync' | 'unresolved_course' | 'legacy_code';
+  descriptionStatus: 'verified' | 'pending_official_sync' | 'unresolved_course';
   descriptionSource: string | null;
   icon: CourseIconName;
-  onsite?: boolean;
-  studyVideoUrl?: string | null;
-  studyFiles?: StudyFile[];
+  onsiteVideoUrl?: string | null;
+  onsiteMaterialsUrl?: string | null;
 };
 
 export type FxResponse = {
   base: 'EGP';
   currency: CurrencyCode;
   rate: number;
-  usdtRate?: number | null;
-  usdtUsdPrice?: number | null;
-  usdtSource?: string | null;
   source: string;
   cachedAt: string;
   providerUpdatedAt?: string | null;
   nextUpdateAt?: string | null;
-  cryptoUpdatedAt?: string | null;
   status: 'fresh' | 'stale' | 'base';
 };
 
@@ -72,26 +63,39 @@ export type PaymentMethod = {
   instructions: string | null;
 };
 
-export type PaymentMethodsResponse = { count: number; items: PaymentMethod[] };
+export type PaymentMethodsResponse = {
+  count: number;
+  items: PaymentMethod[];
+};
 
 export type OrderPayload = {
   course_code: string;
   customer_name: string;
   contact: string;
+  email?: string;
   notes?: string;
-  currency: PaymentCurrency;
-  branch_code: BranchCode;
-  claim_type: 'paid' | 'free_onsite';
-  quoted_local_amount?: number;
-  quoted_local_currency?: CurrencyCode;
-  quoted_usdt_amount?: number;
+  currency: CurrencyCode;
+  service_type: ServiceType;
+  branch?: BranchId;
   payment_method?: string;
-  payment_reference?: string;
+  promo_code?: string;
+  referral_code?: string;
+  deposit_proof_url?: string;
+  deposit_tx_hash?: string;
+  lms_username?: string;
+  lms_password?: string;
 };
 
 export type OrderResponse = {
   ok: boolean;
   order_id: string;
   status: string;
+  deposit_amount: number;
   created_at: string;
+};
+
+export type ServicePrices = {
+  ok: boolean;
+  branch: string;
+  prices: Record<ServiceType, number>;
 };

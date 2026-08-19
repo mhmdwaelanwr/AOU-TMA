@@ -1,29 +1,141 @@
 import fs from 'node:fs';
 
-const baseCourses=JSON.parse(fs.readFileSync(new URL('./data/courses.json',import.meta.url),'utf8'));
-const paymentManifest=JSON.parse(fs.readFileSync(new URL('./data/payment_methods.json',import.meta.url),'utf8'));
-const branches=JSON.parse(fs.readFileSync(new URL('./data/branches.json',import.meta.url),'utf8'));
-let onsiteManifest={version:1,courses:{}};
-try{onsiteManifest=JSON.parse(fs.readFileSync(new URL('./data/onsite_courses.json',import.meta.url),'utf8'))}catch{}
-const onsiteByCode=onsiteManifest?.courses||{};
-const courses=baseCourses.map(course=>{const resource=onsiteByCode[String(course.code).toUpperCase()]||null;return{...course,onsite:Boolean(resource),studyVideoUrl:resource?.studyVideoUrl||null,studyFiles:Array.isArray(resource?.studyFiles)?resource.studyFiles:[]}});
-const courseByCode=new Map(courses.map(course=>[String(course.code).toLowerCase(),course]));
-const branchByCode=new Map(branches.map(branch=>[String(branch.code).toUpperCase(),branch]));
-const FIAT_CURRENCIES=new Set(branches.map(branch=>branch.currency));
-const ORDER_CURRENCIES=new Set([...FIAT_CURRENCIES,'USDT']);
-let fiatCache={fetchedAt:0,refreshAfter:0,rates:null,providerUpdatedAt:null,nextUpdateAt:null};
-let usdtCache={fetchedAt:0,priceUsd:null,updatedAt:null};
+const courses = JSON.parse(fs.readFileSync(new URL('./data/courses.json', import.meta.url), 'utf8'));
+const paymentManifest = JSON.parse(fs.readFileSync(new URL('./data/payment_methods.json', import.meta.url), 'utf8'));
+const branches = JSON.parse(fs.readFileSync(new URL('./data/branches.json', import.meta.url), 'utf8'));
+const courseByCode = new Map(courses.map((c) => [String(c.code).toLowerCase(), c]));
+const ALLOWED_CURRENCIES = new Set(['EGP','KWD','SAR','LBP','JOD','BHD','OMR','SDG','ILS','USDT']);
 
-export function json(body,status=200,extraHeaders={}){return new Response(JSON.stringify(body),{status,headers:{'content-type':'application/json; charset=utf-8','cache-control':'no-store','x-content-type-options':'nosniff',...extraHeaders}})}
-export function searchCourses(url){const q=(url.searchParams.get('q')||'').trim().toLocaleLowerCase();const faculty=(url.searchParams.get('faculty')||'all').trim();const items=courses.filter(course=>{if(faculty!=='all'&&course.faculty!==faculty)return false;if(!q)return true;return `${course.code} ${course.title||''} ${course.description||''} ${course.faculty} ${course.facultyAr}`.toLocaleLowerCase().includes(q)});return{count:items.length,items}}
-export function publicBranches(){return{count:branches.length,items:branches}}
-export function publicPaymentMethods(env=process.env){const items=paymentManifest.map(item=>{const destination=String(env[item.env]||'').trim();return{id:item.id,group:item.group,label:item.label,currency:item.currency,network:item.network||null,icon:item.icon,configured:Boolean(destination),destination:destination||null,instructions:destination?(item.group==='crypto'?`Send only ${item.currency} using ${item.network||'the selected network'} to this address.`:item.id==='instapay'?'Send the exact amount to the configured InstaPay address and keep the transfer reference.':'Send the exact EGP amount to this mobile wallet and keep the transfer reference.'):null}});return{count:items.length,items}}
-function isoFromUnix(value){return Number.isFinite(value)&&value>0?new Date(value*1000).toISOString():null}
-async function getFiatRates(){const now=Date.now();if(fiatCache.rates&&now<fiatCache.refreshAfter)return{...fiatCache,stale:false};try{const response=await fetch('https://open.er-api.com/v6/latest/EGP',{headers:{'user-agent':'aou-tma-hub-serverless/5.0'},signal:AbortSignal.timeout(8000)});if(!response.ok)throw new Error(`fiat_provider_${response.status}`);const payload=await response.json();if(!payload?.rates||payload.result==='error')throw new Error('invalid_fiat_payload');const next=Number(payload.time_next_update_unix)*1000;fiatCache={fetchedAt:now,refreshAfter:Number.isFinite(next)&&next>now?next+60000:now+3600000,rates:payload.rates,providerUpdatedAt:isoFromUnix(Number(payload.time_last_update_unix)),nextUpdateAt:isoFromUnix(Number(payload.time_next_update_unix))};return{...fiatCache,stale:false}}catch(error){if(fiatCache.rates&&now-fiatCache.fetchedAt<172800000)return{...fiatCache,stale:true,warning:error?.message};throw error}}
-async function getUsdtUsdPrice(){const now=Date.now();if(usdtCache.priceUsd&&now-usdtCache.fetchedAt<60000)return{...usdtCache,stale:false};try{const response=await fetch('https://api.coingecko.com/api/v3/simple/price?ids=tether&vs_currencies=usd&include_last_updated_at=true',{headers:{accept:'application/json','user-agent':'aou-tma-hub-serverless/5.0'},signal:AbortSignal.timeout(8000)});if(!response.ok)throw new Error(`usdt_provider_${response.status}`);const payload=await response.json();const priceUsd=Number(payload?.tether?.usd);if(!Number.isFinite(priceUsd)||priceUsd<=0)throw new Error('invalid_usdt_payload');usdtCache={fetchedAt:now,priceUsd,updatedAt:isoFromUnix(Number(payload?.tether?.last_updated_at))};return{...usdtCache,stale:false}}catch(error){if(usdtCache.priceUsd&&now-usdtCache.fetchedAt<1800000)return{...usdtCache,stale:true,warning:error?.message};return{fetchedAt:0,priceUsd:null,updatedAt:null,stale:true,warning:error?.message}}}
-export async function fx(currency){const normalized=String(currency||'EGP').toUpperCase();if(!FIAT_CURRENCIES.has(normalized))return{error:'unsupported_currency',status:400};try{const fiat=await getFiatRates();const rate=normalized==='EGP'?1:Number(fiat.rates?.[normalized]);if(!Number.isFinite(rate)||rate<=0)return{error:'rate_unavailable',status:502};const usdt=normalized==='EGP'?null:await getUsdtUsdPrice();const usdPerEgp=Number(fiat.rates?.USD);const usdtRate=usdt?.priceUsd&&Number.isFinite(usdPerEgp)&&usdPerEgp>0?usdPerEgp/usdt.priceUsd:null;return{status:200,body:{base:'EGP',currency:normalized,rate,usdtRate,usdtUsdPrice:usdt?.priceUsd||null,usdtSource:usdt?.priceUsd?'coingecko.com':null,source:normalized==='EGP'?'base':'open.er-api.com',cachedAt:new Date(fiat.fetchedAt||Date.now()).toISOString(),providerUpdatedAt:fiat.providerUpdatedAt||null,nextUpdateAt:fiat.nextUpdateAt||null,cryptoUpdatedAt:usdt?.updatedAt||null,status:normalized==='EGP'?'base':fiat.stale?'stale':'fresh'}}}catch(error){return{error:'fx_unavailable',message:error?.message||'fx_unavailable',status:503}}}
-function clean(value,max=200){return String(value||'').trim().slice(0,max)}
-function cleanNumber(value){const n=Number(value);return Number.isFinite(n)&&n>=0?n:null}
-export async function createServerlessOrder(payload,env=process.env){const courseCode=clean(payload?.course_code,32);const customerName=clean(payload?.customer_name,80);const contact=clean(payload?.contact,80);const branchCode=clean(payload?.branch_code||'EG',2).toUpperCase();const claimType=clean(payload?.claim_type||'paid',20);const currency=clean(payload?.currency||'EGP',4).toUpperCase();const course=courseByCode.get(courseCode.toLowerCase());const branch=branchByCode.get(branchCode);if(!course)return{status:404,body:{detail:'course_not_found'}};if(!branch)return{status:422,body:{detail:'invalid_branch'}};if(customerName.length<2||contact.length<3||!ORDER_CURRENCIES.has(currency))return{status:422,body:{detail:'invalid_order'}};const freeClaim=claimType==='free_onsite';if(freeClaim&&!course.onsite)return{status:422,body:{detail:'course_is_not_onsite'}};if(!freeClaim&&claimType!=='paid')return{status:422,body:{detail:'invalid_claim_type'}};if(!freeClaim){if(branchCode==='EG'&&currency!=='EGP')return{status:422,body:{detail:'egypt_requires_egp'}};if(branchCode!=='EG'&&currency!=='USDT')return{status:422,body:{detail:'international_requires_usdt'}}}
-  const paymentMethodId=clean(payload?.payment_method,40)||null;if(!freeClaim&&paymentMethodId){const method=paymentManifest.find(item=>item.id===paymentMethodId);if(!method)return{status:422,body:{detail:'unsupported_payment_method'}};if(branchCode==='EG'&&method.group==='crypto')return{status:422,body:{detail:'egypt_payment_method_mismatch'}};if(branchCode!=='EG'&&method.group!=='crypto')return{status:422,body:{detail:'international_payment_method_mismatch'}}}
-  const createdAt=new Date().toISOString();const orderId=`AOU-${createdAt.slice(0,10).replaceAll('-','')}-${crypto.randomUUID().replaceAll('-','').slice(0,6).toUpperCase()}`;const order={order_id:orderId,course_code:course.code,customer_name:customerName,contact,notes:clean(payload?.notes,1000)||null,branch_code:branchCode,claim_type:freeClaim?'free_onsite':'paid',currency,quoted_local_amount:freeClaim?0:cleanNumber(payload?.quoted_local_amount),quoted_local_currency:clean(payload?.quoted_local_currency||branch.currency,3).toUpperCase(),quoted_usdt_amount:freeClaim?0:cleanNumber(payload?.quoted_usdt_amount),payment_method:freeClaim?null:paymentMethodId,payment_reference:freeClaim?null:clean(payload?.payment_reference,120)||null,created_at:createdAt};let forwarded=false;const webhook=clean(env.ORDER_WEBHOOK_URL,1000);if(webhook){try{const response=await fetch(webhook,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(order)});forwarded=response.ok}catch{forwarded=false}}return{status:201,body:{ok:true,order_id:orderId,status:'received',created_at:createdAt,persisted:forwarded,deployment:'serverless',claim_type:order.claim_type}}}
+export function json(body, status = 200, extraHeaders = {}) {
+  return new Response(JSON.stringify(body), {
+    status,
+    headers: {
+      'content-type': 'application/json; charset=utf-8',
+      'cache-control': status === 200 ? 'no-store' : 'no-store',
+      'x-content-type-options': 'nosniff',
+      ...extraHeaders,
+    },
+  });
+}
+
+export function listBranches() {
+  return { count: branches.length, items: branches };
+}
+
+export function searchCourses(url) {
+  const q = (url.searchParams.get('q') || '').trim().toLocaleLowerCase();
+  const faculty = (url.searchParams.get('faculty') || 'all').trim();
+  const type = (url.searchParams.get('type') || '').trim().toUpperCase();
+  const items = courses.filter((course) => {
+    if (faculty !== 'all' && course.faculty !== faculty) return false;
+    if (type && course.type !== type) return false;
+    if (!q) return true;
+    const haystack = `${course.code} ${course.title || ''} ${course.description || ''} ${course.faculty} ${course.facultyAr}`.toLocaleLowerCase();
+    return haystack.includes(q);
+  });
+  return { count: items.length, items };
+}
+
+export function publicPaymentMethods(env = process.env) {
+  const items = paymentManifest.map((item) => {
+    const destination = String(env[item.env] || '').trim();
+    return {
+      id: item.id,
+      group: item.group,
+      label: item.label,
+      currency: item.currency,
+      network: item.network || null,
+      icon: item.icon,
+      configured: Boolean(destination),
+      destination: destination || null,
+      instructions: destination
+        ? item.group === 'crypto'
+          ? `Send only ${item.currency} using ${item.network || 'the selected network'} to this address.`
+          : item.id === 'instapay'
+            ? 'Send the exact amount to the configured InstaPay address and keep the transfer reference.'
+            : 'Send the exact EGP amount to this mobile wallet and keep the transfer reference.'
+        : null,
+    };
+  });
+  return { count: items.length, items };
+}
+
+export async function fx(currency) {
+  const normalized = String(currency || 'EGP').toUpperCase();
+  if (!ALLOWED_CURRENCIES.has(normalized)) return { error: 'unsupported_currency', status: 400 };
+  if (normalized === 'EGP') {
+    return { status: 200, body: { base:'EGP', currency:'EGP', rate:1, source:'base', cachedAt:new Date().toISOString(), status:'base' } };
+  }
+  try {
+    const response = await fetch('https://open.er-api.com/v6/latest/EGP', { headers: { 'user-agent': 'aou-tma-hub-serverless/4.1' } });
+    if (!response.ok) throw new Error(`provider_${response.status}`);
+    const payload = await response.json();
+    const rate = payload?.rates?.[normalized];
+    if (!rate) return { error: 'rate_unavailable', status: 502 };
+    return {
+      status: 200,
+      body: {
+        base:'EGP', currency:normalized, rate, source:'open.er-api.com',
+        cachedAt:new Date().toISOString(),
+        providerUpdatedAt: payload.time_last_update_unix ? new Date(payload.time_last_update_unix * 1000).toISOString() : null,
+        nextUpdateAt: payload.time_next_update_unix ? new Date(payload.time_next_update_unix * 1000).toISOString() : null,
+        status:'fresh',
+      },
+    };
+  } catch (error) {
+    return { error: 'fx_unavailable', message: error?.message || 'fx_unavailable', status: 503 };
+  }
+}
+
+function clean(value, max = 200) {
+  return String(value || '').trim().slice(0, max);
+}
+
+export async function createServerlessOrder(payload, env = process.env) {
+  const courseCode = clean(payload?.course_code, 32);
+  const customerName = clean(payload?.customer_name, 80);
+  const contact = clean(payload?.contact, 80);
+  const currency = clean(payload?.currency || 'EGP', 3).toUpperCase();
+  const branch = clean(payload?.branch || 'egypt', 20);
+  if (!courseByCode.has(courseCode.toLowerCase())) return { status: 404, body: { detail: 'course_not_found' } };
+  if (customerName.length < 2 || contact.length < 3 || !ALLOWED_CURRENCIES.has(currency)) {
+    return { status: 422, body: { detail: 'invalid_order' } };
+  }
+
+  const course = courseByCode.get(courseCode.toLowerCase());
+  const isOnsite = course && course.type === 'ONSITE';
+
+  const createdAt = new Date().toISOString();
+  const orderId = `AOU-${createdAt.slice(0,10).replaceAll('-','')}-${crypto.randomUUID().replaceAll('-','').slice(0,6).toUpperCase()}`;
+  const order = {
+    order_id: orderId,
+    course_code: courseCode,
+    customer_name: customerName,
+    contact,
+    notes: clean(payload?.notes, 1000) || null,
+    currency,
+    payment_method: clean(payload?.payment_method, 40) || null,
+    payment_reference: clean(payload?.payment_reference, 120) || null,
+    branch,
+    type: isOnsite ? 'ONSITE_CLAIM' : 'TMA_ORDER',
+    created_at: createdAt,
+  };
+
+  let forwarded = false;
+  const webhook = clean(env.ORDER_WEBHOOK_URL, 1000);
+  if (webhook) {
+    try {
+      const response = await fetch(webhook, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(order),
+      });
+      forwarded = response.ok;
+    } catch { forwarded = false; }
+  }
+
+  return {
+    status: 201,
+    body: { ok:true, order_id:orderId, status:'received', created_at:createdAt, persisted:forwarded, deployment:'serverless', type: isOnsite ? 'onsite_claim' : 'tma_order' },
+  };
+}

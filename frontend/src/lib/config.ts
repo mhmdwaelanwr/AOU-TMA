@@ -1,53 +1,75 @@
 /// <reference types="vite/client" />
-import type { Branch, BranchCode, CurrencyCode, Faculty } from '../types';
+import type { Branch, BranchId, CurrencyCode, Faculty } from '../types';
 
 const productionOrigin = '';
 export const API_URL = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:8000' : productionOrigin);
 export const FX_URL = import.meta.env.VITE_FX_URL || (import.meta.env.DEV ? 'http://localhost:3001' : productionOrigin);
 
 export const branches: Branch[] = [
-  { code:'EG', countryCode:'EG', currency:'EGP', flag:'🇪🇬', country:{ar:'مصر',en:'Egypt'}, branch:{ar:'فرع مصر',en:'Egypt Branch'} },
-  { code:'KW', countryCode:'KW', currency:'KWD', flag:'🇰🇼', country:{ar:'الكويت',en:'Kuwait'}, branch:{ar:'فرع الكويت',en:'Kuwait Branch'} },
-  { code:'SA', countryCode:'SA', currency:'SAR', flag:'🇸🇦', country:{ar:'السعودية',en:'Saudi Arabia'}, branch:{ar:'فرع السعودية',en:'Saudi Arabia Branch'} },
-  { code:'LB', countryCode:'LB', currency:'LBP', flag:'🇱🇧', country:{ar:'لبنان',en:'Lebanon'}, branch:{ar:'فرع لبنان',en:'Lebanon Branch'} },
-  { code:'JO', countryCode:'JO', currency:'JOD', flag:'🇯🇴', country:{ar:'الأردن',en:'Jordan'}, branch:{ar:'فرع الأردن',en:'Jordan Branch'} },
-  { code:'BH', countryCode:'BH', currency:'BHD', flag:'🇧🇭', country:{ar:'البحرين',en:'Bahrain'}, branch:{ar:'فرع البحرين',en:'Bahrain Branch'} },
-  { code:'OM', countryCode:'OM', currency:'OMR', flag:'🇴🇲', country:{ar:'عُمان',en:'Oman'}, branch:{ar:'فرع عُمان',en:'Oman Branch'} },
-  { code:'SD', countryCode:'SD', currency:'SDG', flag:'🇸🇩', country:{ar:'السودان',en:'Sudan'}, branch:{ar:'فرع السودان',en:'Sudan Branch'} },
-  { code:'PS', countryCode:'PS', currency:'ILS', flag:'🇵🇸', country:{ar:'فلسطين',en:'Palestine'}, branch:{ar:'فرع فلسطين',en:'Palestine Branch'} },
+  { id: 'egypt', name: { ar: 'مصر', en: 'Egypt' }, currency: 'EGP', flag: '🇪🇬', timezone: 'Africa/Cairo', city: { ar: 'القاهرة', en: 'Cairo' } },
+  { id: 'kuwait', name: { ar: 'الكويت', en: 'Kuwait' }, currency: 'KWD', flag: '🇰🇼', timezone: 'Asia/Kuwait', city: { ar: 'الكويت', en: 'Kuwait City' } },
+  { id: 'saudi', name: { ar: 'السعودية', en: 'Saudi Arabia' }, currency: 'SAR', flag: '🇸🇦', timezone: 'Asia/Riyadh', city: { ar: 'الرياض', en: 'Riyadh' } },
+  { id: 'bahrain', name: { ar: 'البحرين', en: 'Bahrain' }, currency: 'BHD', flag: '🇧🇭', timezone: 'Asia/Bahrain', city: { ar: 'المنامة', en: 'Manama' } },
+  { id: 'jordan', name: { ar: 'الأردن', en: 'Jordan' }, currency: 'JOD', flag: '🇯🇴', timezone: 'Asia/Amman', city: { ar: 'عمّان', en: 'Amman' } },
+  { id: 'lebanon', name: { ar: 'لبنان', en: 'Lebanon' }, currency: 'LBP', flag: '🇱🇧', timezone: 'Asia/Beirut', city: { ar: 'بيروت', en: 'Beirut' } },
+  { id: 'oman', name: { ar: 'عُمان', en: 'Oman' }, currency: 'OMR', flag: '🇴🇲', timezone: 'Asia/Muscat', city: { ar: 'مسقط', en: 'Muscat' } },
+  { id: 'sudan', name: { ar: 'السودان', en: 'Sudan' }, currency: 'SDG', flag: '🇸🇩', timezone: 'Africa/Khartoum', city: { ar: 'الخرطوم', en: 'Khartoum' } },
+  { id: 'palestine', name: { ar: 'فلسطين', en: 'Palestine' }, currency: 'ILS', flag: '🇵🇸', timezone: 'Asia/Jerusalem', city: { ar: 'البيرة', en: 'Al-Bireh' } },
+  { id: 'morocco', name: { ar: 'المغرب', en: 'Morocco' }, currency: 'MAD', flag: '🇲🇦', timezone: 'Africa/Casablanca', city: { ar: 'الدار البيضاء', en: 'Casablanca' } },
 ];
 
-export const branchByCode = Object.fromEntries(branches.map((item) => [item.code, item])) as Record<BranchCode, Branch>;
-export const branchByCountry = Object.fromEntries(branches.map((item) => [item.countryCode, item.code])) as Record<string, BranchCode>;
-
-export const currencies: Array<{code:CurrencyCode; country:{ar:string;en:string}; name:{ar:string;en:string}; flag:string}> = [
-  { code:'EGP', country:{ar:'مصر',en:'Egypt'}, name:{ar:'جنيه مصري',en:'Egyptian Pound'}, flag:'🇪🇬' },
-  { code:'KWD', country:{ar:'الكويت',en:'Kuwait'}, name:{ar:'دينار كويتي',en:'Kuwaiti Dinar'}, flag:'🇰🇼' },
-  { code:'SAR', country:{ar:'السعودية',en:'Saudi Arabia'}, name:{ar:'ريال سعودي',en:'Saudi Riyal'}, flag:'🇸🇦' },
-  { code:'LBP', country:{ar:'لبنان',en:'Lebanon'}, name:{ar:'ليرة لبنانية',en:'Lebanese Pound'}, flag:'🇱🇧' },
-  { code:'JOD', country:{ar:'الأردن',en:'Jordan'}, name:{ar:'دينار أردني',en:'Jordanian Dinar'}, flag:'🇯🇴' },
-  { code:'BHD', country:{ar:'البحرين',en:'Bahrain'}, name:{ar:'دينار بحريني',en:'Bahraini Dinar'}, flag:'🇧🇭' },
-  { code:'OMR', country:{ar:'عُمان',en:'Oman'}, name:{ar:'ريال عُماني',en:'Omani Rial'}, flag:'🇴🇲' },
-  { code:'SDG', country:{ar:'السودان',en:'Sudan'}, name:{ar:'جنيه سوداني',en:'Sudanese Pound'}, flag:'🇸🇩' },
-  { code:'ILS', country:{ar:'فلسطين',en:'Palestine'}, name:{ar:'شيكل',en:'Israeli New Shekel'}, flag:'🇵🇸' },
-];
-
-export function isBranchCode(value: unknown): value is BranchCode {
-  return typeof value === 'string' && Object.prototype.hasOwnProperty.call(branchByCode, value);
+export function getBranch(id: BranchId): Branch {
+  return branches.find((b) => b.id === id) || branches[0];
 }
 
-export function inferBranchFromBrowser(): BranchCode {
+export function getCurrencyForBranch(branchId: BranchId): CurrencyCode {
+  return getBranch(branchId).currency;
+}
+
+export function isNonEgyptBranch(branchId: BranchId): boolean {
+  return branchId !== 'egypt';
+}
+
+export function getCurrencySymbol(currency: CurrencyCode): string {
+  const symbols: Record<CurrencyCode, string> = {
+    EGP: 'ج.م', KWD: 'د.ك', SAR: 'ر.س', LBP: 'ل.ب',
+    JOD: 'د.أ', BHD: 'د.ب', OMR: 'ر.ع', SDG: 'ج.س',
+    ILS: '₪', USDT: '₮', MAD: 'د.م',
+  };
+  return symbols[currency] || currency;
+}
+
+export function getCurrencyDecimals(currency: CurrencyCode): number {
+  if (['KWD', 'JOD', 'BHD', 'OMR'].includes(currency)) return 3;
+  if (['LBP', 'SDG'].includes(currency)) return 0;
+  return 2;
+}
+
+export const facultyOrder: Faculty[] = [
+  'all',
+  'Computer Studies',
+  'Business Studies',
+  'Education',
+  'Language Studies',
+  'Media & Mass Communication',
+  'Graphic & Multimedia Design',
+];
+
+export function detectBranchByTimezone(): BranchId {
   try {
-    const zone = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
-    const timezoneMap: Record<string, BranchCode> = {
-      'Africa/Cairo':'EG','Asia/Kuwait':'KW','Asia/Riyadh':'SA','Asia/Beirut':'LB','Asia/Amman':'JO',
-      'Asia/Bahrain':'BH','Asia/Muscat':'OM','Africa/Khartoum':'SD','Asia/Gaza':'PS','Asia/Hebron':'PS',
-    };
-    if (timezoneMap[zone]) return timezoneMap[zone];
-    const localeRegion = (navigator.language || '').match(/-([A-Za-z]{2})$/)?.[1]?.toUpperCase();
-    if (localeRegion && branchByCountry[localeRegion]) return branchByCountry[localeRegion];
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    const match = branches.find((b) => tz.startsWith(b.timezone.split('/')[0]));
+    if (match) return match.id;
+    if (tz.includes('Africa/Cairo') || tz.includes('Egypt')) return 'egypt';
+    if (tz.includes('Asia/Riyadh') || tz.includes('Asia/Jeddah')) return 'saudi';
+    if (tz.includes('Asia/Kuwait')) return 'kuwait';
+    if (tz.includes('Asia/Bahrain')) return 'bahrain';
+    if (tz.includes('Asia/Amman')) return 'jordan';
+    if (tz.includes('Asia/Beirut')) return 'lebanon';
+    if (tz.includes('Asia/Muscat')) return 'oman';
+    if (tz.includes('Africa/Khartoum')) return 'sudan';
+    if (tz.includes('Asia/Jerusalem') || tz.includes('Asia/Gaza')) return 'palestine';
+    if (tz.includes('Africa/Casablanca') || tz.includes('Africa/El_Aaiun')) return 'morocco';
   } catch {}
-  return 'EG';
+  return 'egypt';
 }
-
-export const facultyOrder: Faculty[] = ['all','Computer Studies','Business Studies','Education','Language Studies'];

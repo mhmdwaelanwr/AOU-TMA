@@ -70,5 +70,13 @@
     "flag": "🇵🇸",
     "country": { "ar": "فلسطين", "en": "Palestine" },
     "branch": { "ar": "فرع فلسطين", "en": "Palestine Branch" }
+  },
+  {
+    "code": "MA",
+    "countryCode": "MA",
+    "currency": "MAD",
+    "flag": "🇲🇦",
+    "country": { "ar": "المغرب", "en": "Morocco" },
+    "branch": { "ar": "فرع المغرب", "en": "Morocco Branch" }
   }
 ]

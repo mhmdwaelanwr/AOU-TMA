@@ -1,11 +1,56 @@
 {
-  "version": 2,
-  "updatedAt": "2026-08-13",
+  "version": 1,
+  "updatedAt": "2026-08-14T00:00:00Z",
   "courses": {
-    "M110": {"studyVideoUrl": null, "studyFiles": []},
-    "TM105": {"studyVideoUrl": null, "studyFiles": []},
-    "M251": {"studyVideoUrl": null, "studyFiles": []},
-    "T216A": {"studyVideoUrl": null, "studyFiles": []},
-    "T216B": {"studyVideoUrl": null, "studyFiles": []}
+    "M110": {
+      "title": "Python Programming",
+      "titleAr": "برمجة بايثون",
+      "studyVideoUrl": null,
+      "studyFiles": [
+        { "name": "M110_Study_Guide.pdf", "url": null },
+        { "name": "M110_Practice_Problems.pdf", "url": null },
+        { "name": "M110_Lecture_Notes.pdf", "url": null }
+      ]
+    },
+    "TM105": {
+      "title": "Introduction to Programming",
+      "titleAr": "مقدمة في البرمجة",
+      "studyVideoUrl": null,
+      "studyFiles": [
+        { "name": "TM105_Study_Guide.pdf", "url": null },
+        { "name": "TM105_Practice_Problems.pdf", "url": null },
+        { "name": "TM105_Lecture_Notes.pdf", "url": null }
+      ]
+    },
+    "M251": {
+      "title": "Object Oriented Programming using Java",
+      "titleAr": "البرمجة الكائنية التوجيهية باستخدام جافا",
+      "studyVideoUrl": null,
+      "studyFiles": [
+        { "name": "M251_Study_Guide.pdf", "url": null },
+        { "name": "M251_Code_Examples.pdf", "url": null },
+        { "name": "M251_Exam_Prep.pdf", "url": null }
+      ]
+    },
+    "T216A": {
+      "title": "Cisco Networking (CCNA)-A",
+      "titleAr": "شبكات سيسكو (CCNA)-A",
+      "studyVideoUrl": null,
+      "studyFiles": [
+        { "name": "T216A_Study_Guide.pdf", "url": null },
+        { "name": "T216A_Lab_Exercises.pdf", "url": null },
+        { "name": "T216A_Network_Diagrams.pdf", "url": null }
+      ]
+    },
+    "T216B": {
+      "title": "Cisco Networking (CCNA)-B",
+      "titleAr": "شبكات سيسكو (CCNA)-B",
+      "studyVideoUrl": null,
+      "studyFiles": [
+        { "name": "T216B_Study_Guide.pdf", "url": null },
+        { "name": "T216B_Lab_Exercises.pdf", "url": null },
+        { "name": "T216B_Network_Diagrams.pdf", "url": null }
+      ]
+    }
   }
 }
