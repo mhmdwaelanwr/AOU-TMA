@@ -110,13 +110,22 @@ function DateCardItem({ dateKey, title, note, lang }: { dateKey: string; title: 
 }
 
 /* ── Overview Tab ── */
-function Overview({ tasks, lang, onToast, onNavigateToAssignments }: {
+function Overview({ tasks, lang, onToast, onNavigateToAssignments, onUpdateTasks }: {
   tasks: Task[]; lang: Language; onToast: (msg: string, ok?: boolean) => void;
   onNavigateToAssignments: () => void;
+  onUpdateTasks: (updater: (prev: Task[]) => Task[]) => void;
 }) {
   const handleAction = useCallback((id: number, action: 'done' | 'redo') => {
-    // This will be handled by parent
-  }, []);
+    onUpdateTasks(prev => prev.map(t => {
+      if (t.id !== id) return t;
+      if (action === 'done') {
+        onToast(lang === 'ar' ? 'ممتاز! تم إدراج الواجب كمسلَّم 🎉' : 'Great! Marked as delivered 🎉', true);
+        return { ...t, status: 'done' as TaskStatus, score: +(16 + (id % 4) + ((id * 7) % 10) / 10).toFixed(1) };
+      }
+      onToast(lang === 'ar' ? 'تمت إعادته للقيد التنفيذ للمراجعة' : 'Marked as in-progress for review');
+      return { ...t, status: 'pending' as TaskStatus };
+    }));
+  }, [onUpdateTasks, lang, onToast]);
 
   const upcoming = tasks.filter(t => t.status === 'pending');
   const all = [...tasks].sort((a, b) => (a.due < b.due ? -1 : 1));
@@ -221,7 +230,7 @@ function Assignments({ tasks, lang, onToast, onUpdateTasks }: {
       if (t.id !== id) return t;
       if (action === 'done') {
         onToast(lang === 'ar' ? 'ممتاز! تم إدراج الواجب كمسلَّم 🎉' : 'Great! Marked as delivered 🎉', true);
-        return { ...t, status: 'done' as TaskStatus, score: +(16 + Math.random() * 3).toFixed(1) };
+        return { ...t, status: 'done' as TaskStatus, score: +(16 + (id % 4) + ((id * 7) % 10) / 10).toFixed(1) };
       }
       onToast(lang === 'ar' ? 'تمت إعادته للقيد التنفيذ للمراجعة' : 'Marked as in-progress for review');
       return { ...t, status: 'pending' as TaskStatus };
@@ -477,7 +486,7 @@ export const StudentDashboard = memo(function StudentDashboard({ lang, text, onB
       if (t.id !== id) return t;
       if (action === 'done') {
         onToast(lang === 'ar' ? 'ممتاز! تم إدراج الواجب كمسلَّم 🎉' : 'Great! Marked as delivered 🎉', true);
-        return { ...t, status: 'done' as TaskStatus, score: +(16 + Math.random() * 3).toFixed(1) };
+        return { ...t, status: 'done' as TaskStatus, score: +(16 + (id % 4) + ((id * 7) % 10) / 10).toFixed(1) };
       }
       onToast(lang === 'ar' ? 'تمت إعادته للقيد التنفيذ للمراجعة' : 'Marked as in-progress for review');
       return { ...t, status: 'pending' as TaskStatus };
@@ -528,7 +537,7 @@ export const StudentDashboard = memo(function StudentDashboard({ lang, text, onB
           </div>
         </div>
 
-        {view === 'overview' && <Overview tasks={tasks} lang={lang} onToast={onToast} onNavigateToAssignments={() => setView('assignments')} />}
+        {view === 'overview' && <Overview tasks={tasks} lang={lang} onToast={onToast} onNavigateToAssignments={() => setView('assignments')} onUpdateTasks={updateTasks} />}
         {view === 'assignments' && <Assignments tasks={tasks} lang={lang} onToast={onToast} onUpdateTasks={updateTasks} />}
         {view === 'models' && <Models lang={lang} />}
         {view === 'deadlines' && <Deadlines tasks={tasks} lang={lang} />}
