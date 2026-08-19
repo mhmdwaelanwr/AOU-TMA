@@ -129,8 +129,7 @@ export const LoginPage = memo(function LoginPage({ lang, onBack, onLoginSuccess 
         </button>
 
         <div className="lp-brand">
-          <span className="lp-brand-logo">T</span>
-          <span className="lp-brand-name">TMAly</span>
+          <img src="/tmaly-logo.svg" alt="TMAly" className="lp-brand-logo-img" />
         </div>
 
         <div className="lp-quote">
@@ -174,8 +173,7 @@ export const LoginPage = memo(function LoginPage({ lang, onBack, onLoginSuccess 
       {/* ── Main Panel ── */}
       <main className="lp-main">
         <div className="lp-brand-mobile">
-          <span className="lp-brand-logo">T</span>
-          <span className="lp-brand-name">TMAly</span>
+          <img src="/tmaly-logo.svg" alt="TMAly" className="lp-brand-logo-img" />
         </div>
 
         <div className="lp-box">

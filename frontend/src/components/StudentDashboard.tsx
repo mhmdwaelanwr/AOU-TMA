@@ -499,7 +499,7 @@ export const StudentDashboard = memo(function StudentDashboard({ lang, text, onB
     <div className="sd-dash">
       <aside className="sd-sidebar">
         <a className="sd-logo" href="#" onClick={e => { e.preventDefault(); onBack(); }}>
-          <span className="sd-logo-mark">T</span> TMAly
+          <img src="/tmaly-logo.svg" alt="TMAly" className="sd-logo-img" />
         </a>
         <nav className="sd-side-menu">
           {tabs.map(t => (

@@ -94,7 +94,7 @@ export function Header({ lang, theme, themeMode, branch, branches, text, onLang,
   return (
     <header className={`site-header ${scrolled ? 'scrolled' : ''}`}>
       <a className="brand" href="#top" aria-label="TMAly home">
-        <span className="brand-logo">T</span>
+        <img src="/tmaly-logo.svg" alt="TMAly" className="brand-logo-img" />
         <span className="brand-copy">
           <strong>TMAly</strong>
           <small>{text.brandCaption}</small>
