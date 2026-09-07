@@ -3648,14 +3648,14 @@
   },
   "EFL501": {
     "title": "Theories of Foreign Language Learning",
-    "description": "EFL 501 identifies the main theories which address the question of how language is learnt. Special emphasis will be placed on major theories, namely behaviorism and cognitivism among others. Audiolingualism in learning a foreign language as a ‘mimetic’ activity involves students repeating or imitating new information and practice approach to language development. The cognitive/mentalist approach takes language learning as a mental process rather than a habit formation. The course explains how, through reliance on language theories, research findings, and experiences, educators developed teaching strategies and learning environments that engaged learners in interactive communicative language tasks. This shift in foreign language pedagogy towards the measurement of language performance/competency has resulted in a change in the role of the teacher from one of authority/expert to that of facilitator/guide.",
+    "description": "EFL 501 introduces major theories of language learning, including behaviourism, cognitivism, innatism (e.g., Universal Grammar), and interactionist perspectives. For each theoretical framework, students become familiar with its core tenets, pedagogical implications, and classroom applications. The module highlights how behaviourist, cognitivist, and innatist perspectives shape teaching practices and redefine the teacher’s role as a facilitator of learning and designer of meaningful communicative environments. The module links closely with other programme components by emphasising the importance of language theories in informing classroom practices and theory-driven pedagogical decisions. Students learn to evaluate how factors such as proficiency level, sociocultural context, and learning needs inform lesson planning and the informed selection of teaching methods. This prepares students for subsequent modules in methodology, AI technology in the classroom, and practicum, where theory-informed, context-sensitive instructional decisions are essential.",
     "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/language/Pages/course-catalogue.aspx",
     "icon": "languages"
   },
   "EFL502": {
     "title": "Research Methods",
-    "description": "EFL 502 aims at providing principles and types of research methods which prospective teachers of English need. Research methods comprise a basic requirement that graduate students need for undertaking research at MA level. The module provides a range of theoretical, practical and ethical issues in foreign language research with emphasis on English language teaching and learning.",
+    "description": "EFL 502 aims to equip prospective teachers and researchers of English with a comprehensive understanding of the principles, approaches, and types of research methods required for conducting rigorous research at Master’s level. The module introduces students to a range of qualitative, quantitative, and mixed-methods research designs commonly used in English language teaching and learning, and develops their ability to critically evaluate published research in international contexts. In line with international MA TEFL standards, the module addresses key theoretical, practical, and ethical considerations in foreign language research, including research integrity, academic honesty, and responsible data management. It also integrates the informed and ethical use of artificial intelligence (AI) tools in educational research, such as literature review support, data analysis, and academic writing, with a strong emphasis on critical engagement, transparency, and ethical practice.",
     "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/language/Pages/course-catalogue.aspx",
     "icon": "languages"
@@ -3683,35 +3683,35 @@
   },
   "EFL506": {
     "title": "Classroom Management",
-    "description": "EFL 506 introduces best practices for managing English language classrooms. The purpose of this course is to provide pre-service teachers with group and individual class management and instructional procedures that can be used in the TEFL classroom. EFL 506 will provide both theoretical understanding and practical application of strategies aimed at creating safe, encouraging, and effective learning environments. Emphasis will be placed on core management principles and the use of evidence-based effective procedures.",
+    "description": "EFL 506 is designed to equip pre-service teachers with effective classroom management and instructional strategies for English language learning environments. The course integrates theory and practice to develop management skills applicable to TEFL classrooms. Through a focus on core management principles and evidence-based procedures, the course prepares future teachers to create safe, supportive, and productive learning environments that promote student engagement and effective language learning.",
     "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/language/Pages/course-catalogue.aspx",
     "icon": "languages"
   },
   "EFL507": {
-    "title": "Foreign Language Testing",
-    "description": "EFL 507 aims at acquainting students with the most recent trends, methods and procedures in the area of testing. The students will be familiarized with the various test types needed in both receptive and productive skills.",
+    "title": "Foreign Language Testing and Assessment",
+    "description": "EFL 507 aims to acquaint students with the most recent trends, methods, and procedures in the field of language testing and assessment. The course provides students with a solid understanding of theoretical and practical issues related to test design, development, and evaluation. In addition, students will become familiar with a wide variety of test types used to assess both receptive and productive language skills, enabling them to apply appropriate testing and assessment techniques in educational and professional contexts.",
     "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/language/Pages/course-catalogue.aspx",
     "icon": "languages"
   },
   "EFL508": {
     "title": "Practicum",
-    "description": "EFL 508 introduces potential tutors to an integrated approach in planning and executing successful teaching sessions. The course combines instruction with practical skills and reflective lesson planning. It engages potential tutors in observation and peer teaching to develop independent practices supported by an understanding of the requirements of successful teaching procedures. Learners have the opportunity to participate in in-field assignments leading to professional development. Familiarity of course material in teaching grammar, pronunciation and vocabulary is combined with other necessary skills of professional conduct, methods of instruction, time management, needs assessments and proficiency tests. The module provides an opportunity to experience the practical aspect of EFL after being coached in the theoretical components.",
+    "description": "EFL 508 introduces potential tutors to an integrated approach in planning and executing successful teaching sessions. The first half of the semester is devoted to classroom observation, microteaching activities, and the development of lesson plans. The second half of the semester focuses on hands-on experience through observing teachers in a live classroom context (e.g., the English Language Unit - AOU Foundation Programme) and engaging in teaching one or more sessions in the presence of both the session teacher and the EFL module supervisor. Students are also engaged in preparing reflective reports on these experiences to support professional growth and self-evaluation. Learners, specifically inexperienced candidates, have the opportunity to participate more in in-field assignments, leading to professional development. Familiarity with course material in teaching grammar, pronunciation, and vocabulary, which reflects language teaching awareness, is combined with other necessary skills such as professional conduct, methods of instruction, time management, needs assessment, and proficiency testing. The module provides an opportunity to experience the practical aspects of EFL after being coached in the theoretical components.",
     "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/language/Pages/course-catalogue.aspx",
-    "icon": "graduation-cap"
+    "icon": "languages"
   },
   "EFL529": {
     "title": "Proposal Prep.",
-    "description": "EFL529: Proposal Prep course focuses on equipping the students with the necessary skills to prepare and structure a research proposal on an appropriate topic of their choice. Students will be assisted in planning, designing and structuring their research proposal. They will also start reviewing the relevant literature by putting into practice the knowledge acquired in the studied Research Methods Module (EFL502) as well as the knowledge they acquired in EFL501 - Theories of Foreign Language Learning.",
+    "description": "This course is designed to equip students with the skills needed to develop and structure a research proposal on a topic of their choice. Students will receive guidance in planning, designing, and organizing their proposals while beginning to review relevant literature, applying the knowledge gained in the Research Methods Module (EFL502). The course also emphasizes the responsible and ethical use of artificial intelligence (AI) tools to support literature searches, reference management, initial data exploration, and drafting, helping students integrate technology effectively into the research planning process.",
     "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/language/Pages/course-catalogue.aspx",
     "icon": "languages"
   },
   "EFL531": {
-    "title": "Dissertation",
-    "description": "2. Rationale for the module and its links with other modules This MA dissertation (12,000-16,000 words) is the culmination of the MA in TEFL. It gives students a chance to demonstrate what they have learned throughout the program via writing a piece of research on a TEFL topic. The research should reflect a sound methodology, a robust review of related literature and a well-developed discussion.",
+    "title": "Thesis Module",
+    "description": "This MA dissertation (12,000-16,000 words) is the culmination of the MA in TEFL. It gives students a chance to demonstrate what they have learned throughout the program via writing a piece of research on a TEFL topic. The research should reflect a sound methodology, a robust review of related literature and a well-developed discussion.",
     "status": "verified",
     "source": "https://www.aou.edu.eg/faculties/language/Pages/course-catalogue.aspx",
     "icon": "languages"

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "exportedAt": "2026-08-31T09:50:09.700493+00:00",
+  "exportedAt": "2026-09-07T08:23:17.088775+00:00",
   "facultyCount": 6,
-  "courseRecordCount": 780,
+  "courseRecordCount": 785,
   "faculties": [
     {
       "facultyKey": "computer",
@@ -21,7 +21,7 @@
     {
       "facultyKey": "language",
       "faculty": "Faculty of Language Studies",
-      "courseCount": 76,
+      "courseCount": 81,
       "file": "language.json",
       "sourceUrl": "https://www.aou.edu.eg/faculties/language/Pages/course-catalogue.aspx"
     },

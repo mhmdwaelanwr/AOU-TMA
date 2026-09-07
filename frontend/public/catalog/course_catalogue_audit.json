@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": "2026-08-31T09:50:09.354743+00:00",
+  "generatedAt": "2026-09-07T08:23:16.777921+00:00",
   "projectRecordCount": 840,
   "uniqueProjectCodeCount": 780,
   "duplicateProjectCodes": [
@@ -130,6 +130,9 @@
     "ECO342",
     "ECON201",
     "ECON202",
+    "EFL503",
+    "EFL504",
+    "EFL505",
     "ELM201",
     "ELM202",
     "ELM203",
@@ -407,7 +410,7 @@
     "T471",
     "TM380"
   ],
-  "legacyOrScheduleOnlyCount": 341,
+  "legacyOrScheduleOnlyCount": 344,
   "sourceConflictCodes": [
     "M109",
     "M140",
@@ -417,9 +420,9 @@
   ],
   "sourceConflictCount": 5,
   "statusCounts": {
-    "legacy_or_schedule_only": 341,
+    "legacy_or_schedule_only": 344,
     "source_conflict": 5,
-    "verified_bilingual": 494
+    "verified_bilingual": 491
   },
   "sourceEntryCounts": {
     "Computer Studies": {
@@ -431,8 +434,8 @@
       "ar": 86
     },
     "Language Studies": {
-      "en": 76,
-      "ar": 76
+      "en": 81,
+      "ar": 81
     },
     "Education": {
       "en": 206,
@@ -20753,36 +20756,32 @@
     {
       "code": "EFL503",
       "faculty": "Language Studies",
-      "status": "verified_bilingual",
-      "currentCatalogue": true,
+      "status": "legacy_or_schedule_only",
+      "currentCatalogue": false,
       "cataloguePresence": {
-        "en": true,
-        "ar": true
+        "en": false,
+        "ar": false
       },
-      "titleEn": "English Language Teaching Methods – Receptive Skills",
-      "titleAr": "طرق تدريس اللغة الإنجليزية – مهارات الاستقبال",
+      "titleEn": null,
+      "titleAr": null,
       "creditHours": {
-        "en": 4,
-        "ar": 4
+        "en": null,
+        "ar": null
       },
       "descriptionAvailable": {
-        "en": true,
-        "ar": true
+        "en": false,
+        "ar": false
       },
       "prerequisiteCodes": {
-        "en": [
-          "EFL501",
-          "EFL502"
-        ],
-        "ar": [
-          "EFL501",
-          "EFL502"
-        ]
+        "en": [],
+        "ar": []
       },
       "scheduleGroup": null,
       "groupedDeadline": false,
       "conflicts": [],
-      "warnings": [],
+      "warnings": [
+        "No exact current catalogue record in either language."
+      ],
       "sources": {
         "en": "https://www.aou.edu.eg/faculties/language/Pages/course-catalogue.aspx",
         "ar": "https://www.aou.edu.eg/ar/faculties/language/Pages/course-catalogue.aspx",
@@ -20792,36 +20791,32 @@
     {
       "code": "EFL504",
       "faculty": "Language Studies",
-      "status": "verified_bilingual",
-      "currentCatalogue": true,
+      "status": "legacy_or_schedule_only",
+      "currentCatalogue": false,
       "cataloguePresence": {
-        "en": true,
-        "ar": true
+        "en": false,
+        "ar": false
       },
-      "titleEn": "English Language Teaching Methods – Productive Skills",
-      "titleAr": "طرق تدريس اللغة الإنجليزية – المهارات الإنتاجية",
+      "titleEn": null,
+      "titleAr": null,
       "creditHours": {
-        "en": 4,
-        "ar": 4
+        "en": null,
+        "ar": null
       },
       "descriptionAvailable": {
-        "en": true,
-        "ar": true
+        "en": false,
+        "ar": false
       },
       "prerequisiteCodes": {
-        "en": [
-          "EFL501",
-          "EFL502"
-        ],
-        "ar": [
-          "EFL501",
-          "EFL502"
-        ]
+        "en": [],
+        "ar": []
       },
       "scheduleGroup": null,
       "groupedDeadline": false,
       "conflicts": [],
-      "warnings": [],
+      "warnings": [
+        "No exact current catalogue record in either language."
+      ],
       "sources": {
         "en": "https://www.aou.edu.eg/faculties/language/Pages/course-catalogue.aspx",
         "ar": "https://www.aou.edu.eg/ar/faculties/language/Pages/course-catalogue.aspx",
@@ -20831,36 +20826,32 @@
     {
       "code": "EFL505",
       "faculty": "Language Studies",
-      "status": "verified_bilingual",
-      "currentCatalogue": true,
+      "status": "legacy_or_schedule_only",
+      "currentCatalogue": false,
       "cataloguePresence": {
-        "en": true,
-        "ar": true
+        "en": false,
+        "ar": false
       },
-      "titleEn": "Technology in the Classroom",
-      "titleAr": "التكنولوجيا في الفصول الدراسية",
+      "titleEn": null,
+      "titleAr": null,
       "creditHours": {
-        "en": 4,
-        "ar": 4
+        "en": null,
+        "ar": null
       },
       "descriptionAvailable": {
-        "en": true,
-        "ar": true
+        "en": false,
+        "ar": false
       },
       "prerequisiteCodes": {
-        "en": [
-          "EFL501",
-          "EFL502"
-        ],
-        "ar": [
-          "EFL501",
-          "EFL502"
-        ]
+        "en": [],
+        "ar": []
       },
       "scheduleGroup": null,
       "groupedDeadline": false,
       "conflicts": [],
-      "warnings": [],
+      "warnings": [
+        "No exact current catalogue record in either language."
+      ],
       "sources": {
         "en": "https://www.aou.edu.eg/faculties/language/Pages/course-catalogue.aspx",
         "ar": "https://www.aou.edu.eg/ar/faculties/language/Pages/course-catalogue.aspx",
@@ -20915,7 +20906,7 @@
         "en": true,
         "ar": true
       },
-      "titleEn": "Foreign Language Testing",
+      "titleEn": "Foreign Language Testing and Assessment",
       "titleAr": "اختبارات اللغة الأجنبية",
       "creditHours": {
         "en": 4,
@@ -20992,14 +20983,8 @@
         "ar": true
       },
       "prerequisiteCodes": {
-        "en": [
-          "EFL501",
-          "EFL502"
-        ],
-        "ar": [
-          "EFL501",
-          "EFL502"
-        ]
+        "en": [],
+        "ar": []
       },
       "scheduleGroup": null,
       "groupedDeadline": false,
@@ -21020,7 +21005,7 @@
         "en": true,
         "ar": true
       },
-      "titleEn": "Dissertation",
+      "titleEn": "Thesis Module",
       "titleAr": "الأطروحة",
       "creditHours": {
         "en": 12,
