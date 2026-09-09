@@ -1,49 +1,76 @@
-# AOU TMA Hub — V3 Pro
+# AOU TMA Hub — Full-Stack Systems Prototype
 
-A production-oriented full-stack catalog and request experience for AOU TMA services. The V2 rebuild moves the original prototype to a reusable design system, responsive bilingual UI, server-side FX handling and persisted orders.
+A bilingual full-stack catalog and request-flow project built around Arab Open University course metadata. The repository demonstrates responsive product UI, catalog enrichment, backend APIs, persisted requests, currency conversion, deployment patterns, and payment-method configuration.
 
-## Product highlights
+> **Independent project — not affiliated with or endorsed by Arab Open University.** Any real-world use must comply with university rules and applicable academic-integrity policies. The software must not be used to submit work authored by another person, impersonate a student, or outsource assessed coursework where those activities are prohibited.
 
-- 217 searchable course entries across four faculties.
-- Arabic + English with real RTL/LTR switching.
-- Semantic Light/Dark themes shared between Figma and CSS.
-- Nine product currencies: EGP, KWD, SAR, LBP, JOD, BHD, OMR, SDG and ILS.
-- Latest available FX conversion with client cache, server cache and safe EGP fallback.
-- Faculty filters, sorting, skeleton loading, empty/error states and progressive “load more”.
-- Accessible order modal with validation, success state and generated Order ID.
-- SQLite order persistence in a Docker volume.
-- Same-origin Nginx reverse proxy for the React production container.
-- GitHub Actions checks for frontend build, FastAPI tests and Node syntax.
+## Engineering scope
+
+- Searchable course catalog with faculty filtering and progressive loading.
+- Arabic + English UI with RTL / LTR switching.
+- Semantic light / dark themes.
+- Multi-currency display with server-side FX retrieval, caching, and EGP fallback.
+- Accessible request/order modal with validation and generated IDs.
+- SQLite persistence for local / Docker mode.
+- React production build served through Nginx.
+- Same-origin proxying for frontend, FastAPI, and FX-service requests.
+- GitHub Actions checks for frontend build, FastAPI tests, and Node syntax.
+- Vercel and Netlify serverless deployment adapters.
+- Optional durable-order forwarding through `ORDER_WEBHOOK_URL` for serverless deployments.
 
 ## Stack
 
 ```text
 frontend/        React 19 + TypeScript + Vite
 backend-python/  Python 3.13 + FastAPI + SQLite
-backend-node/    Node.js 22 native HTTP + Fetch (zero runtime packages)
+backend-node/    Node.js 22 native HTTP + Fetch
 ```
 
-Architecture details: `docs/ARCHITECTURE.md`.
+Architecture details live in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
-## Run production-style with Docker
+## Run with Docker
 
 ```bash
 docker compose up --build
 ```
 
-Open `http://localhost:5173`.
+Open:
 
-The frontend container is built with Vite and served by Nginx. Nginx proxies catalog/order requests to FastAPI and FX requests to the Node service so the browser stays on one origin.
+```text
+http://localhost:5173
+```
 
-## Run development mode
+The frontend container is built with Vite and served by Nginx. Nginx proxies catalog / request traffic to FastAPI and FX requests to the Node service so the browser remains on one origin.
+
+## Development mode
+
+First-time setup:
+
+```bash
+npm run setup
+```
+
+Run the project with hot reload:
+
+```bash
+npm run live
+```
+
+The development topology uses:
+
+```text
+Vite / React     localhost:5173
+FastAPI          localhost:8000
+Node FX service  localhost:3001
+```
+
+The Docker development stack is also available:
 
 ```bash
 docker compose -f docker-compose.dev.yml up --build
 ```
 
-Or run each service directly using the `.env.example` files in its folder.
-
-## Useful endpoints
+## API examples
 
 ```text
 GET  /health
@@ -57,9 +84,70 @@ GET  /api/fx/EGP
 GET  /api/fx/KWD
 ```
 
+## Course catalog enrichment
+
+The project stores course codes and enriches them with current titles / descriptions when an exact match is available from the public AOU Egypt faculty catalogues.
+
+The matching policy is deliberately strict: an unresolved code remains unresolved rather than being guessed or silently mapped to a different course.
+
+Relevant generated data includes:
+
+```text
+backend-python/app/courses.json
+backend-python/app/course_catalogue.json
+backend-python/app/course_titles.json
+backend-python/app/catalogue_sources.json
+backend-python/app/unresolved_course_codes.json
+backend-python/app/course_descriptions.json
+```
+
+The repository's recorded enrichment state contains 217 catalog records, with 150 exact title matches and 67 codes explicitly retained as unresolved in the current catalogue snapshot.
+
+### Catalogue sources
+
+- Computer Studies: `https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx`
+- Business Studies: `https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx`
+- Language Studies: `https://www.aou.edu.eg/faculties/language/Pages/course-catalogue.aspx`
+- Education: `https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx`
+- Media: `https://www.aou.edu.eg/faculties/media/Pages/course-catalogue.aspx`
+
+Refresh the local snapshot with:
+
+```bash
+cd backend-python
+python -m pip install -r scripts/requirements-sync.txt
+python scripts/sync_aou_catalogue.py
+```
+
 ## FX behavior
 
-Base course prices are stored in EGP. The Node service requests the latest available EGP-based rates from ExchangeRate-API, uses the provider’s own next-update timestamp to decide when to refresh (with a one-hour fallback TTL), and may serve its last successful value for up to 48 hours if the upstream source is temporarily unavailable. The UI labels this as “latest” rather than implying tick-by-tick market pricing.
+Base prices are stored in EGP. The Node service requests EGP-based rates from ExchangeRate-API and uses the provider's next-update metadata when available, with a one-hour fallback TTL. The service may retain its last successful value for up to 48 hours during an upstream outage.
+
+The UI describes this data as the **latest available** rate rather than implying tick-by-tick market pricing.
+
+## Payment-method configuration
+
+The application can expose configured payment methods, including Egyptian mobile wallets, InstaPay, and selected USDT networks.
+
+Receiving destinations are intentionally supplied through environment variables rather than hard-coded in source:
+
+```env
+VODAFONE_CASH_NUMBER=
+ORANGE_CASH_NUMBER=
+ETISALAT_CASH_NUMBER=
+WE_PAY_NUMBER=
+INSTAPAY_ADDRESS=
+USDT_TRC20_ADDRESS=
+USDT_BEP20_ADDRESS=
+```
+
+Only configure payment methods and networks you are legally and operationally prepared to support. Do not commit receiving secrets or private credentials.
+
+## Serverless persistence boundary
+
+Local / Docker mode persists requests in SQLite through FastAPI.
+
+Vercel and Netlify serverless filesystems are **not** treated as durable order storage. Set `ORDER_WEBHOOK_URL` to forward accepted requests to an external durable system. Without it, the serverless endpoint can validate a request and return an ID, but that request is not represented as durably persisted by the serverless filesystem.
 
 ## Tests
 
@@ -76,124 +164,26 @@ npm install
 npm run build
 ```
 
-## Figma
+## Design source
 
-Editable product file: https://www.figma.com/design/nx6k9oAx6QXT90Rmn69SdT
+Editable Figma file:
 
-The V2 page contains desktop Light/Dark, Arabic mobile Light/Dark, semantic variables and reusable components. See `docs/FIGMA.md`.
+`https://www.figma.com/design/nx6k9oAx6QXT90Rmn69SdT`
 
-## V3 — Official AOU course titles + icon system
+The design system includes desktop and mobile states, light / dark themes, Arabic RTL layouts, semantic variables, and reusable components. See [`docs/FIGMA.md`](docs/FIGMA.md).
 
-The catalog now preserves the course title beside its code using the current AOU Egypt faculty catalogues supplied for this project. Exact-code matching is deliberately strict: when a TMA code is not present verbatim in the current catalogue, its title remains `null` and `titleStatus` is `not_found_in_current_catalogue` rather than guessing or aliasing a different course.
-
-Saved backend catalog data:
-
-```text
-backend-python/app/courses.json             Runtime TMA catalog (217 records)
-backend-python/app/course_catalogue.json    Portable catalog snapshot + source metadata
-backend-python/app/course_titles.json       Lightweight code → title lookup
-backend-python/app/catalogue_sources.json   Official AOU catalogue source URLs
-backend-python/app/unresolved_course_codes.json Exact TMA codes not found in the current catalogues
-```
-
-Current enrichment result: **150 / 217** TMA records have an exact current-catalogue title; **67** retain a clearly marked unresolved title. The API search now matches both course code and official title.
-
-Official catalogue sources used:
-
-```text
-https://www.aou.edu.eg/faculties/media/Pages/course-catalogue.aspx
-https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx
-https://www.aou.edu.eg/faculties/language/Pages/course-catalogue.aspx
-https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx
-https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx
-```
-
-The frontend and Figma UI now use a consistent icon language for course cards, filters, stats, currency/language controls and the order flow. Course cards show **code → official title → faculty** as their information hierarchy.
-
-
-## V4: official descriptions, semantic icons, and payment options
-
-This package extends the course catalogue with:
-
-- `description`, `descriptionStatus`, and `descriptionSource` fields in `backend-python/app/courses.json`.
-- `backend-python/app/course_descriptions.json`, a compact course-description/icon lookup file.
-- Semantic `icon` values derived from each course title and description (programming, data, finance, management, languages, education, media, law, health, etc.).
-- React course cards and the order dialog show the official description when available and link back to the AOU catalogue source.
-- Payment options endpoint and UI for Vodafone Cash, Orange Cash, e& cash, WE Pay, InstaPay, USDT TRC20, and USDT BEP20.
-- Payment receiving destinations are **not hard-coded**. Set them with environment variables before deployment.
-- `backend-python/scripts/sync_aou_catalogue.py` fetches official course titles/descriptions from the same AOU Egypt faculty catalogue pages and updates the local JSON dataset.
-- `.github/workflows/sync-aou-catalogue.yml` can refresh the official catalogue weekly or on demand.
-
-### Payment environment variables
-
-```env
-VODAFONE_CASH_NUMBER=
-ORANGE_CASH_NUMBER=
-ETISALAT_CASH_NUMBER=
-WE_PAY_NUMBER=
-INSTAPAY_ADDRESS=
-USDT_TRC20_ADDRESS=
-USDT_BEP20_ADDRESS=
-```
-
-Only configure networks/addresses you actually support. For USDT the customer must use the exact network shown in the checkout.
-
-### Refresh official AOU descriptions
-
-```bash
-cd backend-python
-python -m pip install -r scripts/requirements-sync.txt
-python scripts/sync_aou_catalogue.py
-```
-
-Official catalogue sources:
-
-- Computer Studies: `https://www.aou.edu.eg/faculties/computer/Pages/course-catalogue.aspx`
-- Business Studies: `https://www.aou.edu.eg/faculties/business/Pages/course-catalogue.aspx`
-- Language Studies: `https://www.aou.edu.eg/faculties/language/Pages/course-catalogue.aspx`
-- Education: `https://www.aou.edu.eg/faculties/education/Pages/course-catalogue.aspx`
-- Media: `https://www.aou.edu.eg/faculties/media/Pages/course-catalogue.aspx`
-
-## V4.1 — Live server + Vercel / Netlify deployment
-
-### One-command live development
-
-First-time setup:
-
-```bash
-npm run setup
-```
-
-Then run the entire project with hot reload:
-
-```bash
-npm run live
-```
-
-Open `http://localhost:5173`. This starts Vite/React on 5173, FastAPI on 8000, and the Node FX service on 3001.
+## Deployment
 
 ### Vercel
 
-The repository root now contains `vercel.json` plus serverless handlers under `api/`. Import the repository in Vercel and deploy from the repository root. The frontend automatically uses same-origin `/api/*` endpoints in production, so `VITE_API_URL` and `VITE_FX_URL` can remain unset.
+The repository root contains `vercel.json` plus serverless handlers under `api/`. Import the repository from the root. The frontend uses same-origin `/api/*` endpoints in production.
 
 ### Netlify
 
-The repository root contains `netlify.toml` plus functions in `netlify/functions/`. Import the repository in Netlify from the repository root; the configured build produces `frontend/dist` and redirects `/api/*` to the functions.
+The repository root contains `netlify.toml` and functions under `netlify/functions/`. The configured build produces `frontend/dist` and routes `/api/*` to the functions.
 
-### Payment environment variables on Vercel / Netlify
+## Academic-integrity and affiliation notice
 
-Configure the same payment secrets in the hosting dashboard:
+This repository is a software-engineering project, not an official AOU system. Public university course metadata is used only as the catalog domain for the application.
 
-```env
-VODAFONE_CASH_NUMBER=
-ORANGE_CASH_NUMBER=
-ETISALAT_CASH_NUMBER=
-WE_PAY_NUMBER=
-INSTAPAY_ADDRESS=
-USDT_TRC20_ADDRESS=
-USDT_BEP20_ADDRESS=
-```
-
-### Serverless order persistence
-
-Local/Docker mode persists orders in SQLite through FastAPI. Vercel/Netlify serverless filesystems are not treated as durable order storage by this project. Set `ORDER_WEBHOOK_URL` to forward each accepted order to your own durable endpoint/automation. Without it, the serverless endpoint still validates the request and returns an Order ID, but it is not persisted server-side.
+Users remain responsible for complying with their university's academic-integrity, assessment, copyright, and conduct rules. Nothing in this repository authorizes plagiarism, impersonation, unauthorized collaboration, or submission of third-party work as a student's own.
