@@ -1,7 +1,7 @@
 {
   "totalProjectCourses": 840,
-  "exactCatalogueMatches": 496,
-  "verifiedDescriptions": 496,
+  "exactCatalogueMatches": 495,
+  "verifiedDescriptions": 495,
   "unresolvedExactCodes": [
     "M130",
     "M129",
@@ -122,6 +122,7 @@
     "GMT314",
     "GPR101",
     "GPR303",
+    "A817",
     "EFL503",
     "EFL504",
     "EFL505",

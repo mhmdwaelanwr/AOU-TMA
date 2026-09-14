@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generatedAt": "2026-09-07T08:23:16.777921+00:00",
+  "generatedAt": "2026-09-14T09:00:17.908891+00:00",
   "projectRecordCount": 840,
   "uniqueProjectCodeCount": 780,
   "duplicateProjectCodes": [
@@ -83,6 +83,7 @@
     "6VC015",
     "6VC018",
     "6VC019",
+    "A817",
     "ACCT201",
     "ACCT202",
     "ACCT250",
@@ -410,7 +411,7 @@
     "T471",
     "TM380"
   ],
-  "legacyOrScheduleOnlyCount": 344,
+  "legacyOrScheduleOnlyCount": 345,
   "sourceConflictCodes": [
     "M109",
     "M140",
@@ -420,9 +421,9 @@
   ],
   "sourceConflictCount": 5,
   "statusCounts": {
-    "legacy_or_schedule_only": 344,
+    "legacy_or_schedule_only": 345,
     "source_conflict": 5,
-    "verified_bilingual": 491
+    "verified_bilingual": 490
   },
   "sourceEntryCounts": {
     "Computer Studies": {
@@ -434,8 +435,8 @@
       "ar": 86
     },
     "Language Studies": {
-      "en": 81,
-      "ar": 81
+      "en": 96,
+      "ar": 96
     },
     "Education": {
       "en": 206,
@@ -20039,7 +20040,7 @@
         "ar": true
       },
       "titleEn": "Theories in Criticism",
-      "titleAr": "نظريات في النقد الأدبي",
+      "titleAr": "نظريات في النقد",
       "creditHours": {
         "en": 4,
         "ar": 4
@@ -20111,7 +20112,7 @@
         "ar": true
       },
       "titleEn": "Cultural Studies",
-      "titleAr": "الدراسات الثقافية",
+      "titleAr": "دراسات ثقافية",
       "creditHours": {
         "en": 4,
         "ar": 4
@@ -20150,7 +20151,7 @@
         "ar": true
       },
       "titleEn": "Dramatic Dialogues",
-      "titleAr": "الحوارات الدرامية",
+      "titleAr": "الحوار الدرامية",
       "creditHours": {
         "en": 4,
         "ar": 4
@@ -20299,44 +20300,32 @@
     {
       "code": "A817",
       "faculty": "Language Studies",
-      "status": "verified_bilingual",
-      "currentCatalogue": true,
+      "status": "legacy_or_schedule_only",
+      "currentCatalogue": false,
       "cataloguePresence": {
-        "en": true,
-        "ar": true
+        "en": false,
+        "ar": false
       },
-      "titleEn": "MA Dissertation",
-      "titleAr": "أطروحة في الأدب الإنجليزي",
+      "titleEn": null,
+      "titleAr": null,
       "creditHours": {
-        "en": 16,
-        "ar": 16
+        "en": null,
+        "ar": null
       },
       "descriptionAvailable": {
-        "en": true,
-        "ar": true
+        "en": false,
+        "ar": false
       },
       "prerequisiteCodes": {
-        "en": [
-          "A801",
-          "A802",
-          "A803",
-          "A804",
-          "A806",
-          "A807-A808"
-        ],
-        "ar": [
-          "A801",
-          "A802",
-          "A803",
-          "A804",
-          "A806",
-          "A807-A808"
-        ]
+        "en": [],
+        "ar": []
       },
       "scheduleGroup": null,
       "groupedDeadline": false,
       "conflicts": [],
-      "warnings": [],
+      "warnings": [
+        "No exact current catalogue record in either language."
+      ],
       "sources": {
         "en": "https://www.aou.edu.eg/faculties/language/Pages/course-catalogue.aspx",
         "ar": "https://www.aou.edu.eg/ar/faculties/language/Pages/course-catalogue.aspx",
