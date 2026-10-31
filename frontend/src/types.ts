@@ -38,6 +38,9 @@ export type Course = {
   icon: CourseIconName;
   onsiteVideoUrl?: string | null;
   onsiteMaterialsUrl?: string | null;
+  onsite?: boolean;
+  studyVideoUrl?: string | null;
+  studyFiles?: { name: string; url: string | null }[];
 };
 
 export type FxResponse = {
@@ -77,6 +80,7 @@ export type OrderPayload = {
   currency: CurrencyCode;
   service_type: ServiceType;
   branch?: BranchId;
+  branch_code?: string;
   payment_method?: string;
   promo_code?: string;
   referral_code?: string;
