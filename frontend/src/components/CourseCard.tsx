@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { ArrowLeft, ArrowRight, ExternalLink, Gift, Play, FileText } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ExternalLink, Gift, Info } from 'lucide-react';
 import type { Branch, Course, CurrencyCode, Language } from '../types';
 import { CourseIcon } from './CourseIcon';
 import { getCurrencyDecimals, getCurrencySymbol } from '../lib/config';
@@ -13,6 +13,7 @@ type Props = {
   isInternational: boolean;
   text: Record<string, string>;
   onOrder: (course: Course) => void;
+  orderingEnabled: boolean;
 };
 
 export function formatMoney(value: number, currency: CurrencyCode, lang: Language) {
@@ -26,7 +27,7 @@ function shortDescription(course: Course, text: Record<string, string>) {
   return text.descriptionUnavailable;
 }
 
-export const CourseCard = memo(function CourseCard({ course, lang, branch, currency, rate, isInternational, text, onOrder }: Props) {
+export const CourseCard = memo(function CourseCard({ course, lang, branch, currency, rate, isInternational, text, onOrder, orderingEnabled }: Props) {
   const converted = course.priceEgp * rate;
   const Arrow = lang === 'ar' ? ArrowLeft : ArrowRight;
   const description = shortDescription(course, text);
@@ -45,7 +46,9 @@ export const CourseCard = memo(function CourseCard({ course, lang, branch, curre
           </p>
           <span className="course-faculty">{lang === 'ar' ? course.facultyAr : course.faculty}</span>
         </div>
-        {isOnsite ? (
+        {!orderingEnabled ? (
+          <span className="tma-badge">{lang === 'ar' ? 'مقرر دراسي' : 'Course'}</span>
+        ) : isOnsite ? (
           <span className="onsite-badge">{text.onsiteExam}</span>
         ) : (
           <span className="tma-badge">{course.type}</span>
@@ -66,11 +69,18 @@ export const CourseCard = memo(function CourseCard({ course, lang, branch, curre
 
       <div className="course-meta">
         <div><small>{text.semester}</small><strong>{course.semester.replace('2025/2026', '25/26')}</strong></div>
-        <div><small>{text.service}</small><strong>{isOnsite ? text.onsiteExam : text.tmaSupport}</strong></div>
+        <div><small>{orderingEnabled ? text.service : (lang === 'ar' ? 'البيانات' : 'Information')}</small><strong>{orderingEnabled ? (isOnsite ? text.onsiteExam : text.tmaSupport) : (lang === 'ar' ? 'معلومات المقرر' : 'Course details')}</strong></div>
       </div>
 
       <div className="course-footer">
-        {isOnsite ? (
+        {!orderingEnabled ? (
+          <div className="catalog-preview-footer">
+            <span className="catalog-preview-caption"><Info size={14} />{lang === 'ar' ? 'تصفح المواد بدون تسجيل' : 'Browse without signing in'}</span>
+            <button className="primary-button" type="button" onClick={() => onOrder(course)}>
+              <span>{lang === 'ar' ? 'تفاصيل المادة' : 'View details'}</span><Arrow size={15} />
+            </button>
+          </div>
+        ) : isOnsite ? (
           <div className="onsite-footer">
             <div className="price-block">
               <small>{text.claimPrice}</small>
