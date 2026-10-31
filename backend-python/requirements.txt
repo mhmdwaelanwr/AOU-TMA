@@ -6,3 +6,4 @@ PyJWT==2.10.1
 python-multipart==0.0.20
 google-auth==2.38.0
 requests==2.32.3
+httpx==0.28.1
