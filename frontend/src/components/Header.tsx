@@ -2,7 +2,6 @@ import { ChevronDown, Globe2, Monitor, Moon, Sun, Menu, X, LogIn, User, LogOut, 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import type { Branch, BranchId, Language, Theme } from '../types';
 import { useAuth } from '../lib/auth';
-import { ACCOUNT_BACKEND_ENABLED } from '../lib/config';
 
 type Props = {
   lang: Language;
@@ -19,6 +18,7 @@ type Props = {
   onAdmin?: () => void;
   showAdmin?: boolean;
   ordersEnabled: boolean;
+  accountsEnabled: boolean;
 };
 
 const NAV_ITEMS = [
@@ -28,7 +28,7 @@ const NAV_ITEMS = [
   { id: 'support-page', labelKey: 'support' },
 ] as const;
 
-export function Header({ lang, theme, themeMode, branch, branches, text, onLang, onThemeMode, onBranch, onLogin, onDashboard, onAdmin, showAdmin, ordersEnabled }: Props) {
+export function Header({ lang, theme, themeMode, branch, branches, text, onLang, onThemeMode, onBranch, onLogin, onDashboard, onAdmin, showAdmin, ordersEnabled, accountsEnabled }: Props) {
   const { user, logout, loading } = useAuth();
   const [showBranches, setShowBranches] = useState(false);
   const [showTheme, setShowTheme] = useState(false);
@@ -104,7 +104,7 @@ export function Header({ lang, theme, themeMode, branch, branches, text, onLang,
       </a>
 
       <nav className="desktop-nav" aria-label="Primary navigation">
-        {NAV_ITEMS.filter(item => (ordersEnabled || item.id !== 'how-it-works') && (ACCOUNT_BACKEND_ENABLED || item.id !== 'complaints')).map(item => (
+        {NAV_ITEMS.filter(item => (ordersEnabled || item.id !== 'how-it-works') && (accountsEnabled || item.id !== 'complaints')).map(item => (
           <a
             key={item.id}
             className={`nav-chip ${activeSection === item.id ? 'active' : ''}`}
@@ -161,7 +161,7 @@ export function Header({ lang, theme, themeMode, branch, branches, text, onLang,
         </div>
 
         {/* Auth Button */}
-        {ACCOUNT_BACKEND_ENABLED && (loading ? null : user ? (
+        {accountsEnabled && (loading ? null : user ? (
           <div className="user-selector-wrap" ref={userRef}>
             <button className="control-chip user-control" type="button" onClick={() => { setShowUser(!showUser); setShowBranches(false); setShowTheme(false); }}>
               <span className="user-avatar">{user.name.charAt(0).toUpperCase()}</span>
@@ -210,7 +210,7 @@ export function Header({ lang, theme, themeMode, branch, branches, text, onLang,
       {showMobile && (
         <div className="mobile-nav-overlay" ref={mobileRef}>
           <nav className="mobile-nav" aria-label="Mobile navigation">
-            {NAV_ITEMS.filter(item => (ordersEnabled || item.id !== 'how-it-works') && (ACCOUNT_BACKEND_ENABLED || item.id !== 'complaints')).map(item => (
+            {NAV_ITEMS.filter(item => (ordersEnabled || item.id !== 'how-it-works') && (accountsEnabled || item.id !== 'complaints')).map(item => (
               <a
                 key={item.id}
                 className={`mobile-nav-link ${activeSection === item.id ? 'active' : ''}`}
@@ -220,15 +220,15 @@ export function Header({ lang, theme, themeMode, branch, branches, text, onLang,
                 {text[item.labelKey]}
               </a>
             ))}
-            {user && <a className="mobile-nav-link" href="#order-history" onClick={() => handleNavClick('order-history')}>{lang === 'ar' ? 'طلباتي' : 'My Orders'}</a>}
-            {user && <button className="mobile-nav-link" type="button" onClick={() => { onDashboard(); setShowMobile(false); }}><LayoutDashboard size={14} /> {lang === 'ar' ? 'لوحة التحكم' : 'Dashboard'}</button>}
-            {user && onAdmin && <button className="mobile-nav-link" type="button" onClick={() => { onAdmin(); setShowMobile(false); }}><Shield size={14} /> {showAdmin ? (lang === 'ar' ? 'إخفاء الإدارة' : 'Hide Admin') : (lang === 'ar' ? 'لوحة الإدارة' : 'Admin Panel')}</button>}
+            {accountsEnabled && user && <a className="mobile-nav-link" href="#order-history" onClick={() => handleNavClick('order-history')}>{lang === 'ar' ? 'طلباتي' : 'My Orders'}</a>}
+            {accountsEnabled && user && <button className="mobile-nav-link" type="button" onClick={() => { onDashboard(); setShowMobile(false); }}><LayoutDashboard size={14} /> {lang === 'ar' ? 'لوحة التحكم' : 'Dashboard'}</button>}
+            {accountsEnabled && user && onAdmin && <button className="mobile-nav-link" type="button" onClick={() => { onAdmin(); setShowMobile(false); }}><Shield size={14} /> {showAdmin ? (lang === 'ar' ? 'إخفاء الإدارة' : 'Hide Admin') : (lang === 'ar' ? 'لوحة الإدارة' : 'Admin Panel')}</button>}
           </nav>
           <div className="mobile-nav-footer">
             <div className="mobile-nav-branch">
               <span>{lang === 'ar' ? 'الفرع' : 'Branch'}: {branch.flag} {branch.name[lang]}</span>
             </div>
-            {ACCOUNT_BACKEND_ENABLED && (user ? (
+            {accountsEnabled && (user ? (
               <button className="primary-button mobile-auth-btn" type="button" onClick={() => { logout(); setShowMobile(false); }}>
                 <LogOut size={15} /><span>{lang === 'ar' ? 'خروج' : 'Sign Out'}</span>
               </button>
