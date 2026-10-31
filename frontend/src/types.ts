@@ -1,10 +1,10 @@
 export type Language = 'ar' | 'en';
 export type Theme = 'light' | 'dark';
 export type Faculty = 'all' | 'Computer Studies' | 'Business Studies' | 'Education' | 'Language Studies' | 'Media & Mass Communication' | 'Graphic & Multimedia Design';
-export type CurrencyCode = 'EGP' | 'KWD' | 'SAR' | 'LBP' | 'JOD' | 'BHD' | 'OMR' | 'SDG' | 'ILS' | 'USDT' | 'MAD';
+export type CurrencyCode = 'EGP' | 'KWD' | 'SAR' | 'LBP' | 'JOD' | 'BHD' | 'OMR' | 'SDG' | 'ILS' | 'USDT';
 export type ServiceType = 'TMA' | 'QUIZ' | 'ASSIGNMENT';
 
-export type BranchId = 'egypt' | 'kuwait' | 'saudi' | 'bahrain' | 'jordan' | 'lebanon' | 'oman' | 'sudan' | 'palestine' | 'morocco';
+export type BranchId = 'egypt' | 'kuwait' | 'saudi' | 'bahrain' | 'jordan' | 'lebanon' | 'oman' | 'sudan' | 'palestine';
 
 export type Branch = {
   id: BranchId;
@@ -90,7 +90,7 @@ export type OrderResponse = {
   ok: boolean;
   order_id: string;
   status: string;
-  deposit_amount: number;
+  deposit_amount?: number;
   created_at: string;
 };
 

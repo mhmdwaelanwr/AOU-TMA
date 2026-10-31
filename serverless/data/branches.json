@@ -1,82 +1,128 @@
 [
   {
     "id": "egypt",
-    "name": { "ar": "مصر", "en": "Egypt" },
+    "name": {
+      "ar": "مصر",
+      "en": "Egypt"
+    },
     "currency": "EGP",
     "flag": "🇪🇬",
     "timezone": "Africa/Cairo",
-    "city": { "ar": "القاهرة", "en": "Cairo" }
+    "city": {
+      "ar": "القاهرة",
+      "en": "Cairo"
+    }
   },
   {
     "id": "kuwait",
-    "name": { "ar": "الكويت", "en": "Kuwait" },
+    "name": {
+      "ar": "الكويت",
+      "en": "Kuwait"
+    },
     "currency": "KWD",
     "flag": "🇰🇼",
     "timezone": "Asia/Kuwait",
-    "city": { "ar": "الكويت", "en": "Kuwait City" }
+    "city": {
+      "ar": "الكويت",
+      "en": "Kuwait City"
+    }
   },
   {
     "id": "saudi",
-    "name": { "ar": "السعودية", "en": "Saudi Arabia" },
+    "name": {
+      "ar": "السعودية",
+      "en": "Saudi Arabia"
+    },
     "currency": "SAR",
     "flag": "🇸🇦",
     "timezone": "Asia/Riyadh",
-    "city": { "ar": "الرياض", "en": "Riyadh" }
+    "city": {
+      "ar": "الرياض",
+      "en": "Riyadh"
+    }
   },
   {
     "id": "bahrain",
-    "name": { "ar": "البحرين", "en": "Bahrain" },
+    "name": {
+      "ar": "البحرين",
+      "en": "Bahrain"
+    },
     "currency": "BHD",
     "flag": "🇧🇭",
     "timezone": "Asia/Bahrain",
-    "city": { "ar": "المنامة", "en": "Manama" }
+    "city": {
+      "ar": "المنامة",
+      "en": "Manama"
+    }
   },
   {
     "id": "jordan",
-    "name": { "ar": "الأردن", "en": "Jordan" },
+    "name": {
+      "ar": "الأردن",
+      "en": "Jordan"
+    },
     "currency": "JOD",
     "flag": "🇯🇴",
     "timezone": "Asia/Amman",
-    "city": { "ar": "عمّان", "en": "Amman" }
+    "city": {
+      "ar": "عمّان",
+      "en": "Amman"
+    }
   },
   {
     "id": "lebanon",
-    "name": { "ar": "لبنان", "en": "Lebanon" },
+    "name": {
+      "ar": "لبنان",
+      "en": "Lebanon"
+    },
     "currency": "LBP",
     "flag": "🇱🇧",
     "timezone": "Asia/Beirut",
-    "city": { "ar": "بيروت", "en": "Beirut" }
+    "city": {
+      "ar": "بيروت",
+      "en": "Beirut"
+    }
   },
   {
     "id": "oman",
-    "name": { "ar": "عُمان", "en": "Oman" },
+    "name": {
+      "ar": "عُمان",
+      "en": "Oman"
+    },
     "currency": "OMR",
     "flag": "🇴🇲",
     "timezone": "Asia/Muscat",
-    "city": { "ar": "مسقط", "en": "Muscat" }
+    "city": {
+      "ar": "مسقط",
+      "en": "Muscat"
+    }
   },
   {
     "id": "sudan",
-    "name": { "ar": "السودان", "en": "Sudan" },
+    "name": {
+      "ar": "السودان",
+      "en": "Sudan"
+    },
     "currency": "SDG",
     "flag": "🇸🇩",
     "timezone": "Africa/Khartoum",
-    "city": { "ar": "الخرطوم", "en": "Khartoum" }
+    "city": {
+      "ar": "الخرطوم",
+      "en": "Khartoum"
+    }
   },
   {
     "id": "palestine",
-    "name": { "ar": "فلسطين", "en": "Palestine" },
+    "name": {
+      "ar": "فلسطين",
+      "en": "Palestine"
+    },
     "currency": "ILS",
     "flag": "🇵🇸",
     "timezone": "Asia/Jerusalem",
-    "city": { "ar": "البيرة", "en": "Al-Bireh" }
-  },
-  {
-    "id": "morocco",
-    "name": { "ar": "المغرب", "en": "Morocco" },
-    "currency": "MAD",
-    "flag": "🇲🇦",
-    "timezone": "Africa/Casablanca",
-    "city": { "ar": "الدار البيضاء", "en": "Casablanca" }
+    "city": {
+      "ar": "البيرة",
+      "en": "Al-Bireh"
+    }
   }
 ]

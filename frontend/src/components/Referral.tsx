@@ -15,11 +15,8 @@ export const Referral = memo(function Referral({ lang, text }: Props) {
 
   useEffect(() => {
     if (!user || !token) {
-      const stored = localStorage.getItem('aou-referral-code');
-      if (stored) { setReferralCode(stored); return; }
-      const code = 'AOU-' + Math.random().toString(36).substring(2, 8).toUpperCase();
-      localStorage.setItem('aou-referral-code', code);
-      setReferralCode(code);
+      setReferralCode('');
+      setStats(null);
       return;
     }
     fetch(`${API_URL}/api/user/referral`, { headers: { Authorization: `Bearer ${token}` } })
@@ -52,6 +49,8 @@ export const Referral = memo(function Referral({ lang, text }: Props) {
       : `Use referral code ${referralCode} and get 15 EGP credit on your first order from TMAly`;
     window.open(`https://wa.me/?text=${encodeURIComponent(msg)}`, '_blank');
   }
+
+  if (!user || !token || !referralCode) return null;
 
   return (
     <section className="referral-section" id="referral">

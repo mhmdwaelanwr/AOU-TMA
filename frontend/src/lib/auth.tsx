@@ -9,6 +9,7 @@ export type User = {
   avatar_url: string | null;
   referral_code: string;
   created_at: string;
+  is_admin?: boolean;
 };
 
 type AuthState = {
@@ -17,7 +18,7 @@ type AuthState = {
   loading: boolean;
   login: (email: string, password: string) => Promise<void>;
   register: (name: string, email: string, password: string) => Promise<void>;
-  loginWithGoogle: (token: string, name: string, email: string, avatarUrl?: string) => Promise<void>;
+  loginWithGoogle: (idToken: string) => Promise<void>;
   logout: () => void;
   updateProfile: (name: string) => Promise<void>;
 };
@@ -63,10 +64,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setUser(data.user);
   }, []);
 
-  const loginWithGoogle = useCallback(async (googleToken: string, name: string, email: string, avatarUrl?: string) => {
+  const loginWithGoogle = useCallback(async (googleToken: string) => {
     const res = await fetch(`${API_URL}/api/auth/google`, {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ token: googleToken, name, email, avatar_url: avatarUrl }),
+      body: JSON.stringify({ token: googleToken }),
     });
     const data = await res.json();
     if (!res.ok) throw new Error(data.detail || 'google_login_failed');

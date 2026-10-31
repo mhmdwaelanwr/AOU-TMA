@@ -4,7 +4,8 @@ const courses = JSON.parse(fs.readFileSync(new URL('./data/courses.json', import
 const paymentManifest = JSON.parse(fs.readFileSync(new URL('./data/payment_methods.json', import.meta.url), 'utf8'));
 const branches = JSON.parse(fs.readFileSync(new URL('./data/branches.json', import.meta.url), 'utf8'));
 const courseByCode = new Map(courses.map((c) => [String(c.code).toLowerCase(), c]));
-const ALLOWED_CURRENCIES = new Set(['EGP','KWD','SAR','LBP','JOD','BHD','OMR','SDG','ILS','USDT']);
+const ALLOWED_CURRENCIES = new Set([...branches.map((branch) => branch.currency), 'USDT']);
+const BRANCH_IDS = new Set(branches.map((branch) => branch.id));
 
 export function json(body, status = 200, extraHeaders = {}) {
   return new Response(JSON.stringify(body), {
@@ -92,50 +93,70 @@ function clean(value, max = 200) {
 }
 
 export async function createServerlessOrder(payload, env = process.env) {
-  const courseCode = clean(payload?.course_code, 32);
+  const courseCode = clean(payload?.course_code, 32).toUpperCase();
   const customerName = clean(payload?.customer_name, 80);
   const contact = clean(payload?.contact, 80);
-  const currency = clean(payload?.currency || 'EGP', 3).toUpperCase();
+  const currency = clean(payload?.currency || 'EGP', 4).toUpperCase();
   const branch = clean(payload?.branch || 'egypt', 20);
+  const serviceType = clean(payload?.service_type || 'TMA', 20).toUpperCase();
   if (!courseByCode.has(courseCode.toLowerCase())) return { status: 404, body: { detail: 'course_not_found' } };
-  if (customerName.length < 2 || contact.length < 3 || !ALLOWED_CURRENCIES.has(currency)) {
+  if (customerName.length < 2 || contact.length < 3 || !ALLOWED_CURRENCIES.has(currency) ||
+      !BRANCH_IDS.has(branch) || !['TMA', 'ASSIGNMENT'].includes(serviceType)) {
     return { status: 422, body: { detail: 'invalid_order' } };
+  }
+  if (payload?.lms_username || payload?.lms_password) {
+    return { status: 422, body: { detail: 'lms_credentials_not_accepted' } };
+  }
+
+  // A serverless function has no durable filesystem. Do not acknowledge a request
+  // until a configured external receiver has accepted it.
+  const webhook = clean(env.ORDER_WEBHOOK_URL, 1000);
+  if (!webhook || !webhook.startsWith('https://')) {
+    return { status: 503, body: { detail: 'order_storage_not_configured' } };
   }
 
   const course = courseByCode.get(courseCode.toLowerCase());
-  const isOnsite = course && course.type === 'ONSITE';
-
   const createdAt = new Date().toISOString();
-  const orderId = `AOU-${createdAt.slice(0,10).replaceAll('-','')}-${crypto.randomUUID().replaceAll('-','').slice(0,6).toUpperCase()}`;
+  const orderId = `AOU-${createdAt.slice(0, 10).replaceAll('-', '')}-${crypto.randomUUID().replaceAll('-', '').slice(0, 6).toUpperCase()}`;
   const order = {
     order_id: orderId,
-    course_code: courseCode,
+    course_code: course.code,
     customer_name: customerName,
     contact,
+    email: clean(payload?.email, 120) || null,
     notes: clean(payload?.notes, 1000) || null,
     currency,
     payment_method: clean(payload?.payment_method, 40) || null,
-    payment_reference: clean(payload?.payment_reference, 120) || null,
+    promo_code: clean(payload?.promo_code, 20) || null,
+    referral_code: clean(payload?.referral_code, 20) || null,
+    deposit_tx_hash: clean(payload?.deposit_tx_hash, 128) || null,
     branch,
-    type: isOnsite ? 'ONSITE_CLAIM' : 'TMA_ORDER',
+    service_type: serviceType,
+    type: course.type === 'ONSITE' ? 'ONSITE_CLAIM' : 'TMA_ORDER',
     created_at: createdAt,
   };
-
-  let forwarded = false;
-  const webhook = clean(env.ORDER_WEBHOOK_URL, 1000);
-  if (webhook) {
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 8000);
+    let response;
     try {
-      const response = await fetch(webhook, {
+      response = await fetch(webhook, {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(order),
+        signal: controller.signal,
       });
-      forwarded = response.ok;
-    } catch { forwarded = false; }
+    } finally {
+      clearTimeout(timeout);
+    }
+    if (!response.ok) return { status: 502, body: { detail: 'order_delivery_failed' } };
+  } catch {
+    return { status: 502, body: { detail: 'order_delivery_failed' } };
   }
 
   return {
     status: 201,
-    body: { ok:true, order_id:orderId, status:'received', created_at:createdAt, persisted:forwarded, deployment:'serverless', type: isOnsite ? 'onsite_claim' : 'tma_order' },
+    body: { ok: true, order_id: orderId, status: 'received', created_at: createdAt,
+            forwarded: true, deployment: 'serverless', type: course.type === 'ONSITE' ? 'onsite_claim' : 'tma_order' },
   };
 }
