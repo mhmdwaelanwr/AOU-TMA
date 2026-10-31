@@ -38,6 +38,9 @@ export function Catalog({ courses, query, loading, error, faculty, lang, branch,
   const [sort, setSort] = useState<Sort>('code');
 
   useEffect(() => setVisible(16), [faculty, query, sort]);
+  useEffect(() => {
+    if (!orderingEnabled && (sort === 'price-asc' || sort === 'price-desc')) setSort('code');
+  }, [orderingEnabled, sort]);
 
   const sorted = useMemo(() => {
     const list = [...courses];
@@ -71,8 +74,12 @@ export function Catalog({ courses, query, loading, error, faculty, lang, branch,
           <select value={sort} onChange={(event) => setSort(event.target.value as Sort)}>
             <option value="code">{text.sortCode}</option>
             <option value="title">{text.sortTitle}</option>
-            <option value="price-asc">{text.sortLow}</option>
-            <option value="price-desc">{text.sortHigh}</option>
+            {orderingEnabled && (
+              <>
+                <option value="price-asc">{text.sortLow}</option>
+                <option value="price-desc">{text.sortHigh}</option>
+              </>
+            )}
           </select>
         </label>
       </div>
