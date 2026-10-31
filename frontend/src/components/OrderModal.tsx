@@ -155,7 +155,7 @@ export function OrderModal({ open, course, lang, branch, currency, rate, isInter
         .then((d: ServicePrices | null) => { if (d?.prices) setServicePrices(d.prices); })
         .catch(() => {});
       if (user) {
-        setFirstOrderDiscount(basePrice * 0.20);
+        setFirstOrderDiscount(0); // Server decides eligibility; never show an unverified discount.
       } else {
         setFirstOrderDiscount(0);
       }
@@ -217,16 +217,23 @@ export function OrderModal({ open, course, lang, branch, currency, rate, isInter
       promo_code: isQuiz ? undefined : (promoCode.trim().toUpperCase() || undefined),
       referral_code: isQuiz ? undefined : (referralCode.trim().toUpperCase() || undefined),
       deposit_tx_hash: depositTxHash.trim() || undefined,
-      lms_username: isQuiz ? lmsUsername.trim() || undefined : undefined,
-      lms_password: isQuiz ? lmsPassword.trim() || undefined : undefined,
     };
     try {
       const headers: Record<string, string> = { 'Content-Type': 'application/json' };
       if (token) headers['Authorization'] = `Bearer ${token}`;
       const res = await fetch(`${API_URL}/api/orders`, { method: 'POST', headers, body: JSON.stringify(payload) });
-      if (!res.ok) throw new Error('failed');
-      setSuccess(await res.json() as OrderResponse);
-    } catch { setError(text.requestFailed); }
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        if (data?.detail === 'order_storage_not_configured') {
+          throw new Error(lang === 'ar' ? 'الطلبات غير مفعّلة بعد: يجب إعداد نظام حفظ الطلبات.' : 'Ordering is not enabled: durable storage must be configured.');
+        }
+        if (data?.detail === 'order_delivery_failed') {
+          throw new Error(lang === 'ar' ? 'تعذر توصيل الطلب. لم يتم تأكيده، حاول لاحقًا.' : 'Order delivery failed. Your request was not confirmed.');
+        }
+        throw new Error(text.requestFailed);
+      }
+      setSuccess(data as OrderResponse);
+    } catch (err) { setError(err instanceof Error ? err.message : text.requestFailed); }
     finally { setSending(false); }
   }
 
@@ -287,7 +294,7 @@ export function OrderModal({ open, course, lang, branch, currency, rate, isInter
         <div className="modal-wizard-icon"><FileText size={28} /></div>
         <h3>{lang === 'ar' ? 'اختار الخدمة' : 'Choose Service'}</h3>
         <div className="service-type-grid">
-          {SERVICE_OPTIONS.map(opt => (
+          {SERVICE_OPTIONS.filter(opt => opt.type !== 'QUIZ').map(opt => (
             <button key={opt.type} className={`service-type-card ${serviceType === opt.type ? 'active' : ''}`} type="button" onClick={() => setServiceType(opt.type)}>
               <div className="service-type-icon">{opt.icon}</div>
               <strong>{opt.type}</strong>
@@ -541,7 +548,9 @@ export function OrderModal({ open, course, lang, branch, currency, rate, isInter
             <div className="order-id-box"><span>{text.orderId}</span><strong dir="ltr">{success.order_id}</strong></div>
             <div className="deposit-info-box">
               <CircleDollarSign size={16} />
-              <span>{lang === 'ar' ? `ادفع ${formatMoney(success.deposit_amount, currency, lang)} ${currency} — فريقنا هيتواصل معاك` : `Pay ${formatMoney(success.deposit_amount, currency, lang)} — our team will contact you`}</span>
+              <span>{typeof success.deposit_amount === 'number'
+                ? (lang === 'ar' ? `ادفع ${formatMoney(success.deposit_amount, currency, lang)} ${currency} — فريقنا هيتواصل معاك` : `Pay ${formatMoney(success.deposit_amount, currency, lang)} — our team will contact you`)
+                : (lang === 'ar' ? 'سيتم تأكيد تفاصيل الدفع عند التواصل معك.' : 'Payment details will be confirmed when we contact you.')}</span>
             </div>
             <button className="primary-button modal-primary" type="button" onClick={onClose}>{text.close}</button>
           </div>

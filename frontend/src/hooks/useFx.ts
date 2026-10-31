@@ -3,6 +3,7 @@ import { FX_URL } from '../lib/config';
 import type { CurrencyCode, FxResponse } from '../types';
 
 const FX_CACHE_TTL = 5 * 60 * 1000;
+const FX_MAX_STALE_AGE = 48 * 60 * 60 * 1000;
 const fxCache = new Map<string, { data: FxResponse; ts: number }>();
 
 function baseData(): FxResponse {
@@ -25,7 +26,8 @@ function readCached(currency: CurrencyCode): FxResponse | null {
     const raw = localStorage.getItem(`aou-fx-${currency}`);
     if (!raw) return null;
     const parsed = JSON.parse(raw) as FxResponse;
-    if (!Number.isFinite(parsed.rate) || parsed.rate <= 0) return null;
+    const recordedAt = Date.parse(parsed.cachedAt);
+    if (!Number.isFinite(parsed.rate) || parsed.rate <= 0 || !Number.isFinite(recordedAt) || Date.now() - recordedAt > FX_MAX_STALE_AGE) return null;
     return { ...parsed, status: 'stale' };
   } catch {
     return null;
