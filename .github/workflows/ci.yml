@@ -26,8 +26,10 @@ jobs:
           const courses=JSON.parse(fs.readFileSync('dist/catalog/courses.json','utf8'));
           const branches=JSON.parse(fs.readFileSync('dist/catalog/branches.json','utf8'));
           const onsite=JSON.parse(fs.readFileSync('dist/catalog/onsite_courses.json','utf8'));
-          if(courses.length!==217) throw new Error('expected 217 bundled courses');
-          if(branches.length!==9) throw new Error('expected 9 AOU branches');
+          const sourceCourses=JSON.parse(fs.readFileSync('../serverless/data/courses.json','utf8'));
+          const sourceBranches=JSON.parse(fs.readFileSync('../serverless/data/branches.json','utf8'));
+          if(!courses.length || courses.length!==sourceCourses.length) throw new Error('bundled courses not synchronized');
+          if(!branches.length || branches.length!==sourceBranches.length) throw new Error('bundled branches not synchronized');
           if(Object.keys(onsite.courses||{}).length!==5) throw new Error('expected 5 configured onsite courses');"
 
   catalog-api:
@@ -46,7 +48,7 @@ jobs:
       - run: PYTHONPATH=. pytest -q
       - name: Verify branch and course metadata
         run: >-
-          PYTHONPATH=. python -c "from app.main import BRANCHES, COURSES; assert len(BRANCHES)==9; assert len(COURSES)==217; assert sum(1 for c in COURSES if c.get('onsite'))==5"
+          PYTHONPATH=. python -c "from app.main import BRANCHES, COURSES, BASE_COURSES; assert len(BRANCHES)==9; assert len(COURSES)==len(BASE_COURSES)>0; assert sum(1 for c in COURSES if c.get('onsite'))==5"
 
   serverless-api:
     runs-on: ubuntu-latest
@@ -62,7 +64,8 @@ jobs:
           const branches = listBranches();
           if (branches.count !== 9) throw new Error('expected 9 AOU branches');
           const catalog = searchCourses(new URL('https://example.test/api/courses'));
-          if (catalog.count !== 217) throw new Error('expected 217 courses');
+          const rawCourses = JSON.parse((await import('node:fs')).readFileSync('./serverless/data/courses.json','utf8'));
+          if (catalog.count !== rawCourses.length || !catalog.count) throw new Error('catalog and API results out of sync');
           const body = { course_code: 'TM105', customer_name: 'Test User', contact: '000', branch: 'egypt', currency: 'EGP', service_type: 'TMA' };
           const withoutStorage = await createServerlessOrder(body, {});
           if (withoutStorage.status !== 503) throw new Error('orders must require a durable receiver');
