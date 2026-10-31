@@ -215,7 +215,7 @@ class LoginIn(BaseModel):
 class GoogleLoginIn(BaseModel):
     token: str = Field(min_length=10)
     name: str | None = Field(default=None, max_length=80)
-    email: str = Field(max_length=120)
+    email: str | None = Field(default=None, max_length=120)
     avatar_url: str | None = Field(default=None, max_length=500)
 
 class UpdateProfileIn(BaseModel):
