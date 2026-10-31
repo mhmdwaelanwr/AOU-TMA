@@ -20,6 +20,11 @@ jobs:
           node-version: 22
       - run: npm install --no-audit --no-fund
       - run: npm run build
+      - name: Verify standalone Vite service build (no sibling data)
+        run: |
+          mv ../serverless ../serverless-ci-hidden
+          trap 'mv ../serverless-ci-hidden ../serverless' EXIT
+          npm run build
       - name: Verify bundled catalog fallback
         run: >-
           node -e "const fs=require('fs');
