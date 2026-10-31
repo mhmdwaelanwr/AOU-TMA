@@ -133,10 +133,15 @@ app = FastAPI(title="TMAly API", version="8.0.0", description="Full auth, catalo
 allowed_origins=[o.strip() for o in os.getenv("CORS_ORIGINS","*").split(",") if o.strip()]
 app.add_middleware(CORSMiddleware,allow_origins=allowed_origins,allow_credentials=allowed_origins!=["*"],allow_methods=["GET","POST","PUT","DELETE","OPTIONS"],allow_headers=["Content-Type","Authorization"])
 
+def stateful_storage_available() -> bool:
+    """The bundled SQLite database cannot persist reliably in Vercel Functions."""
+    return not bool(os.getenv("VERCEL"))
+
+
 @app.middleware("http")
 async def protect_ephemeral_vercel_storage(request: Request, call_next):
-    """SQLite inside a Vercel Function cannot persist user data safely."""
-    if os.getenv("VERCEL") and request.method in {"POST", "PUT", "PATCH", "DELETE"}:
+    """Reject every state-changing request rather than silently lose user data."""
+    if not stateful_storage_available() and request.method in {"POST", "PUT", "PATCH", "DELETE"}:
         return JSONResponse(
             status_code=503,
             content={"detail": "durable_storage_required"},
@@ -363,6 +368,27 @@ def apply_promo_code(conn, promo_code: str | None) -> tuple[str | None, float, f
 # ── Health ──────────────────────────────────────────────────────────────────
 @app.get("/health")
 def health(): return {"ok": True, "service": "catalog-api", "version": app.version, "courses": len(COURSES), "branches": len(BRANCHES)}
+
+@app.get("/api/capabilities")
+def public_capabilities():
+    """Fail closed for stateful UI features until durable storage is installed."""
+    ready = stateful_storage_available()
+    return JSONResponse(
+        content={
+            "ok": True,
+            "mode": "full_local" if ready else "catalog_only",
+            "catalog": True,
+            "features": {
+                "orders": ready,
+                "accounts": ready,
+                "payments": ready,
+                "referrals": ready,
+                "complaints": ready,
+            },
+            "reason": None if ready else "durable_storage_required",
+        },
+        headers={"Cache-Control": "no-store"},
+    )
 
 # FX is an internal Vercel service. This URL is injected into the caller at runtime
 # by the "backend-python" binding; browsers must use /api/fx on the public origin.
