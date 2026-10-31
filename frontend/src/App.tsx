@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect, useMemo, useRef, useState, useCallback } from 'react';
 import { ArrowUp } from 'lucide-react';
-import { AuthProvider } from './lib/auth';
+import { AuthProvider, useAuth } from './lib/auth';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -11,7 +11,7 @@ import { useCourses } from './hooks/useCourses';
 import { useFx } from './hooks/useFx';
 import { usePayments } from './hooks/usePayments';
 import { copy } from './lib/i18n';
-import { branches, detectBranchByTimezone, getBranch, getCurrencyForBranch, isNonEgyptBranch } from './lib/config';
+import { ACCOUNT_BACKEND_ENABLED, branches, detectBranchByTimezone, getBranch, getCurrencyForBranch, isNonEgyptBranch } from './lib/config';
 import type { Branch, BranchId, Course, CurrencyCode, Faculty, Language, Theme } from './types';
 
 const Catalog = lazy(() => import('./components/Catalog').then(m => ({ default: m.Catalog })));
@@ -39,7 +39,7 @@ function detectLanguage(): Language {
 }
 
 function getInitialTheme(): Theme {
-  const stored_theme = stored<Theme | 'system'>('aou-theme', 'system');
+  const stored_theme = stored<Theme | 'system'>('aou-theme-mode', 'system');
   if (stored_theme === 'system' || !stored_theme) {
     return window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   }
@@ -47,6 +47,8 @@ function getInitialTheme(): Theme {
 }
 
 function AppInner() {
+  const { user: authenticatedUser } = useAuth();
+  const [catalogCount, setCatalogCount] = useState(0);
   const [lang, setLang] = useState<Language>(detectLanguage);
   const [theme, setTheme] = useState<Theme>(getInitialTheme);
   const [themeMode, setThemeMode] = useState<'system' | 'light' | 'dark'>(() => stored<'system' | 'light' | 'dark'>('aou-theme-mode', 'system'));
@@ -56,10 +58,19 @@ function AppInner() {
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [showLoginPage, setShowLoginPage] = useState(false);
   const [showDashboard, setShowDashboard] = useState(false);
-  const [showAdmin, setShowAdmin] = useState(() => new URLSearchParams(window.location.search).get('admin') === '1');
+  const [showAdmin, setShowAdmin] = useState(false);
   const [toast, setToast] = useState<ToastMessage | null>(null);
   const [showTop, setShowTop] = useState(false);
   const currencyRef = useRef<HTMLSelectElement>(null);
+
+  useEffect(() => {
+    let active = true;
+    fetch('/catalog/courses.json', { cache: 'force-cache' })
+      .then((response) => response.ok ? response.json() : null)
+      .then((data) => { if (active && Array.isArray(data)) setCatalogCount(data.length); })
+      .catch(() => {});
+    return () => { active = false; };
+  }, []);
 
   const showToast = useCallback((msg: string, ok?: boolean) => {
     setToast({ msg, ok });
@@ -95,9 +106,12 @@ function AppInner() {
     root.dataset.theme = theme;
     root.classList.remove('light', 'dark');
     root.classList.add(theme);
-    localStorage.setItem('aou-theme', themeMode);
     localStorage.setItem('aou-theme-resolved', theme);
   }, [theme]);
+
+  useEffect(() => {
+    localStorage.setItem('aou-theme-mode', themeMode);
+  }, [themeMode]);
 
   useEffect(() => {
     const mq = window.matchMedia('(prefers-color-scheme: dark)');
@@ -155,7 +169,7 @@ function AppInner() {
               onBranch={setBranchId}
               onLogin={() => setShowLoginPage(true)}
               onDashboard={() => setShowDashboard(true)}
-              onAdmin={() => setShowAdmin(v => !v)}
+              onAdmin={authenticatedUser?.is_admin ? () => setShowAdmin(v => !v) : undefined}
               showAdmin={showAdmin}
             />
 
@@ -174,7 +188,7 @@ function AppInner() {
               />
               <div className="page-width">
                 <Suspense fallback={<div className="stats-grid">{Array.from({ length: 4 }).map((_, i) => <div className="stat-card" key={i} />)}</div>}>
-                  <Stats courseCount={840} text={text} />
+                  <Stats courseCount={catalogCount || courses.length} text={text} />
                 </Suspense>
                 <Suspense fallback={<div className="course-grid">{Array.from({ length: 8 }).map((_, i) => <div className="course-card skeleton-card" key={i} />)}</div>}>
                   <Catalog
@@ -208,9 +222,9 @@ function AppInner() {
                   <Referral lang={lang} text={text} />
                 </Suspense>
                 <Suspense fallback={null}>
-                  <Complaints lang={lang} text={text} />
+                  {ACCOUNT_BACKEND_ENABLED && <Complaints lang={lang} text={text} />}
                 </Suspense>
-                {showAdmin && (
+                {showAdmin && authenticatedUser?.is_admin && (
                   <Suspense fallback={null}>
                     <AdminDashboard lang={lang} text={text} />
                   </Suspense>

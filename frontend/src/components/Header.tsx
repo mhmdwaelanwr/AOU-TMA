@@ -2,6 +2,7 @@ import { ChevronDown, Globe2, Monitor, Moon, Sun, Menu, X, LogIn, User, LogOut, 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import type { Branch, BranchId, Language, Theme } from '../types';
 import { useAuth } from '../lib/auth';
+import { ACCOUNT_BACKEND_ENABLED } from '../lib/config';
 
 type Props = {
   lang: Language;
@@ -102,7 +103,7 @@ export function Header({ lang, theme, themeMode, branch, branches, text, onLang,
       </a>
 
       <nav className="desktop-nav" aria-label="Primary navigation">
-        {NAV_ITEMS.map(item => (
+        {NAV_ITEMS.filter(item => ACCOUNT_BACKEND_ENABLED || item.id !== 'complaints').map(item => (
           <a
             key={item.id}
             className={`nav-chip ${activeSection === item.id ? 'active' : ''}`}
@@ -159,7 +160,7 @@ export function Header({ lang, theme, themeMode, branch, branches, text, onLang,
         </div>
 
         {/* Auth Button */}
-        {loading ? null : user ? (
+        {ACCOUNT_BACKEND_ENABLED && (loading ? null : user ? (
           <div className="user-selector-wrap" ref={userRef}>
             <button className="control-chip user-control" type="button" onClick={() => { setShowUser(!showUser); setShowBranches(false); setShowTheme(false); }}>
               <span className="user-avatar">{user.name.charAt(0).toUpperCase()}</span>
@@ -198,7 +199,7 @@ export function Header({ lang, theme, themeMode, branch, branches, text, onLang,
             <LogIn size={14} />
             <span>{lang === 'ar' ? 'دخول' : 'Sign In'}</span>
           </button>
-        )}
+        ))}
 
         <button className="control-chip icon-only mobile-menu-btn" type="button" onClick={() => setShowMobile(!showMobile)} aria-label="Menu">
           {showMobile ? <X size={16} /> : <Menu size={16} />}
@@ -208,7 +209,7 @@ export function Header({ lang, theme, themeMode, branch, branches, text, onLang,
       {showMobile && (
         <div className="mobile-nav-overlay" ref={mobileRef}>
           <nav className="mobile-nav" aria-label="Mobile navigation">
-            {NAV_ITEMS.map(item => (
+            {NAV_ITEMS.filter(item => ACCOUNT_BACKEND_ENABLED || item.id !== 'complaints').map(item => (
               <a
                 key={item.id}
                 className={`mobile-nav-link ${activeSection === item.id ? 'active' : ''}`}
@@ -226,7 +227,7 @@ export function Header({ lang, theme, themeMode, branch, branches, text, onLang,
             <div className="mobile-nav-branch">
               <span>{lang === 'ar' ? 'الفرع' : 'Branch'}: {branch.flag} {branch.name[lang]}</span>
             </div>
-            {user ? (
+            {ACCOUNT_BACKEND_ENABLED && (user ? (
               <button className="primary-button mobile-auth-btn" type="button" onClick={() => { logout(); setShowMobile(false); }}>
                 <LogOut size={15} /><span>{lang === 'ar' ? 'خروج' : 'Sign Out'}</span>
               </button>
@@ -234,7 +235,7 @@ export function Header({ lang, theme, themeMode, branch, branches, text, onLang,
               <button className="primary-button mobile-auth-btn" type="button" onClick={() => { onLogin(); setShowMobile(false); }}>
                 <LogIn size={15} /><span>{lang === 'ar' ? 'تسجيل دخول' : 'Sign In'}</span>
               </button>
-            )}
+            ))}
           </div>
         </div>
       )}
