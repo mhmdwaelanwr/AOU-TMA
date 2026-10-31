@@ -76,12 +76,6 @@ function AppInner() {
     return () => { active = false; };
   }, []);
 
-  const handleCourseSelection = useCallback((course: Course) => {
-    setSelectedCourse(course);
-    setSelectionIsOrder(orderingEnabled);
-  }, [orderingEnabled]);
-  const closeCourseSelection = useCallback(() => setSelectedCourse(null), []);
-
   const showToast = useCallback((msg: string, ok?: boolean) => {
     setToast({ msg, ok });
   }, []);
@@ -107,6 +101,12 @@ function AppInner() {
   const orderingEnabled = capabilities.ordersEnabled;
   const accountsEnabled = ACCOUNT_BACKEND_ENABLED && capabilities.accountsEnabled;
   const payments = usePayments(orderingEnabled);
+
+  const handleCourseSelection = useCallback((course: Course) => {
+    setSelectedCourse(course);
+    setSelectionIsOrder(orderingEnabled);
+  }, [orderingEnabled]);
+  const closeCourseSelection = useCallback(() => setSelectedCourse(null), []);
 
   useEffect(() => {
     document.documentElement.lang = lang;
