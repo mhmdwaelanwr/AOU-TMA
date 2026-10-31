@@ -14,10 +14,10 @@ Services:
 - FastAPI: 8000
 - FX Node service: 3001
 
-## Vercel Services (proposed multi-service project)
+## Vercel Services (approved multi-service configuration)
 
-**Do not deploy to production until the service names, public route prefixes,
-internal binding, and persistence plan have been confirmed.**
+The three service names, public routes and `FX_INTERNAL_URL` binding are approved and merged on `main`.
+**Do not enable account, order or payment writes in production until durable storage is designed and tested.**
 
 Import the repository from its root (not from `frontend/`). The root
 `vercel.json` uses the current Vercel Services model:
@@ -52,7 +52,8 @@ into the calling FastAPI runtime.
 npx vercel dev -L
 # Another terminal:
 curl http://localhost:3000/health
-curl http://localhost:3000/api/courses?q=TM105
+curl 'http://localhost:3000/api/courses?q=TM105'
+curl http://localhost:3000/api/capabilities
 curl http://localhost:3000/api/currencies
 curl 'http://localhost:3000/api/fx?currency=KWD'
 ```
@@ -68,15 +69,26 @@ durable in Vercel Functions. In the Vercel runtime the DB defaults to
 `/tmp/aou-tma-orders.db` only so read-side startup can initialize.
 The app returns HTTP **503** for POST, PUT, PATCH and DELETE
 to avoid creating accounts/orders/payments that may silently disappear.
-Catalog, health and FX endpoints still work.
+Catalog, health and FX endpoints remain available. A public `GET /api/capabilities`
+endpoint reports `mode: "catalog_only"` and `features.orders: false` in this environment.
+Responses are sent with `Cache-Control: no-store`, so the React frontend can safely
+decide which functionality to expose at runtime.
 
 For production accounts, referrals, orders, complaints and
 payments, migrate SQLite to a durable managed database and remove this
 guard only after durable persistence is implemented and tested.
 Do **not** set `VITE_ACCOUNT_BACKEND=true` on Vercel until then;
 the frontend currently hides the account-based navigation by default.
-The frontend's order form may report `durable_storage_required`
-until persistence is implemented.
+The frontend shows a read-only, bilingual course-details dialog instead of the
+order form on Vercel. It hides payment methods, account links and order-step
+navigation and doesn't collect personal information in catalog-only mode.
+Read-only catalog responses may be CDN-cached for a short period in Vercel.
+The `/api/capabilities` response is never cached.
+
+In local/Docker mode, `GET /api/capabilities` returns `mode: "full_local"`
+and enables the original order flow; the frontend still requires the local
+`VITE_ACCOUNT_BACKEND=true` flag for account navigation. The demo's local
+SQLite storage is not a substitute for a production durable database.
 
 The previous root `api/*.mjs` serverless adapters are no longer
 the active Vercel route entrypoints when using `services`.
