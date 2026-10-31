@@ -32,6 +32,7 @@ services:
     environment:
       VITE_API_URL: http://localhost:8000
       VITE_FX_URL: http://localhost:3001
+      VITE_ACCOUNT_BACKEND: 'true'
     depends_on: [api, fx]
 
 volumes:
