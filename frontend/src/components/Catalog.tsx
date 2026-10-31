@@ -16,6 +16,7 @@ const facultyKeys: Array<[Faculty, string, typeof LayoutGrid]> = [
 
 type Props = {
   courses: Course[];
+  query: string;
   loading: boolean;
   error: boolean;
   faculty: Faculty;
@@ -32,11 +33,11 @@ type Props = {
 
 type Sort = 'code' | 'title' | 'price-asc' | 'price-desc';
 
-export function Catalog({ courses, loading, error, faculty, lang, branch, currency, rate, isInternational, text, onFaculty, onOrder, orderingEnabled }: Props) {
+export function Catalog({ courses, query, loading, error, faculty, lang, branch, currency, rate, isInternational, text, onFaculty, onOrder, orderingEnabled }: Props) {
   const [visible, setVisible] = useState(16);
   const [sort, setSort] = useState<Sort>('code');
 
-  useEffect(() => setVisible(16), [faculty, courses.length, sort]);
+  useEffect(() => setVisible(16), [faculty, query, sort]);
 
   const sorted = useMemo(() => {
     const list = [...courses];
