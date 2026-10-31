@@ -218,7 +218,7 @@ function AppInner() {
                   </aside>
                 )}
                 <Suspense fallback={<div className="stats-grid">{Array.from({ length: 4 }).map((_, i) => <div className="stat-card" key={i} />)}</div>}>
-                  <Stats courseCount={catalogCount || courses.length} text={text} />
+                  <Stats courseCount={catalogCount || courses.length} text={text} catalogOnly={!orderingEnabled} lang={lang} />
                 </Suspense>
                 <Suspense fallback={<div className="course-grid">{Array.from({ length: 8 }).map((_, i) => <div className="course-card skeleton-card" key={i} />)}</div>}>
                   <Catalog
