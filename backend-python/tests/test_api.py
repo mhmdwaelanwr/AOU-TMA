@@ -171,5 +171,7 @@ def test_capabilities_follow_storage_guard(tmp_path: Path, monkeypatch):
         assert response.json()["reason"] == "durable_storage_required"
         assert not any(response.json()["features"].values())
         assert response.headers["cache-control"] == "no-store"
-        assert client.get("/api/courses?q=TM105").status_code == 200
+        catalog = client.get("/api/courses?q=TM105")
+        assert catalog.status_code == 200
+        assert "s-maxage=300" in catalog.headers["cache-control"]
         assert client.post("/api/auth/login", json={"email": "a@example.com", "password": "x"}).status_code == 503
