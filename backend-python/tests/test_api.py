@@ -14,7 +14,7 @@ def test_health_and_catalog(tmp_path: Path):
     with client_for(tmp_path) as client:
         health = client.get("/health")
         assert health.status_code == 200
-        assert health.json()["courses"] == 217
+        assert health.json()["courses"] == len(main.COURSES) > 0
 
         search = client.get("/api/courses", params={"q": "TM105", "faculty": "all"})
         assert search.status_code == 200
