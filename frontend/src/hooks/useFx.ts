@@ -6,6 +6,23 @@ const FX_CACHE_TTL = 5 * 60 * 1000;
 const FX_MAX_STALE_AGE = 48 * 60 * 60 * 1000;
 const fxCache = new Map<string, { data: FxResponse; ts: number }>();
 
+/** Do not apply missing, mismatched or impossible exchange rates to displayed prices. */
+function isUsableQuote(payload: unknown, currency: CurrencyCode): payload is FxResponse {
+  if (!payload || typeof payload !== 'object') return false;
+  const quote = payload as Partial<FxResponse>;
+  const timestamp = typeof quote.cachedAt === 'string' ? Date.parse(quote.cachedAt) : NaN;
+  const age = Date.now() - timestamp;
+  return quote.base === 'EGP' &&
+    quote.currency === currency &&
+    typeof quote.rate === 'number' &&
+    Number.isFinite(quote.rate) &&
+    quote.rate > 0 &&
+    (quote.status === 'fresh' || quote.status === 'stale' || quote.status === 'base') &&
+    Number.isFinite(age) &&
+    age >= -5 * 60 * 1000 &&
+    age <= FX_MAX_STALE_AGE;
+}
+
 function baseData(): FxResponse {
   return {
     base: 'EGP',
@@ -19,15 +36,14 @@ function baseData(): FxResponse {
 
 function readCached(currency: CurrencyCode): FxResponse | null {
   const entry = fxCache.get(currency);
-  if (entry && Date.now() - entry.ts < FX_CACHE_TTL) {
+  if (entry && Date.now() - entry.ts < FX_CACHE_TTL && isUsableQuote(entry.data, currency)) {
     return { ...entry.data, status: 'stale' };
   }
   try {
     const raw = localStorage.getItem(`aou-fx-${currency}`);
     if (!raw) return null;
-    const parsed = JSON.parse(raw) as FxResponse;
-    const recordedAt = Date.parse(parsed.cachedAt);
-    if (!Number.isFinite(parsed.rate) || parsed.rate <= 0 || !Number.isFinite(recordedAt) || Date.now() - recordedAt > FX_MAX_STALE_AGE) return null;
+    const parsed: unknown = JSON.parse(raw);
+    if (!isUsableQuote(parsed, currency)) return null;
     return { ...parsed, status: 'stale' };
   } catch {
     return null;
@@ -64,6 +80,8 @@ export function useFx(currency: CurrencyCode) {
         return response.json() as Promise<FxResponse>;
       })
       .then((payload) => {
+        if (controller.signal.aborted) return;
+        if (!isUsableQuote(payload, currency)) throw new Error('invalid_fx_quote');
         setData(payload);
         fxCache.set(currency, { data: payload, ts: Date.now() });
         try { localStorage.setItem(`aou-fx-${currency}`, JSON.stringify(payload)); } catch {}
@@ -74,7 +92,7 @@ export function useFx(currency: CurrencyCode) {
         if (fallback) setData(fallback);
         else setError(true);
       })
-      .finally(() => setLoading(false));
+      .finally(() => { if (!controller.signal.aborted) setLoading(false); });
 
     return () => { abortRef.current?.abort(); };
   }, [currency]);
