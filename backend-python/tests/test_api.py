@@ -152,3 +152,24 @@ def test_vercel_does_not_accept_ephemeral_database_writes(tmp_path: Path, monkey
             "password": "a-long-unique-password",
         })
         assert signup.status_code == 503
+
+
+def test_capabilities_follow_storage_guard(tmp_path: Path, monkeypatch):
+    monkeypatch.delenv("VERCEL", raising=False)
+    with client_for(tmp_path) as client:
+        response = client.get("/api/capabilities")
+        assert response.status_code == 200
+        assert response.headers["cache-control"] == "no-store"
+        assert response.json()["mode"] == "full_local"
+        assert all(response.json()["features"].values())
+
+    monkeypatch.setenv("VERCEL", "1")
+    with client_for(tmp_path) as client:
+        response = client.get("/api/capabilities")
+        assert response.status_code == 200
+        assert response.json()["mode"] == "catalog_only"
+        assert response.json()["reason"] == "durable_storage_required"
+        assert not any(response.json()["features"].values())
+        assert response.headers["cache-control"] == "no-store"
+        assert client.get("/api/courses?q=TM105").status_code == 200
+        assert client.post("/api/auth/login", json={"email": "a@example.com", "password": "x"}).status_code == 503
