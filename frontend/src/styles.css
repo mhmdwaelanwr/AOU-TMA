@@ -2855,3 +2855,23 @@ html[dir="rtl"] .lp-title { letter-spacing: -0.01em; }
 @media print {
   .catalog-details-backdrop { display: none !important; }
 }
+
+
+/* Clear storefront status in catalog-only deployments */
+.catalog-readonly-banner {
+  display: flex; align-items: flex-start; gap: 12px;
+  margin: 18px 0 22px; padding: 16px 18px;
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  color: var(--text-secondary);
+}
+.catalog-readonly-banner > svg { flex-shrink: 0; color: var(--brand-primary); margin-top: 2px; }
+.catalog-readonly-banner strong {
+  display: block; margin-bottom: 4px; color: var(--text-primary);
+  font-size: 13px; font-weight: 800;
+}
+.catalog-readonly-banner p { margin: 0; font-size: 12px; line-height: 1.8; }
+@media (max-width: 520px) {
+  .catalog-readonly-banner { padding: 13px; margin: 12px 0 18px; }
+}
