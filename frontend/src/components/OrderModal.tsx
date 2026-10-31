@@ -1,6 +1,6 @@
 import { CheckCircle2, CircleDollarSign, CreditCard, ExternalLink, Gift, Play, Smartphone, X, FileText, Tag, Upload, ChevronLeft, ChevronRight, User, Banknote, FileCheck, Users, MessageCircle, BookOpen, ClipboardList, AlertTriangle, Shield, Lock, ChevronDown } from 'lucide-react';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { API_URL, branches as allBranches } from '../lib/config';
+import { API_URL, getBackendBranchCode, branches as allBranches } from '../lib/config';
 import { useAuth } from '../lib/auth';
 import type { Branch, BranchId, Course, CurrencyCode, Language, OrderPayload, OrderResponse, PaymentMethod, ServiceType, ServicePrices } from '../types';
 import { formatMoney } from './CourseCard';
@@ -150,7 +150,7 @@ export function OrderModal({ open, course, lang, branch, currency, rate, isInter
       } else {
         setName(''); setContact(''); setEmail('');
       }
-      fetch(`${API_URL}/api/service-prices?branch=${branch.id === 'egypt' ? 'EG' : branch.id.toUpperCase().slice(0, 2)}`)
+      fetch(`${API_URL}/api/service-prices?branch=${getBackendBranchCode(branch.id)}`)
         .then(r => r.ok ? r.json() : null)
         .then((d: ServicePrices | null) => { if (d?.prices) setServicePrices(d.prices); })
         .catch(() => {});
@@ -212,7 +212,7 @@ export function OrderModal({ open, course, lang, branch, currency, rate, isInter
     const payload: OrderPayload = {
       course_code: course.code, customer_name: name.trim() || (user?.name ?? ''), contact: contact.trim(),
       email: email.trim() || undefined, notes: notes.trim() || undefined, currency,
-      service_type: serviceType, branch: branch.id,
+      service_type: serviceType, branch: branch.id, branch_code: getBackendBranchCode(branch.id),
       payment_method: paymentMethod || undefined,
       promo_code: isQuiz ? undefined : (promoCode.trim().toUpperCase() || undefined),
       referral_code: isQuiz ? undefined : (referralCode.trim().toUpperCase() || undefined),
@@ -224,7 +224,7 @@ export function OrderModal({ open, course, lang, branch, currency, rate, isInter
       const res = await fetch(`${API_URL}/api/orders`, { method: 'POST', headers, body: JSON.stringify(payload) });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
-        if (data?.detail === 'order_storage_not_configured') {
+        if (data?.detail === 'durable_storage_required' || data?.detail === 'order_storage_not_configured') {
           throw new Error(lang === 'ar' ? 'الطلبات غير مفعّلة بعد: يجب إعداد نظام حفظ الطلبات.' : 'Ordering is not enabled: durable storage must be configured.');
         }
         if (data?.detail === 'order_delivery_failed') {
