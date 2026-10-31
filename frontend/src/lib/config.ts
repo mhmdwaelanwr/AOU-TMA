@@ -4,6 +4,7 @@ import type { Branch, BranchId, CurrencyCode, Faculty } from '../types';
 const productionOrigin = '';
 export const API_URL = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:8000' : productionOrigin);
 export const FX_URL = import.meta.env.VITE_FX_URL || (import.meta.env.DEV ? 'http://localhost:3001' : productionOrigin);
+export const ACCOUNT_BACKEND_ENABLED = import.meta.env.DEV || import.meta.env.VITE_ACCOUNT_BACKEND === 'true';
 
 export const branches: Branch[] = [
   { id: 'egypt', name: { ar: 'مصر', en: 'Egypt' }, currency: 'EGP', flag: '🇪🇬', timezone: 'Africa/Cairo', city: { ar: 'القاهرة', en: 'Cairo' } },
@@ -15,7 +16,6 @@ export const branches: Branch[] = [
   { id: 'oman', name: { ar: 'عُمان', en: 'Oman' }, currency: 'OMR', flag: '🇴🇲', timezone: 'Asia/Muscat', city: { ar: 'مسقط', en: 'Muscat' } },
   { id: 'sudan', name: { ar: 'السودان', en: 'Sudan' }, currency: 'SDG', flag: '🇸🇩', timezone: 'Africa/Khartoum', city: { ar: 'الخرطوم', en: 'Khartoum' } },
   { id: 'palestine', name: { ar: 'فلسطين', en: 'Palestine' }, currency: 'ILS', flag: '🇵🇸', timezone: 'Asia/Jerusalem', city: { ar: 'البيرة', en: 'Al-Bireh' } },
-  { id: 'morocco', name: { ar: 'المغرب', en: 'Morocco' }, currency: 'MAD', flag: '🇲🇦', timezone: 'Africa/Casablanca', city: { ar: 'الدار البيضاء', en: 'Casablanca' } },
 ];
 
 export function getBranch(id: BranchId): Branch {
@@ -34,7 +34,7 @@ export function getCurrencySymbol(currency: CurrencyCode): string {
   const symbols: Record<CurrencyCode, string> = {
     EGP: 'ج.م', KWD: 'د.ك', SAR: 'ر.س', LBP: 'ل.ب',
     JOD: 'د.أ', BHD: 'د.ب', OMR: 'ر.ع', SDG: 'ج.س',
-    ILS: '₪', USDT: '₮', MAD: 'د.م',
+    ILS: '₪', USDT: '₮',
   };
   return symbols[currency] || currency;
 }
@@ -58,7 +58,7 @@ export const facultyOrder: Faculty[] = [
 export function detectBranchByTimezone(): BranchId {
   try {
     const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    const match = branches.find((b) => tz.startsWith(b.timezone.split('/')[0]));
+    const match = branches.find((b) => tz === b.timezone);
     if (match) return match.id;
     if (tz.includes('Africa/Cairo') || tz.includes('Egypt')) return 'egypt';
     if (tz.includes('Asia/Riyadh') || tz.includes('Asia/Jeddah')) return 'saudi';
@@ -69,7 +69,6 @@ export function detectBranchByTimezone(): BranchId {
     if (tz.includes('Asia/Muscat')) return 'oman';
     if (tz.includes('Africa/Khartoum')) return 'sudan';
     if (tz.includes('Asia/Jerusalem') || tz.includes('Asia/Gaza')) return 'palestine';
-    if (tz.includes('Africa/Casablanca') || tz.includes('Africa/El_Aaiun')) return 'morocco';
   } catch {}
   return 'egypt';
 }
