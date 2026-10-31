@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect, useMemo, useRef, useState, useCallback } from 'react';
-import { ArrowUp } from 'lucide-react';
+import { ArrowUp, Info } from 'lucide-react';
 import { AuthProvider, useAuth } from './lib/auth';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { Header } from './components/Header';
@@ -55,7 +55,10 @@ function AppInner() {
   const [lang, setLang] = useState<Language>(detectLanguage);
   const [theme, setTheme] = useState<Theme>(getInitialTheme);
   const [themeMode, setThemeMode] = useState<'system' | 'light' | 'dark'>(() => stored<'system' | 'light' | 'dark'>('aou-theme-mode', 'system'));
-  const [branchId, setBranchId] = useState<BranchId>(() => stored<BranchId>('aou-branch', detectBranchByTimezone()));
+  const [branchId, setBranchId] = useState<BranchId>(() => {
+    const saved = stored<BranchId>('aou-branch', detectBranchByTimezone());
+    return branches.some((branch) => branch.id === saved) ? saved : detectBranchByTimezone();
+  });
   const [query, setQuery] = useState('');
   const [faculty, setFaculty] = useState<Faculty>('all');
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
@@ -203,6 +206,17 @@ function AppInner() {
                 onQuery={setQuery}
               />
               <div className="page-width">
+                {!capabilities.loading && !orderingEnabled && (
+                  <aside className="catalog-readonly-banner" role="status">
+                    <Info size={20} aria-hidden="true" />
+                    <div>
+                      <strong>{lang === 'ar' ? 'تصفح المواد متاح حاليًا' : 'Course browsing is available'}</strong>
+                      <p>{lang === 'ar'
+                        ? 'الموقع مستقل وغير تابع للجامعة. خدمات الطلب والدفع والحسابات متوقفة لحين توفير تخزين آمن ودائم. راجع المصادر الرسمية لأحدث بيانات المواد.'
+                        : 'Independent, unofficial catalog. Ordering, payments and accounts are disabled until secure, durable storage is ready. Check official sources for the latest course information.'}</p>
+                    </div>
+                  </aside>
+                )}
                 <Suspense fallback={<div className="stats-grid">{Array.from({ length: 4 }).map((_, i) => <div className="stat-card" key={i} />)}</div>}>
                   <Stats courseCount={catalogCount || courses.length} text={text} />
                 </Suspense>
