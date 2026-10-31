@@ -1,10 +1,11 @@
 /// <reference types="vite/client" />
 import type { Branch, BranchId, CurrencyCode, Faculty } from '../types';
 
-const productionOrigin = '';
-export const API_URL = import.meta.env.VITE_API_URL || (import.meta.env.DEV ? 'http://localhost:8000' : productionOrigin);
-export const FX_URL = import.meta.env.VITE_FX_URL || (import.meta.env.DEV ? 'http://localhost:3001' : productionOrigin);
-export const ACCOUNT_BACKEND_ENABLED = import.meta.env.DEV || import.meta.env.VITE_ACCOUNT_BACKEND === 'true';
+// Client-side requests use public same-origin rewrites; service bindings exist only at runtime.
+export const API_URL = import.meta.env.VITE_API_URL || '';
+export const FX_URL = import.meta.env.VITE_FX_URL || API_URL;
+// Vercel's FastAPI SQLite instance is ephemeral; account features need durable storage.
+export const ACCOUNT_BACKEND_ENABLED = import.meta.env.VITE_ACCOUNT_BACKEND === 'true';
 
 export const branches: Branch[] = [
   { id: 'egypt', name: { ar: 'مصر', en: 'Egypt' }, currency: 'EGP', flag: '🇪🇬', timezone: 'Africa/Cairo', city: { ar: 'القاهرة', en: 'Cairo' } },

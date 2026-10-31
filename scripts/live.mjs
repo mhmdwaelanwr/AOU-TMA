@@ -40,7 +40,11 @@ start('api', python, ['-m', 'uvicorn', 'app.main:app', '--reload', '--host', '0.
 start('fx', 'node', ['--watch', 'src/index.js'], 'backend-node', {
   CORS_ORIGINS: 'http://localhost:5173',
 });
-start('frontend', 'npm', ['run', 'dev', '--', '--host', '0.0.0.0'], 'frontend');
+start('frontend', 'npm', ['run', 'dev', '--', '--host', '0.0.0.0'], 'frontend', {
+  VITE_API_URL: 'http://localhost:8000',
+  VITE_FX_URL: 'http://localhost:3001',
+  VITE_ACCOUNT_BACKEND: 'true',
+});
 
 function shutdown() {
   for (const child of children) {

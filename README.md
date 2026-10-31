@@ -174,9 +174,19 @@ The design system includes desktop and mobile states, light / dark themes, Arabi
 
 ## Deployment
 
-### Vercel
+### Vercel Services (beta)
 
-The repository root contains `vercel.json` plus serverless handlers under `api/`. Import the repository from the root. The frontend uses same-origin `/api/*` endpoints in production.
+The root `vercel.json` defines three independently built services: `frontend`
+(Vite, public root), `backend-python` (FastAPI, public `/api/*` and
+`/health`), and `backend-node` (private container). FastAPI calls the
+internal FX service through the injected `FX_INTERNAL_URL` binding; the
+browser always calls public same-origin API routes.
+
+**SQLite is not durable on Vercel**: FastAPI rejects state-changing requests
+with HTTP 503 until an external persistent data store is integrated. See
+[`DEPLOY.md`](DEPLOY.md) for the route table, environment variables,
+limitations, and local `vercel dev -L` steps. The older `api/*.mjs`
+files are retained for reference but do not serve the Vercel Services routes.
 
 ### Netlify
 

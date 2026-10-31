@@ -20,6 +20,11 @@ jobs:
           node-version: 22
       - run: npm install --no-audit --no-fund
       - run: npm run build
+      - name: Verify standalone Vite service build (no sibling data)
+        run: |
+          mv ../serverless ../serverless-ci-hidden
+          trap 'mv ../serverless-ci-hidden ../serverless' EXIT
+          npm run build
       - name: Verify bundled catalog fallback
         run: >-
           node -e "const fs=require('fs');
@@ -95,3 +100,37 @@ jobs:
         with:
           node-version: 22
       - run: node --check src/index.js
+
+  vercel-services:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate Vercel Services routing and bindings
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import assert from 'node:assert/strict';
+          const config = JSON.parse(fs.readFileSync('vercel.json', 'utf8'));
+          assert.deepEqual(Object.keys(config.services).sort(), ['backend-node', 'backend-python', 'frontend']);
+          assert.equal(config.services['backend-node'].runtime, 'container');
+          assert.equal(config.services['backend-node'].entrypoint, 'Dockerfile');
+          assert.equal(config.services['backend-python'].entrypoint, 'app.main:app');
+          assert.equal(config.services.frontend.framework, 'vite');
+          assert.deepEqual(config.services['backend-python'].bindings, [
+            { type: 'service', service: 'backend-node', format: 'url', env: 'FX_INTERNAL_URL' },
+          ]);
+          for (const k of ['functions', 'buildCommand', 'installCommand', 'devCommand', 'outputDirectory', 'framework']) {
+            assert.ok(!(k in config), `${k} must live in a service, not at the top level`);
+          }
+          assert.deepEqual(config.rewrites, [
+            { source: '/health', destination: { service: 'backend-python' } },
+            { source: '/api', destination: { service: 'backend-python' } },
+            { source: '/api/(.*)', destination: { service: 'backend-python' } },
+            { source: '/(.*)', destination: { service: 'frontend' } },
+          ]);
+          assert.ok(!config.rewrites.some(x => x.destination.service === 'backend-node'),
+            'FX container must remain internal');
+          NODE
