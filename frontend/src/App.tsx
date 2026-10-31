@@ -208,6 +208,7 @@ function AppInner() {
                 <Suspense fallback={<div className="course-grid">{Array.from({ length: 8 }).map((_, i) => <div className="course-card skeleton-card" key={i} />)}</div>}>
                   <Catalog
                     courses={courses}
+                    query={query}
                     loading={coursesLoading}
                     error={coursesError}
                     faculty={faculty}
