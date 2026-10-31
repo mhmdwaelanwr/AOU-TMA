@@ -74,3 +74,32 @@ def test_order_is_persisted_and_validated(tmp_path: Path):
             },
         )
         assert invalid.status_code == 422
+
+
+def test_non_admin_cannot_access_private_admin_data(tmp_path: Path):
+    with client_for(tmp_path) as client:
+        signup = client.post("/api/auth/register", json={
+            "name": "Regular Student", "email": "student@example.com",
+            "password": "correct-horse-battery-staple",
+        })
+        assert signup.status_code == 200
+        assert signup.json()["user"]["is_admin"] is False
+        token = signup.json()["token"]
+        headers = {"Authorization": f"Bearer {token}"}
+        assert client.get("/api/admin/stats", headers=headers).status_code == 403
+        assert client.get("/api/admin/orders", headers=headers).status_code == 403
+
+
+def test_google_mock_token_and_lms_password_are_rejected(tmp_path: Path, monkeypatch):
+    monkeypatch.setattr(main, "GOOGLE_CLIENT_ID", "")
+    with client_for(tmp_path) as client:
+        response = client.post("/api/auth/google", json={
+            "token": "mock-google-token-123", "email": "admin@example.com",
+        })
+        assert response.status_code == 503
+        request = client.post("/api/orders", json={
+            "course_code": "TM105", "customer_name": "Student",
+            "contact": "01000000000", "lms_password": "do-not-store-me",
+        })
+        assert request.status_code == 422
+        assert request.json()["detail"] == "lms_credentials_not_accepted"
