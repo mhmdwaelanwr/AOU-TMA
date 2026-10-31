@@ -18,6 +18,7 @@ type Props = {
   onDashboard: () => void;
   onAdmin?: () => void;
   showAdmin?: boolean;
+  ordersEnabled: boolean;
 };
 
 const NAV_ITEMS = [
@@ -27,7 +28,7 @@ const NAV_ITEMS = [
   { id: 'support-page', labelKey: 'support' },
 ] as const;
 
-export function Header({ lang, theme, themeMode, branch, branches, text, onLang, onThemeMode, onBranch, onLogin, onDashboard, onAdmin, showAdmin }: Props) {
+export function Header({ lang, theme, themeMode, branch, branches, text, onLang, onThemeMode, onBranch, onLogin, onDashboard, onAdmin, showAdmin, ordersEnabled }: Props) {
   const { user, logout, loading } = useAuth();
   const [showBranches, setShowBranches] = useState(false);
   const [showTheme, setShowTheme] = useState(false);
@@ -103,7 +104,7 @@ export function Header({ lang, theme, themeMode, branch, branches, text, onLang,
       </a>
 
       <nav className="desktop-nav" aria-label="Primary navigation">
-        {NAV_ITEMS.filter(item => ACCOUNT_BACKEND_ENABLED || item.id !== 'complaints').map(item => (
+        {NAV_ITEMS.filter(item => (ordersEnabled || item.id !== 'how-it-works') && (ACCOUNT_BACKEND_ENABLED || item.id !== 'complaints')).map(item => (
           <a
             key={item.id}
             className={`nav-chip ${activeSection === item.id ? 'active' : ''}`}
@@ -209,7 +210,7 @@ export function Header({ lang, theme, themeMode, branch, branches, text, onLang,
       {showMobile && (
         <div className="mobile-nav-overlay" ref={mobileRef}>
           <nav className="mobile-nav" aria-label="Mobile navigation">
-            {NAV_ITEMS.filter(item => ACCOUNT_BACKEND_ENABLED || item.id !== 'complaints').map(item => (
+            {NAV_ITEMS.filter(item => (ordersEnabled || item.id !== 'how-it-works') && (ACCOUNT_BACKEND_ENABLED || item.id !== 'complaints')).map(item => (
               <a
                 key={item.id}
                 className={`mobile-nav-link ${activeSection === item.id ? 'active' : ''}`}
