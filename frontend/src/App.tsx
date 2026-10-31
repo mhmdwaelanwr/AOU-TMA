@@ -183,6 +183,7 @@ function AppInner() {
               onLogin={() => setShowLoginPage(true)}
               onDashboard={() => setShowDashboard(true)}
               ordersEnabled={orderingEnabled}
+              accountsEnabled={accountsEnabled}
               onAdmin={authenticatedUser?.is_admin ? () => setShowAdmin(v => !v) : undefined}
               showAdmin={showAdmin}
             />
