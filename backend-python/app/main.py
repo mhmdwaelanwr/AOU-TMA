@@ -8,6 +8,7 @@ import hashlib, hmac, json, os, sqlite3, uuid, time
 
 import bcrypt
 import jwt
+import httpx
 from google.auth.transport import requests as google_requests
 from google.oauth2 import id_token as google_id_token
 from fastapi import FastAPI, HTTPException, Query, Header, Depends, Request, UploadFile, File
@@ -33,7 +34,7 @@ COURSE_BY_CODE = {c["code"].lower(): c for c in COURSES}
 BRANCH_BY_CODE = {b["code"].upper(): b for b in BRANCHES}
 FIAT_CURRENCIES = {b["currency"] for b in BRANCHES}
 ORDER_CURRENCIES = FIAT_CURRENCIES | {"USDT"}
-DB_PATH = Path(os.getenv("ORDERS_DB_PATH", str(BASE_DIR / "orders.db")))
+DB_PATH = Path(os.getenv("ORDERS_DB_PATH", "/tmp/aou-tma-orders.db" if os.getenv("VERCEL") else str(BASE_DIR / "orders.db")))
 JWT_SECRET = os.getenv("JWT_SECRET", "aou-tma-hub-secret-key-change-in-production-" + uuid.uuid4().hex[:8])
 JWT_ALGORITHM = "HS256"
 JWT_EXPIRY_HOURS = 720  # 30 days
@@ -131,6 +132,18 @@ async def lifespan(_: FastAPI):
 app = FastAPI(title="TMAly API", version="8.0.0", description="Full auth, catalog, orders with deposit, referrals, promo codes, admin.", lifespan=lifespan)
 allowed_origins=[o.strip() for o in os.getenv("CORS_ORIGINS","*").split(",") if o.strip()]
 app.add_middleware(CORSMiddleware,allow_origins=allowed_origins,allow_credentials=allowed_origins!=["*"],allow_methods=["GET","POST","PUT","DELETE","OPTIONS"],allow_headers=["Content-Type","Authorization"])
+
+@app.middleware("http")
+async def protect_ephemeral_vercel_storage(request: Request, call_next):
+    """SQLite inside a Vercel Function cannot persist user data safely."""
+    if os.getenv("VERCEL") and request.method in {"POST", "PUT", "PATCH", "DELETE"}:
+        return JSONResponse(
+            status_code=503,
+            content={"detail": "durable_storage_required"},
+            headers={"Cache-Control": "no-store"},
+        )
+    return await call_next(request)
+
 
 # ── Auth helpers ────────────────────────────────────────────────────────────
 def hash_password(pw: str) -> str:
@@ -350,6 +363,34 @@ def apply_promo_code(conn, promo_code: str | None) -> tuple[str | None, float, f
 # ── Health ──────────────────────────────────────────────────────────────────
 @app.get("/health")
 def health(): return {"ok": True, "service": "catalog-api", "version": app.version, "courses": len(COURSES), "branches": len(BRANCHES)}
+
+# FX is an internal Vercel service. This URL is injected into the caller at runtime
+# by the "backend-python" binding; browsers must use /api/fx on the public origin.
+async def _proxy_fx(path: str, params: dict[str, str] | None = None):
+    base = os.getenv("FX_INTERNAL_URL", "").strip()
+    if not base:
+        raise HTTPException(status_code=503, detail="fx_service_binding_missing")
+    try:
+        async with httpx.AsyncClient(timeout=10.0, follow_redirects=False) as client:
+            response = await client.get(f"{base.rstrip('/')}{path}", params=params)
+        return JSONResponse(
+            status_code=response.status_code,
+            content=response.json(),
+            headers={"Cache-Control": "no-store"},
+        )
+    except (httpx.RequestError, ValueError):
+        raise HTTPException(status_code=502, detail="fx_service_unavailable")
+
+
+@app.get("/api/fx")
+async def get_fx(currency: str = Query(default="EGP", min_length=3, max_length=4)):
+    return await _proxy_fx("/api/fx", {"currency": currency.upper()})
+
+
+@app.get("/api/currencies")
+async def get_currencies():
+    return await _proxy_fx("/api/currencies")
+
 
 # ════════════════════════════════════════════════════════════════════════════
 # AUTH ENDPOINTS
