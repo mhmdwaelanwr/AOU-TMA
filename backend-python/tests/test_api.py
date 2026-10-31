@@ -103,3 +103,52 @@ def test_google_mock_token_and_lms_password_are_rejected(tmp_path: Path, monkeyp
         })
         assert request.status_code == 422
         assert request.json()["detail"] == "lms_credentials_not_accepted"
+
+def test_fx_binding_is_required(tmp_path: Path, monkeypatch):
+    monkeypatch.delenv("FX_INTERNAL_URL", raising=False)
+    with client_for(tmp_path) as client:
+        res = client.get("/api/fx", params={"currency": "KWD"})
+        assert res.status_code == 503
+        assert res.json()["detail"] == "fx_service_binding_missing"
+
+
+def test_fx_requests_use_the_private_service_binding(tmp_path: Path, monkeypatch):
+    seen = []
+    original_client = main.httpx.AsyncClient
+
+    def handler(request):
+        seen.append((request.url.path, request.url.params.get("currency")))
+        if request.url.path == "/api/currencies":
+            return main.httpx.Response(200, json={"base": "EGP", "currencies": ["EGP", "KWD"]})
+        return main.httpx.Response(200, json={"base": "EGP", "currency": "KWD", "rate": 0.006})
+
+    monkeypatch.setenv("FX_INTERNAL_URL", "https://private-fx.internal")
+    monkeypatch.setattr(main.httpx, "AsyncClient", lambda **kw: original_client(
+        transport=main.httpx.MockTransport(handler), **kw
+    ))
+
+    with client_for(tmp_path) as client:
+        fx = client.get("/api/fx?currency=kwd")
+        assert fx.status_code == 200
+        assert fx.json()["currency"] == "KWD"
+        currencies = client.get("/api/currencies")
+        assert currencies.status_code == 200
+        assert currencies.json()["currencies"] == ["EGP", "KWD"]
+    assert seen == [("/api/fx", "KWD"), ("/api/currencies", None)]
+
+
+def test_vercel_does_not_accept_ephemeral_database_writes(tmp_path: Path, monkeypatch):
+    monkeypatch.setenv("VERCEL", "1")
+    with client_for(tmp_path) as client:
+        assert client.get("/api/courses?q=TM105").status_code == 200
+        result = client.post("/api/orders", json={
+            "course_code": "TM105", "customer_name": "Student",
+            "contact": "01000000000",
+        })
+        assert result.status_code == 503
+        assert result.json()["detail"] == "durable_storage_required"
+        signup = client.post("/api/auth/register", json={
+            "name": "New Student", "email": "new@example.com",
+            "password": "a-long-unique-password",
+        })
+        assert signup.status_code == 503
