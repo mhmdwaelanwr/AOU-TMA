@@ -1,11 +1,55 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "npm --prefix frontend install && npm --prefix frontend run build",
-  "outputDirectory": "frontend/dist",
-  "functions": {
-    "api/*.mjs": {
-      "maxDuration": 10,
-      "includeFiles": "serverless/**"
+  "services": {
+    "backend-node": {
+      "root": "backend-node",
+      "runtime": "container",
+      "entrypoint": "Dockerfile"
+    },
+    "backend-python": {
+      "root": "backend-python",
+      "framework": "fastapi",
+      "entrypoint": "app.main:app",
+      "bindings": [
+        {
+          "type": "service",
+          "service": "backend-node",
+          "format": "url",
+          "env": "FX_INTERNAL_URL"
+        }
+      ]
+    },
+    "frontend": {
+      "root": "frontend",
+      "framework": "vite",
+      "buildCommand": "npm run build",
+      "outputDirectory": "dist"
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/health",
+      "destination": {
+        "service": "backend-python"
+      }
+    },
+    {
+      "source": "/api",
+      "destination": {
+        "service": "backend-python"
+      }
+    },
+    {
+      "source": "/api/(.*)",
+      "destination": {
+        "service": "backend-python"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "destination": {
+        "service": "frontend"
+      }
+    }
+  ]
 }
