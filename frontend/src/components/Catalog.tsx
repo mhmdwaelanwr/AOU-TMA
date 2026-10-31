@@ -27,11 +27,12 @@ type Props = {
   text: Record<string, string>;
   onFaculty: (faculty: Faculty) => void;
   onOrder: (course: Course) => void;
+  orderingEnabled: boolean;
 };
 
 type Sort = 'code' | 'title' | 'price-asc' | 'price-desc';
 
-export function Catalog({ courses, loading, error, faculty, lang, branch, currency, rate, isInternational, text, onFaculty, onOrder }: Props) {
+export function Catalog({ courses, loading, error, faculty, lang, branch, currency, rate, isInternational, text, onFaculty, onOrder, orderingEnabled }: Props) {
   const [visible, setVisible] = useState(16);
   const [sort, setSort] = useState<Sort>('code');
 
@@ -95,6 +96,7 @@ export function Catalog({ courses, loading, error, faculty, lang, branch, curren
                 isInternational={isInternational}
                 text={text}
                 onOrder={onOrder}
+                orderingEnabled={orderingEnabled}
               />
             ))}
           </div>
