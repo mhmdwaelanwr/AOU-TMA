@@ -147,7 +147,12 @@ async def protect_ephemeral_vercel_storage(request: Request, call_next):
             content={"detail": "durable_storage_required"},
             headers={"Cache-Control": "no-store"},
         )
-    return await call_next(request)
+    response = await call_next(request)
+    # Static catalog snapshots can be cached at the CDN only in read-only mode.
+    if (not stateful_storage_available() and request.method == "GET"
+            and request.url.path in {"/api/courses", "/api/branches", "/api/meta"}):
+        response.headers["Cache-Control"] = "public, max-age=60, s-maxage=300, stale-while-revalidate=3600"
+    return response
 
 
 # ── Auth helpers ────────────────────────────────────────────────────────────
