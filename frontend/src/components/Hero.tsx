@@ -5,6 +5,7 @@ type Props = {
   lang: Language;
   branch: Branch;
   query: string;
+  catalogOnly: boolean;
   rate: number;
   fxLoading: boolean;
   fxError: boolean;
@@ -14,14 +15,22 @@ type Props = {
   onQuery: (value: string) => void;
 };
 
-export function Hero({ lang, branch, query, rate, fxLoading, fxError, fxStatus, isInternational, text, onQuery }: Props) {
+export function Hero({ lang, branch, query, catalogOnly, rate, fxLoading, fxError, fxStatus, isInternational, text, onQuery }: Props) {
   return (
     <section className="hero-section" id="top">
       <div className="hero-card">
         <div className="hero-copy">
-          <span className="hero-badge">{text.liveFx}</span>
-          <h1><span>{text.title1}</span><span>{text.title2}</span></h1>
-          <p>{text.heroCopy}</p>
+          <span className="hero-badge">{catalogOnly ? (lang === 'ar' ? 'دليل المقررات' : 'COURSE CATALOG') : text.liveFx}</span>
+          {catalogOnly ? (
+            <h1><span>{lang === 'ar' ? 'كل موادك' : 'Your courses'}</span><span>{lang === 'ar' ? 'في مكان واحد' : 'in one place'}</span></h1>
+          ) : (
+            <h1><span>{text.title1}</span><span>{text.title2}</span></h1>
+          )}
+          <p>{catalogOnly
+            ? (lang === 'ar'
+              ? 'ابحث عن مواد الجامعة العربية المفتوحة، وراجع وصف المقرر ومصدره الرسمي بدون حساب أو بيانات شخصية.'
+              : 'Search Arab Open University courses and review descriptions and official sources without an account.')
+            : text.heroCopy}</p>
         </div>
 
         <div className="search-panel">
