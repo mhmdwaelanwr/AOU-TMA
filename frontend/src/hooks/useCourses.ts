@@ -47,11 +47,19 @@ export function useCourses(query: string, faculty: Faculty) {
           if (!response.ok) throw new Error(`catalog_failed_${response.status}`);
           const payload = await response.json() as { items?: Course[] }; const items = Array.isArray(payload.items) ? payload.items : [];
           if (q === '' && faculty === 'all' && items.length === 0) throw new Error('catalog_returned_empty_baseline');
+          if (controller.signal.aborted) return;
           courseCache.set(key, items); setCourses(items); setError(false);
         } catch (err: any) {
           if (err?.name === 'AbortError') return;
-          try { const staticItems = filterCatalog(await loadStaticCatalog(), q, faculty); courseCache.set(key, staticItems); setCourses(staticItems); setError(false); }
-          catch (fallbackError) { console.error('Failed to load course catalog.', fallbackError); setCourses([]); setError(true); }
+          try {
+            const staticItems = filterCatalog(await loadStaticCatalog(), q, faculty);
+            if (controller.signal.aborted) return;
+            courseCache.set(key, staticItems); setCourses(staticItems); setError(false);
+          } catch (fallbackError) {
+            if (controller.signal.aborted) return;
+            console.error('Failed to load course catalog.', fallbackError);
+            setCourses([]); setError(true);
+          }
         } finally { if (!controller.signal.aborted) setLoading(false); }
       };
       void load();
