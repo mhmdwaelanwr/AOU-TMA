@@ -19,6 +19,16 @@ export const branches: Branch[] = [
   { id: 'palestine', name: { ar: 'فلسطين', en: 'Palestine' }, currency: 'ILS', flag: '🇵🇸', timezone: 'Asia/Jerusalem', city: { ar: 'البيرة', en: 'Al-Bireh' } },
 ];
 
+const backendBranchCodes: Record<BranchId, string> = {
+  egypt: 'EG', kuwait: 'KW', saudi: 'SA', bahrain: 'BH',
+  jordan: 'JO', lebanon: 'LB', oman: 'OM', sudan: 'SD',
+  palestine: 'PS',
+};
+
+export function getBackendBranchCode(id: BranchId): string {
+  return backendBranchCodes[id];
+}
+
 export function getBranch(id: BranchId): Branch {
   return branches.find((b) => b.id === id) || branches[0];
 }

@@ -2,7 +2,30 @@ import { useEffect, useRef, useState } from 'react';
 import { API_URL } from '../lib/config';
 import type { Course, Faculty } from '../types';
 
-const courseCache = new Map<string, Course[]>();
+const CACHE_TTL_MS = 10 * 60 * 1000;
+const CACHE_MAX_ENTRIES = 30;
+const courseCache = new Map<string, { items: Course[]; savedAt: number }>();
+
+function cachedCourses(key: string): Course[] | null {
+  const entry = courseCache.get(key);
+  if (!entry) return null;
+  if (Date.now() - entry.savedAt > CACHE_TTL_MS) {
+    courseCache.delete(key);
+    return null;
+  }
+  courseCache.delete(key);
+  courseCache.set(key, entry);
+  return entry.items;
+}
+
+function rememberCourses(key: string, items: Course[]) {
+  courseCache.delete(key);
+  courseCache.set(key, { items, savedAt: Date.now() });
+  if (courseCache.size > CACHE_MAX_ENTRIES) {
+    const oldest = courseCache.keys().next().value;
+    if (oldest !== undefined) courseCache.delete(oldest);
+  }
+}
 const onsiteCodes = new Set(['M110', 'TM105', 'M251', 'T216A', 'T216B']);
 let staticCatalogPromise: Promise<Course[]> | null = null;
 
@@ -37,7 +60,7 @@ export function useCourses(query: string, faculty: Faculty) {
   const abortRef = useRef<AbortController | null>(null); const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   useEffect(() => {
     abortRef.current?.abort(); if (timerRef.current !== null) clearTimeout(timerRef.current);
-    const q = query.trim(); const key = cacheKey(q, faculty); const cached = courseCache.get(key);
+    const q = query.trim(); const key = cacheKey(q, faculty); const cached = cachedCourses(key);
     if (cached) { setCourses(cached); setLoading(false); setError(false); return; }
     timerRef.current = setTimeout(() => {
       const controller = new AbortController(); abortRef.current = controller; setLoading(true); setError(false);
@@ -47,11 +70,19 @@ export function useCourses(query: string, faculty: Faculty) {
           if (!response.ok) throw new Error(`catalog_failed_${response.status}`);
           const payload = await response.json() as { items?: Course[] }; const items = Array.isArray(payload.items) ? payload.items : [];
           if (q === '' && faculty === 'all' && items.length === 0) throw new Error('catalog_returned_empty_baseline');
-          courseCache.set(key, items); setCourses(items); setError(false);
+          if (controller.signal.aborted) return;
+          rememberCourses(key, items); setCourses(items); setError(false);
         } catch (err: any) {
           if (err?.name === 'AbortError') return;
-          try { const staticItems = filterCatalog(await loadStaticCatalog(), q, faculty); courseCache.set(key, staticItems); setCourses(staticItems); setError(false); }
-          catch (fallbackError) { console.error('Failed to load course catalog.', fallbackError); setCourses([]); setError(true); }
+          try {
+            const staticItems = filterCatalog(await loadStaticCatalog(), q, faculty);
+            if (controller.signal.aborted) return;
+            rememberCourses(key, staticItems); setCourses(staticItems); setError(false);
+          } catch (fallbackError) {
+            if (controller.signal.aborted) return;
+            console.error('Failed to load course catalog.', fallbackError);
+            setCourses([]); setError(true);
+          }
         } finally { if (!controller.signal.aborted) setLoading(false); }
       };
       void load();

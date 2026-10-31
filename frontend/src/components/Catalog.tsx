@@ -16,6 +16,7 @@ const facultyKeys: Array<[Faculty, string, typeof LayoutGrid]> = [
 
 type Props = {
   courses: Course[];
+  query: string;
   loading: boolean;
   error: boolean;
   faculty: Faculty;
@@ -27,15 +28,19 @@ type Props = {
   text: Record<string, string>;
   onFaculty: (faculty: Faculty) => void;
   onOrder: (course: Course) => void;
+  orderingEnabled: boolean;
 };
 
 type Sort = 'code' | 'title' | 'price-asc' | 'price-desc';
 
-export function Catalog({ courses, loading, error, faculty, lang, branch, currency, rate, isInternational, text, onFaculty, onOrder }: Props) {
+export function Catalog({ courses, query, loading, error, faculty, lang, branch, currency, rate, isInternational, text, onFaculty, onOrder, orderingEnabled }: Props) {
   const [visible, setVisible] = useState(16);
   const [sort, setSort] = useState<Sort>('code');
 
-  useEffect(() => setVisible(16), [faculty, courses.length, sort]);
+  useEffect(() => setVisible(16), [faculty, query, sort]);
+  useEffect(() => {
+    if (!orderingEnabled && (sort === 'price-asc' || sort === 'price-desc')) setSort('code');
+  }, [orderingEnabled, sort]);
 
   const sorted = useMemo(() => {
     const list = [...courses];
@@ -69,8 +74,12 @@ export function Catalog({ courses, loading, error, faculty, lang, branch, curren
           <select value={sort} onChange={(event) => setSort(event.target.value as Sort)}>
             <option value="code">{text.sortCode}</option>
             <option value="title">{text.sortTitle}</option>
-            <option value="price-asc">{text.sortLow}</option>
-            <option value="price-desc">{text.sortHigh}</option>
+            {orderingEnabled && (
+              <>
+                <option value="price-asc">{text.sortLow}</option>
+                <option value="price-desc">{text.sortHigh}</option>
+              </>
+            )}
           </select>
         </label>
       </div>
@@ -95,6 +104,7 @@ export function Catalog({ courses, loading, error, faculty, lang, branch, curren
                 isInternational={isInternational}
                 text={text}
                 onOrder={onOrder}
+                orderingEnabled={orderingEnabled}
               />
             ))}
           </div>

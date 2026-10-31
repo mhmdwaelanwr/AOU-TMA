@@ -10,7 +10,9 @@ A bilingual full-stack catalog and request-flow project built around Arab Open U
 - Arabic + English UI with RTL / LTR switching.
 - Semantic light / dark themes.
 - Multi-currency display with server-side FX retrieval, caching, and EGP fallback.
-- Accessible request/order modal with validation and generated IDs.
+- Accessible, read-only course-details modal on Vercel (no personal information required).
+- Runtime capability discovery through `GET /api/capabilities` to prevent unavailable account/order/payment actions.
+- Original order flow available in local/Docker mode only while a durable production database is pending.
 - SQLite persistence for local / Docker mode.
 - React production build served through Nginx.
 - Same-origin proxying for frontend, FastAPI, and FX-service requests.
@@ -75,13 +77,14 @@ docker compose -f docker-compose.dev.yml up --build
 ```text
 GET  /health
 GET  /api/meta
+GET  /api/capabilities
 GET  /api/courses?q=TM105&faculty=all
 GET  /api/courses/TM105
 POST /api/orders
 
 GET  /api/currencies
-GET  /api/fx/EGP
-GET  /api/fx/KWD
+GET  /api/fx?currency=EGP
+GET  /api/fx?currency=KWD
 ```
 
 ## Course catalog enrichment
@@ -101,7 +104,7 @@ backend-python/app/unresolved_course_codes.json
 backend-python/app/course_descriptions.json
 ```
 
-The repository's recorded enrichment state contains 217 catalog records, with 150 exact title matches and 67 codes explicitly retained as unresolved in the current catalogue snapshot.
+The bundled catalog includes 840 course entries in the current repository snapshot. Some titles or descriptions are unresolved; the UI labels missing information instead of inventing course details. Always consult the official AOU source for updates.
 
 ### Catalogue sources
 
@@ -147,7 +150,9 @@ Only configure payment methods and networks you are legally and operationally pr
 
 Local / Docker mode persists requests in SQLite through FastAPI.
 
-Vercel and Netlify serverless filesystems are **not** treated as durable order storage. Set `ORDER_WEBHOOK_URL` to forward accepted requests to an external durable system. Without it, the serverless endpoint can validate a request and return an ID, but that request is not represented as durably persisted by the serverless filesystem.
+Vercel Services currently exposes the public catalog and currency API only; all data-changing requests return HTTP 503 until a durable database is integrated. The frontend uses the `/api/capabilities` response to display course details instead of unavailable checkout and account flows.
+
+The separate legacy Netlify serverless adapter can forward an order to an external durable receiver using `ORDER_WEBHOOK_URL`. Without a configured HTTPS receiver, it returns HTTP 503 instead of claiming that an order was saved.
 
 ## Tests
 
@@ -183,7 +188,9 @@ internal FX service through the injected `FX_INTERNAL_URL` binding; the
 browser always calls public same-origin API routes.
 
 **SQLite is not durable on Vercel**: FastAPI rejects state-changing requests
-with HTTP 503 until an external persistent data store is integrated. See
+with HTTP 503 until an external persistent data store is integrated.
+In the meantime, the UI is a bilingual, accessible read-only course catalog
+with official source links and no payment or login prompts. See
 [`DEPLOY.md`](DEPLOY.md) for the route table, environment variables,
 limitations, and local `vercel dev -L` steps. The older `api/*.mjs`
 files are retained for reference but do not serve the Vercel Services routes.

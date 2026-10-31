@@ -2,11 +2,17 @@ import { useEffect, useState } from 'react';
 import { API_URL } from '../lib/config';
 import type { PaymentMethod, PaymentMethodsResponse } from '../types';
 
-export function usePayments() {
+export function usePayments(enabled = true) {
   const [items, setItems] = useState<PaymentMethod[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (!enabled) {
+      setItems([]);
+      setLoading(false);
+      return;
+    }
+    setLoading(true);
     let active = true;
     fetch(`${API_URL}/api/payment-methods`)
       .then(async (response) => {
@@ -17,7 +23,7 @@ export function usePayments() {
       .catch(() => { if (active) setItems([]); })
       .finally(() => { if (active) setLoading(false); });
     return () => { active = false; };
-  }, []);
+  }, [enabled]);
 
   return { items, loading };
 }
