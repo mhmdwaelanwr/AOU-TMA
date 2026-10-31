@@ -12,6 +12,7 @@ export function usePayments(enabled = true) {
       setLoading(false);
       return;
     }
+    setLoading(true);
     let active = true;
     fetch(`${API_URL}/api/payment-methods`)
       .then(async (response) => {
