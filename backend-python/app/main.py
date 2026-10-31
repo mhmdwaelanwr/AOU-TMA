@@ -8,6 +8,8 @@ import hashlib, hmac, json, os, sqlite3, uuid, time
 
 import bcrypt
 import jwt
+from google.auth.transport import requests as google_requests
+from google.oauth2 import id_token as google_id_token
 from fastapi import FastAPI, HTTPException, Query, Header, Depends, Request, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
@@ -39,6 +41,8 @@ DEPOSIT_EGP = 29.0
 FIRST_ORDER_DISCOUNT_PCT = 20.0
 REFERRAL_CREDIT_EGP = 15.0
 GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID", "")
+# Explicit user IDs only: email addresses are not verified for password registrations.
+ADMIN_USER_IDS = {value.strip() for value in os.getenv("ADMIN_USER_IDS", "").split(",") if value.strip()}
 
 # ── DB ──────────────────────────────────────────────────────────────────────
 def db_connect():
@@ -160,8 +164,8 @@ def require_user(authorization: str | None = Header(default=None)) -> str:
 def require_admin(user_id: str = Depends(require_user)) -> str:
     with db_connect() as conn:
         user = conn.execute("SELECT is_banned FROM users WHERE id=?", (user_id,)).fetchone()
-    if not user or user["is_banned"]:
-        raise HTTPException(status_code=403, detail="forbidden")
+    if not user or user["is_banned"] or user_id not in ADMIN_USER_IDS:
+        raise HTTPException(status_code=403, detail="admin_access_required")
     return user_id
 
 def generate_referral_code() -> str:
@@ -173,6 +177,7 @@ def user_public(user_row) -> dict:
         "provider": user_row["provider"], "avatar_url": user_row["avatar_url"],
         "referral_code": user_row["referral_code"], "credit_egp": user_row["credit_egp"] or 0,
         "is_banned": bool(user_row["is_banned"]),
+        "is_admin": user_row["id"] in ADMIN_USER_IDS,
         "created_at": user_row["created_at"]
     }
 
@@ -390,9 +395,20 @@ def auth_login(body: LoginIn):
 
 @app.post("/api/auth/google")
 def auth_google(body: GoogleLoginIn):
-    email = body.email.strip().lower()
-    name = body.name or email.split("@")[0]
-    avatar = body.avatar_url
+    if not GOOGLE_CLIENT_ID:
+        raise HTTPException(status_code=503, detail="google_auth_not_configured")
+    try:
+        claims = google_id_token.verify_oauth2_token(
+            body.token, google_requests.Request(), GOOGLE_CLIENT_ID
+        )
+    except (ValueError, Exception) as exc:
+        raise HTTPException(status_code=401, detail="invalid_google_token") from exc
+    if not claims.get("email_verified") or not claims.get("email") or not claims.get("sub"):
+        raise HTTPException(status_code=401, detail="unverified_google_identity")
+    email = str(claims["email"]).strip().lower()
+    name = str(claims.get("name") or email.split("@")[0])[:80]
+    avatar = str(claims.get("picture") or "")[:500] or None
+    google_subject = str(claims["sub"])
     with db_connect() as conn:
         user = conn.execute("SELECT * FROM users WHERE email=?", (email,)).fetchone()
         now = datetime.now(timezone.utc).isoformat()
@@ -408,7 +424,7 @@ def auth_google(body: GoogleLoginIn):
         ref_code = generate_referral_code()
         conn.execute(
             "INSERT INTO users (id,name,email,provider,provider_id,avatar_url,referral_code,created_at,last_login) VALUES (?,?,?,?,?,?,?,?,?)",
-            (user_id, name, email, "google", body.token[:32], avatar, ref_code, now, now)
+            (user_id, name, email, "google", google_subject, avatar, ref_code, now, now)
         )
         conn.execute("INSERT INTO referrals (code,owner_user_id,owner_name,created_at) VALUES (?,?,?,?)",
                      (ref_code, user_id, name, now))
@@ -603,6 +619,9 @@ def create_complaint(body: ComplaintIn, user_id: str | None = Depends(get_curren
 def create_order(order: OrderIn, request: Request, user_id: str | None = Depends(get_current_user)):
     course_item = COURSE_BY_CODE.get(order.course_code.casefold())
     if not course_item: raise HTTPException(status_code=404, detail="course_not_found")
+    # Never receive or persist students' university login credentials.
+    if order.lms_username or order.lms_password:
+        raise HTTPException(status_code=422, detail="lms_credentials_not_accepted")
     branch = BRANCH_BY_CODE[order.branch_code]
     ip = get_client_ip(request)
     now = datetime.now(timezone.utc); order_id = f"AOU-{now:%Y%m%d}-{uuid.uuid4().hex[:6].upper()}"
@@ -643,7 +662,7 @@ def create_order(order: OrderIn, request: Request, user_id: str | None = Depends
                 conn.execute("UPDATE users SET credit_egp = credit_egp + ? WHERE id=?", (ref_credit, ref_owner["owner_user_id"]))
         # Insert order
         conn.execute("""INSERT INTO orders (id,user_id,course_code,customer_name,contact,email,notes,currency,price_egp,status,service_type,branch_code,payment_method,payment_reference,deposit_amount,deposit_paid,remaining_amount,ip_address,first_order_discount_pct,promo_code,promo_discount_pct,referral_code,referral_credit_applied,lms_username,lms_password,created_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
-                     (order_id, user_id, course_item["code"], order.customer_name, order.contact, order.email, order.notes, order.currency, base_price, status, order.service_type, order.branch_code, order.payment_method, order.payment_reference, deposit, 0, remaining, ip, first_disc_pct if first_disc_pct > 0 else None, promo_code_applied, promo_pct if promo_pct > 0 else None, ref_code_applied, ref_credit if ref_credit > 0 else None, order.lms_username, order.lms_password, now.isoformat()))
+                     (order_id, user_id, course_item["code"], order.customer_name, order.contact, order.email, order.notes, order.currency, base_price, status, order.service_type, order.branch_code, order.payment_method, order.payment_reference, deposit, 0, remaining, ip, first_disc_pct if first_disc_pct > 0 else None, promo_code_applied, promo_pct if promo_pct > 0 else None, ref_code_applied, ref_credit if ref_credit > 0 else None, None, None, now.isoformat()))
         conn.commit()
     return OrderOut(ok=True, order_id=order_id, status="deposit_pending", deposit_amount=deposit, created_at=now.isoformat())
 

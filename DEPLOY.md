@@ -61,3 +61,11 @@ ORDER_WEBHOOK_URL=https://your-durable-order-receiver.example/webhook
 ```
 
 The serverless order function forwards the validated order to this endpoint. Without a webhook, an Order ID is generated but the serverless deployment does not claim durable database storage.
+
+## Production safety requirements
+
+- The Vercel/Netlify deployment is a public catalog and request frontend; it does **not** provide the SQLite-backed accounts, admin dashboard, referrals, or support API. Host FastAPI with a durable database for those features and configure the frontend API origin accordingly.
+- Set `ORDER_WEBHOOK_URL` to an **HTTPS** endpoint that validates and durably stores orders before acknowledging them. Without it, the serverless API returns HTTP 503 and does not claim a request was submitted.
+- In FastAPI deployments, set a strong `JWT_SECRET`, and use `ADMIN_USER_IDS` (comma-separated verified internal user IDs) to grant admin access. **Never grant admin rights by an unverified sign-up email.**
+- Google login uses verified Google ID tokens, not client-supplied email addresses. Configure matching `GOOGLE_CLIENT_ID` on FastAPI and `VITE_GOOGLE_CLIENT_ID` for the frontend build to enable it.
+- Do not collect, submit, or store LMS passwords or university login credentials.
