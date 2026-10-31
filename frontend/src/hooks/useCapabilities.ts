@@ -38,7 +38,7 @@ export function useCapabilities(): Capabilities {
         if (payload?.ok !== true || !payload?.features || typeof payload.mode !== 'string') {
           throw new Error('invalid_capabilities');
         }
-        const writable = payload.mode !== 'catalog_only';
+        const writable = payload.mode === 'full_local';
         setCapabilities({
           ordersEnabled: writable && payload.features.orders === true,
           accountsEnabled: writable && payload.features.accounts === true,
