@@ -4,8 +4,9 @@ import { AuthProvider, useAuth } from './lib/auth';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { OrderModal } from './components/OrderModal';
-import { LoginPage } from './components/LoginPage';
+import { CourseDetailsModal } from './components/CourseDetailsModal';
+import { useCapabilities } from './hooks/useCapabilities';
+
 import { Toast, type ToastMessage } from './components/Toast';
 import { useCourses } from './hooks/useCourses';
 import { useFx } from './hooks/useFx';
@@ -15,6 +16,8 @@ import { ACCOUNT_BACKEND_ENABLED, branches, detectBranchByTimezone, getBranch, g
 import type { Branch, BranchId, Course, CurrencyCode, Faculty, Language, Theme } from './types';
 
 const Catalog = lazy(() => import('./components/Catalog').then(m => ({ default: m.Catalog })));
+const OrderModal = lazy(() => import('./components/OrderModal').then(m => ({ default: m.OrderModal })));
+const LoginPage = lazy(() => import('./components/LoginPage').then(m => ({ default: m.LoginPage })));
 const Stats = lazy(() => import('./components/Stats').then(m => ({ default: m.Stats })));
 const PaymentMethods = lazy(() => import('./components/PaymentMethods').then(m => ({ default: m.PaymentMethods })));
 const HowItWorks = lazy(() => import('./components/HowItWorks').then(m => ({ default: m.HowItWorks })));
@@ -56,6 +59,7 @@ function AppInner() {
   const [query, setQuery] = useState('');
   const [faculty, setFaculty] = useState<Faculty>('all');
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
+  const [selectionIsOrder, setSelectionIsOrder] = useState(false);
   const [showLoginPage, setShowLoginPage] = useState(false);
   const [showDashboard, setShowDashboard] = useState(false);
   const [showAdmin, setShowAdmin] = useState(false);
@@ -71,6 +75,12 @@ function AppInner() {
       .catch(() => {});
     return () => { active = false; };
   }, []);
+
+  const handleCourseSelection = useCallback((course: Course) => {
+    setSelectedCourse(course);
+    setSelectionIsOrder(orderingEnabled);
+  }, [orderingEnabled]);
+  const closeCourseSelection = useCallback(() => setSelectedCourse(null), []);
 
   const showToast = useCallback((msg: string, ok?: boolean) => {
     setToast({ msg, ok });
@@ -93,7 +103,10 @@ function AppInner() {
   const text = useMemo(() => copy[lang] as Record<string, string>, [lang]);
   const { courses, loading: coursesLoading, error: coursesError } = useCourses(query, faculty);
   const fx = useFx(currency);
-  const payments = usePayments();
+  const capabilities = useCapabilities();
+  const orderingEnabled = capabilities.ordersEnabled;
+  const accountsEnabled = ACCOUNT_BACKEND_ENABLED && capabilities.accountsEnabled;
+  const payments = usePayments(orderingEnabled);
 
   useEffect(() => {
     document.documentElement.lang = lang;
@@ -149,9 +162,9 @@ function AppInner() {
   return (
     <div className="app-shell">
       <ErrorBoundary>
-        {showLoginPage ? (
-          <LoginPage lang={lang} onBack={() => setShowLoginPage(false)} onLoginSuccess={() => { setShowLoginPage(false); showToast(lang === 'ar' ? 'تم تسجيل الدخول بنجاح ✓' : 'Signed in successfully ✓', true); }} />
-        ) : showDashboard ? (
+        {showLoginPage && accountsEnabled ? (
+          <Suspense fallback={null}><LoginPage lang={lang} onBack={() => setShowLoginPage(false)} onLoginSuccess={() => { setShowLoginPage(false); showToast(lang === 'ar' ? 'تم تسجيل الدخول بنجاح ✓' : 'Signed in successfully ✓', true); }} /></Suspense>
+        ) : showDashboard && accountsEnabled ? (
           <Suspense fallback={<div className="order-history-loading"><span>{lang === 'ar' ? 'جاري التحميل...' : 'Loading...'}</span></div>}>
             <StudentDashboard lang={lang} text={text} onBack={() => setShowDashboard(false)} onToast={showToast} />
           </Suspense>
@@ -169,6 +182,7 @@ function AppInner() {
               onBranch={setBranchId}
               onLogin={() => setShowLoginPage(true)}
               onDashboard={() => setShowDashboard(true)}
+              ordersEnabled={orderingEnabled}
               onAdmin={authenticatedUser?.is_admin ? () => setShowAdmin(v => !v) : undefined}
               showAdmin={showAdmin}
             />
@@ -178,6 +192,7 @@ function AppInner() {
                 lang={lang}
                 branch={branch}
                 query={query}
+                catalogOnly={!orderingEnabled}
                 rate={rate}
                 fxLoading={fx.loading}
                 fxError={fx.error}
@@ -203,28 +218,29 @@ function AppInner() {
                     isInternational={isInternational}
                     text={text}
                     onFaculty={setFaculty}
-                    onOrder={setSelectedCourse}
+                    onOrder={handleCourseSelection}
+                    orderingEnabled={orderingEnabled}
                   />
                 </Suspense>
                 <Suspense fallback={null}>
-                  {!payments.loading && <PaymentMethods items={payments.items} lang={lang} isInternational={isInternational} text={text} />}
+                  {orderingEnabled && !payments.loading && <PaymentMethods items={payments.items} lang={lang} isInternational={isInternational} text={text} />}
                 </Suspense>
                 <Suspense fallback={null}>
-                  <HowItWorks text={text} />
+                  {orderingEnabled && <HowItWorks text={text} />}
                 </Suspense>
                 <Suspense fallback={null}>
-                  <OrderHistory lang={lang} />
+                  {accountsEnabled && <OrderHistory lang={lang} />}
                 </Suspense>
                 <Suspense fallback={null}>
                   <Support text={text} />
                 </Suspense>
                 <Suspense fallback={null}>
-                  <Referral lang={lang} text={text} />
+                  {accountsEnabled && <Referral lang={lang} text={text} />}
                 </Suspense>
                 <Suspense fallback={null}>
-                  {ACCOUNT_BACKEND_ENABLED && <Complaints lang={lang} text={text} />}
+                  {accountsEnabled && <Complaints lang={lang} text={text} />}
                 </Suspense>
-                {showAdmin && authenticatedUser?.is_admin && (
+                {accountsEnabled && showAdmin && authenticatedUser?.is_admin && (
                   <Suspense fallback={null}>
                     <AdminDashboard lang={lang} text={text} />
                   </Suspense>
@@ -243,17 +259,26 @@ function AppInner() {
         )}
       </ErrorBoundary>
 
-      <OrderModal
-        open={Boolean(selectedCourse)}
-        course={selectedCourse}
+      {selectionIsOrder && orderingEnabled && (
+        <Suspense fallback={null}>
+          <OrderModal
+            open={Boolean(selectedCourse)}
+            course={selectedCourse}
+            lang={lang}
+            branch={branch}
+            currency={pricingCurrency}
+            rate={rate}
+            isInternational={isInternational}
+            text={text}
+            paymentMethods={payments.items}
+            onClose={closeCourseSelection}
+          />
+        </Suspense>
+      )}
+      <CourseDetailsModal
+        course={selectionIsOrder ? null : selectedCourse}
         lang={lang}
-        branch={branch}
-        currency={pricingCurrency}
-        rate={rate}
-        isInternational={isInternational}
-        text={text}
-        paymentMethods={payments.items}
-        onClose={() => setSelectedCourse(null)}
+        onClose={closeCourseSelection}
       />
 
       <Toast toast={toast} onDismiss={() => setToast(null)} />
