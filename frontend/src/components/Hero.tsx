@@ -1,4 +1,5 @@
-import { MapPin, Search } from 'lucide-react';
+import { MapPin, Search, X } from 'lucide-react';
+import { useEffect, useRef } from 'react';
 import type { Branch, Language } from '../types';
 
 type Props = {
@@ -16,6 +17,21 @@ type Props = {
 };
 
 export function Hero({ lang, branch, query, catalogOnly, rate, fxLoading, fxError, fxStatus, isInternational, text, onQuery }: Props) {
+  const searchRef = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== '/' || event.altKey || event.ctrlKey || event.metaKey) return;
+      const target = event.target;
+      if (!(target instanceof HTMLElement)) return;
+      if (target.closest('input, textarea, select, [contenteditable="true"]')) return;
+      if (document.querySelector('[aria-modal="true"]')) return;
+      event.preventDefault();
+      searchRef.current?.focus();
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, []);
+
   return (
     <section className="hero-section" id="top">
       <div className="hero-card">
@@ -37,12 +53,34 @@ export function Hero({ lang, branch, query, catalogOnly, rate, fxLoading, fxErro
           <label className="search-field" htmlFor="course-search">
             <Search size={18} />
             <input
+              ref={searchRef}
+              type="search"
               id="course-search"
               value={query}
               onChange={(event) => onQuery(event.target.value)}
+              onKeyDown={(event) => {
+                if (event.key === 'Escape' && query) {
+                  event.preventDefault();
+                  onQuery('');
+                }
+              }}
               placeholder={text.searchPlaceholder}
+              aria-label={lang === 'ar' ? 'البحث في المقررات' : 'Search courses'}
               autoComplete="off"
             />
+            {query ? (
+              <button
+                type="button"
+                className="course-search-clear"
+                onClick={() => {
+                  onQuery('');
+                  searchRef.current?.focus();
+                }}
+                aria-label={lang === 'ar' ? 'مسح البحث' : 'Clear search'}
+              >
+                <X size={16} aria-hidden="true" />
+              </button>
+            ) : <kbd className="course-search-shortcut" aria-hidden="true">/</kbd>}
           </label>
 
           <div className="branch-display">

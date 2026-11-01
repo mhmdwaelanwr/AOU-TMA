@@ -1,10 +1,12 @@
-import { useEffect, useId, useRef } from 'react';
-import { BookOpen, CalendarDays, ExternalLink, FileText, Info, X } from 'lucide-react';
+import { useEffect, useId, useRef, useState } from 'react';
+import { BookOpen, CalendarDays, ExternalLink, FileText, Info, X, Copy, Check, Share2 } from 'lucide-react';
+import { courseShareUrl } from '../lib/courseLinks';
 import type { Course, Language } from '../types';
 
 type Props = {
   course: Course | null;
   lang: Language;
+  catalogOnly: boolean;
   onClose: () => void;
 };
 
@@ -25,11 +27,24 @@ function officialSource(value: string | null | undefined): string | null {
   return hostname === 'aou.edu.eg' || hostname.endsWith('.aou.edu.eg') ? safe : null;
 }
 
-export function CourseDetailsModal({ course, lang, onClose }: Props) {
+export function CourseDetailsModal({ course, lang, catalogOnly, onClose }: Props) {
   const titleId = useId();
   const descriptionId = useId();
   const panelRef = useRef<HTMLElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
+  const [shareStatus, setShareStatus] = useState<'idle' | 'copied' | 'failed'>('idle');
+
+  useEffect(() => setShareStatus('idle'), [course?.code]);
+
+  async function copyCourseLink() {
+    if (!course) return;
+    try {
+      await navigator.clipboard.writeText(courseShareUrl(window.location.href, course.code));
+      setShareStatus('copied');
+    } catch {
+      setShareStatus('failed');
+    }
+  }
 
   useEffect(() => {
     if (!course) return;
@@ -125,13 +140,28 @@ export function CourseDetailsModal({ course, lang, onClose }: Props) {
           </div>
         )}
 
-        <div className="catalog-details-note">
-          <Info size={18} />
-          <p>{ar
-            ? 'المنصة في وضع تصفح المواد فقط. الطلبات والدفع وتسجيل الحسابات غير متاحة حاليًا لحين تجهيز تخزين دائم وآمن. لا تحتاج لإدخال أي بيانات شخصية.'
-            : 'Catalog preview mode: ordering, payments and accounts are currently unavailable until durable storage is ready. No personal information is required.'}</p>
-        </div>
+        {catalogOnly && (
+          <div className="catalog-details-note">
+            <Info size={18} />
+            <p>{ar
+              ? 'المنصة في وضع تصفح المواد فقط. الطلبات والدفع وتسجيل الحسابات غير متاحة حاليًا لحين تجهيز تخزين دائم وآمن. لا تحتاج لإدخال أي بيانات شخصية.'
+              : 'Catalog preview mode: ordering, payments and accounts are currently unavailable until durable storage is ready. No personal information is required.'}</p>
+          </div>
+        )}
         <div className="catalog-details-actions">
+          <button
+            type="button"
+            className="catalog-details-share"
+            onClick={() => void copyCourseLink()}
+            aria-live="polite"
+          >
+            {shareStatus === 'copied' ? <Check size={16} /> : shareStatus === 'failed' ? <Share2 size={16} /> : <Copy size={16} />}
+            {shareStatus === 'copied'
+              ? (ar ? 'تم نسخ الرابط' : 'Link copied')
+              : shareStatus === 'failed'
+                ? (ar ? 'تعذر نسخ الرابط' : 'Could not copy link')
+                : (ar ? 'نسخ رابط المادة' : 'Copy course link')}
+          </button>
           {source && (
             <a className="catalog-details-official" href={source} target="_blank" rel="noopener noreferrer">
               <ExternalLink size={16} /> {ar ? 'المصدر الرسمي للجامعة' : 'Official university source'}

@@ -7,6 +7,10 @@ A bilingual full-stack catalog and request-flow project built around Arab Open U
 ## Engineering scope
 
 - Searchable course catalog with faculty filtering and progressive loading.
+- Save up to 100 courses in local browser bookmarks (no account or database).
+- Share individual courses via links like `/?course=TM105` and open details directly.
+- Keyboard search shortcut (`/`), accessible save/filter controls and responsive browsing.
+
 - Arabic + English UI with RTL / LTR switching.
 - Semantic light / dark themes.
 - Multi-currency display with server-side FX retrieval, caching, and EGP fallback.
@@ -166,6 +170,7 @@ node --check src/index.js
 
 cd ../frontend
 npm install
+npm run test:unit
 npm run build
 ```
 

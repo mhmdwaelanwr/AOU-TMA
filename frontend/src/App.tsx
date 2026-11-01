@@ -6,6 +6,7 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { CourseDetailsModal } from './components/CourseDetailsModal';
 import { useCapabilities } from './hooks/useCapabilities';
+import { courseFromSearch, updateCourseUrl } from './lib/courseLinks';
 
 import { Toast, type ToastMessage } from './components/Toast';
 import { useCourses } from './hooks/useCourses';
@@ -59,7 +60,8 @@ function AppInner() {
     const saved = stored<BranchId>('aou-branch', detectBranchByTimezone());
     return branches.some((branch) => branch.id === saved) ? saved : detectBranchByTimezone();
   });
-  const [query, setQuery] = useState('');
+  const [linkedCourse] = useState(() => courseFromSearch(window.location.search));
+  const [query, setQuery] = useState(linkedCourse || '');
   const [faculty, setFaculty] = useState<Faculty>('all');
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [selectionIsOrder, setSelectionIsOrder] = useState(false);
@@ -108,8 +110,26 @@ function AppInner() {
   const handleCourseSelection = useCallback((course: Course) => {
     setSelectedCourse(course);
     setSelectionIsOrder(orderingEnabled);
+    if (!orderingEnabled) {
+      window.history.replaceState(window.history.state, '', updateCourseUrl(window.location.href, course.code));
+    }
   }, [orderingEnabled]);
-  const closeCourseSelection = useCallback(() => setSelectedCourse(null), []);
+
+  const openedDeepLink = useRef(false);
+  useEffect(() => {
+    if (!linkedCourse || openedDeepLink.current || coursesLoading || coursesError) return;
+    const match = courses.find((course) => course.code.toUpperCase() === linkedCourse);
+    openedDeepLink.current = true;
+    if (match) {
+      setSelectedCourse(match);
+      setSelectionIsOrder(false);
+    }
+  }, [linkedCourse, courses, coursesLoading, coursesError]);
+
+  const closeCourseSelection = useCallback(() => {
+    setSelectedCourse(null);
+    window.history.replaceState(window.history.state, '', updateCourseUrl(window.location.href, null));
+  }, []);
 
   useEffect(() => {
     document.documentElement.lang = lang;
@@ -294,6 +314,7 @@ function AppInner() {
       <CourseDetailsModal
         course={selectionIsOrder ? null : selectedCourse}
         lang={lang}
+        catalogOnly={!orderingEnabled}
         onClose={closeCourseSelection}
       />
 

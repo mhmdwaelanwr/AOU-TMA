@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { ArrowLeft, ArrowRight, ExternalLink, Gift, Info } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ExternalLink, Gift, Info, Bookmark } from 'lucide-react';
 import type { Branch, Course, CurrencyCode, Language } from '../types';
 import { CourseIcon } from './CourseIcon';
 import { getCurrencyDecimals, getCurrencySymbol } from '../lib/config';
@@ -14,6 +14,8 @@ type Props = {
   text: Record<string, string>;
   onOrder: (course: Course) => void;
   orderingEnabled: boolean;
+  saved: boolean;
+  onToggleSaved: (code: string) => void;
 };
 
 export function formatMoney(value: number, currency: CurrencyCode, lang: Language) {
@@ -27,7 +29,7 @@ function shortDescription(course: Course, text: Record<string, string>) {
   return text.descriptionUnavailable;
 }
 
-export const CourseCard = memo(function CourseCard({ course, lang, branch, currency, rate, isInternational, text, onOrder, orderingEnabled }: Props) {
+export const CourseCard = memo(function CourseCard({ course, lang, branch, currency, rate, isInternational, text, onOrder, orderingEnabled, saved, onToggleSaved }: Props) {
   const converted = course.priceEgp * rate;
   const Arrow = lang === 'ar' ? ArrowLeft : ArrowRight;
   const description = shortDescription(course, text);
@@ -46,13 +48,29 @@ export const CourseCard = memo(function CourseCard({ course, lang, branch, curre
           </p>
           <span className="course-faculty">{lang === 'ar' ? course.facultyAr : course.faculty}</span>
         </div>
-        {!orderingEnabled ? (
-          <span className="tma-badge">{lang === 'ar' ? 'مقرر دراسي' : 'Course'}</span>
-        ) : isOnsite ? (
-          <span className="onsite-badge">{text.onsiteExam}</span>
-        ) : (
-          <span className="tma-badge">{course.type}</span>
-        )}
+        <div className="course-card-actions">
+          <button
+            type="button"
+            className={`course-bookmark ${saved ? 'active' : ''}`}
+            aria-label={saved
+              ? (lang === 'ar' ? 'إزالة المادة من المحفوظة' : 'Remove saved course')
+              : (lang === 'ar' ? 'حفظ المادة' : 'Save course')}
+            aria-pressed={saved}
+            title={saved
+              ? (lang === 'ar' ? 'إزالة من المحفوظة' : 'Remove bookmark')
+              : (lang === 'ar' ? 'حفظ المادة' : 'Bookmark course')}
+            onClick={() => onToggleSaved(course.code)}
+          >
+            <Bookmark size={17} fill={saved ? 'currentColor' : 'none'} aria-hidden="true" />
+          </button>
+          {!orderingEnabled ? (
+            <span className="tma-badge">{lang === 'ar' ? 'مقرر دراسي' : 'Course'}</span>
+          ) : isOnsite ? (
+            <span className="onsite-badge">{text.onsiteExam}</span>
+          ) : (
+            <span className="tma-badge">{course.type}</span>
+          )}
+        </div>
       </div>
 
       <p className={`course-description ${course.description ? '' : 'pending'}`} title={description}>
