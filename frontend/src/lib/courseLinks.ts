@@ -1,4 +1,4 @@
-import { normalizeCourseCode } from './savedCourses';
+import { normalizeCourseCode } from './savedCourses.ts';
 
 export function courseFromSearch(search: string): string | null {
   return normalizeCourseCode(new URLSearchParams(search).get('course'));
