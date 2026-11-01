@@ -19,6 +19,8 @@ jobs:
         with:
           node-version: 22
       - run: npm install --no-audit --no-fund
+      - name: Unit tests for catalog bookmarks and deep links
+        run: npm run test:unit
       - run: npm run build
       - name: Verify standalone Vite service build (no sibling data)
         run: |
