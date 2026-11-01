@@ -1,5 +1,6 @@
-import { BookOpen, BriefcaseBusiness, GraduationCap, LayoutGrid, SearchX, Languages, Newspaper, Palette } from 'lucide-react';
+import { BookOpen, BriefcaseBusiness, GraduationCap, LayoutGrid, SearchX, Languages, Newspaper, Palette, Bookmark } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
+import { SAVED_COURSES_KEY, loadSavedCourses, toggleSavedCourse } from '../lib/savedCourses';
 import type { Branch, Course, CurrencyCode, Faculty, Language } from '../types';
 import { CourseCard } from './CourseCard';
 import { SkeletonCard } from './SkeletonCard';
@@ -36,8 +37,33 @@ type Sort = 'code' | 'title' | 'price-asc' | 'price-desc';
 export function Catalog({ courses, query, loading, error, faculty, lang, branch, currency, rate, isInternational, text, onFaculty, onOrder, orderingEnabled }: Props) {
   const [visible, setVisible] = useState(16);
   const [sort, setSort] = useState<Sort>('code');
+  const [savedCodes, setSavedCodes] = useState<string[]>(loadSavedCourses);
+  const [savedOnly, setSavedOnly] = useState(false);
+  const savedSet = useMemo(() => new Set(savedCodes), [savedCodes]);
 
-  useEffect(() => setVisible(16), [faculty, query, sort]);
+  // Bookmarks are stored only on this device, and kept in sync across tabs.
+  useEffect(() => {
+    const sync = (event: StorageEvent) => {
+      if (event.key === SAVED_COURSES_KEY || event.key === null) {
+        setSavedCodes(loadSavedCourses());
+      }
+    };
+    window.addEventListener('storage', sync);
+    return () => window.removeEventListener('storage', sync);
+  }, []);
+
+  useEffect(() => {
+    try {
+      const value = JSON.stringify(savedCodes);
+      if (localStorage.getItem(SAVED_COURSES_KEY) !== value) {
+        localStorage.setItem(SAVED_COURSES_KEY, value);
+      }
+    } catch {
+      // Bookmarking still works in memory when storage is disabled.
+    }
+  }, [savedCodes]);
+
+  useEffect(() => setVisible(16), [faculty, query, sort, savedOnly]);
   useEffect(() => {
     if (!orderingEnabled && (sort === 'price-asc' || sort === 'price-desc')) setSort('code');
   }, [orderingEnabled, sort]);
@@ -50,6 +76,10 @@ export function Catalog({ courses, query, loading, error, faculty, lang, branch,
     return list.sort((a, b) => a.code.localeCompare(b.code, undefined, { numeric: true }));
   }, [courses, sort]);
 
+  const shown = useMemo(() => savedOnly
+    ? sorted.filter((course) => savedSet.has(course.code.toUpperCase()))
+    : sorted, [sorted, savedOnly, savedSet]);
+
   return (
     <section className="catalog-section" id="catalog">
       <div className="catalog-heading">
@@ -58,7 +88,7 @@ export function Catalog({ courses, query, loading, error, faculty, lang, branch,
           <h2>{text.chooseCourse}</h2>
           <p>{text.catalogSubtitle}</p>
         </div>
-        <span className="results-chip">{courses.length} {text.results}</span>
+        <span className="results-chip" role="status" aria-live="polite">{shown.length} {text.results}</span>
       </div>
 
       <div className="catalog-toolbar">
@@ -69,6 +99,15 @@ export function Catalog({ courses, query, loading, error, faculty, lang, branch,
             </button>
           ))}
         </div>
+        <button
+          className={`saved-filter ${savedOnly ? 'active' : ''}`}
+          type="button"
+          aria-pressed={savedOnly}
+          onClick={() => setSavedOnly((value) => !value)}
+        >
+          <Bookmark size={16} aria-hidden="true" fill={savedOnly ? 'currentColor' : 'none'} />
+          <span>{lang === 'ar' ? 'المحفوظة' : 'Saved'} ({savedCodes.length})</span>
+        </button>
         <label className="sort-control">
           <span>{text.sort}</span>
           <select value={sort} onChange={(event) => setSort(event.target.value as Sort)}>
@@ -88,12 +127,21 @@ export function Catalog({ courses, query, loading, error, faculty, lang, branch,
         <div className="course-grid">{Array.from({ length: 8 }).map((_, index) => <SkeletonCard key={index} />)}</div>
       ) : error ? (
         <div className="empty-state"><SearchX size={28} /><h3>{text.noResults}</h3><p>{text.requestFailed}</p></div>
-      ) : sorted.length === 0 ? (
-        <div className="empty-state"><SearchX size={28} /><h3>{text.noResults}</h3><p>{text.noResultsHelp}</p></div>
+      ) : shown.length === 0 ? (
+        <div className="empty-state">
+          <SearchX size={28} />
+          <h3>{savedOnly ? (lang === 'ar' ? 'لا توجد مواد محفوظة ضمن النتائج' : 'No saved courses in these results') : text.noResults}</h3>
+          <p>{savedOnly
+            ? (lang === 'ar' ? 'احفظ موادك من علامة الإشارة المرجعية، أو ألغِ البحث والفلاتر.' : 'Bookmark a course or clear the search and filters.')
+            : text.noResultsHelp}</p>
+          {savedOnly && <button type="button" className="secondary-button" onClick={() => setSavedOnly(false)}>
+            {lang === 'ar' ? 'عرض كل المواد' : 'Show all courses'}
+          </button>}
+        </div>
       ) : (
         <>
           <div className="course-grid">
-            {sorted.slice(0, visible).map((course) => (
+            {shown.slice(0, visible).map((course) => (
               <CourseCard
                 key={course.code}
                 course={course}
@@ -105,11 +153,13 @@ export function Catalog({ courses, query, loading, error, faculty, lang, branch,
                 text={text}
                 onOrder={onOrder}
                 orderingEnabled={orderingEnabled}
+                saved={savedSet.has(course.code.toUpperCase())}
+                onToggleSaved={(code) => setSavedCodes((current) => toggleSavedCourse(current, code))}
               />
             ))}
           </div>
-          {visible < sorted.length && (
-            <div className="load-more-wrap"><button className="secondary-button load-more" type="button" onClick={() => setVisible((value) => value + 16)}>{text.loadMore}<span>{Math.min(visible, sorted.length)} / {sorted.length}</span></button></div>
+          {visible < shown.length && (
+            <div className="load-more-wrap"><button className="secondary-button load-more" type="button" onClick={() => setVisible((value) => value + 16)}>{text.loadMore}<span>{Math.min(visible, shown.length)} / {shown.length}</span></button></div>
           )}
         </>
       )}
